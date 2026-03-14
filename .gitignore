@@ -1,0 +1,12 @@
+/explicaciones/*
+
+# Entorno virtual (¡Súper importante no subirlo!)
+.venv/
+
+# Checkpoints automáticos de Jupyter Notebooks
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+
+# Archivos de caché de Python
+__pycache__/
+*.pyc
