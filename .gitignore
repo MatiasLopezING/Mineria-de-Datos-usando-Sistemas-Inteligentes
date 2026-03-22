@@ -10,3 +10,10 @@
 # Archivos de caché de Python
 __pycache__/
 *.pyc
+
+# LaTeX files
+entrega1/*.aux
+entrega1/*.fdb_latexmk
+entrega1/*.fls
+entrega1/*.log
+entrega1/*.synctex.gz
