@@ -4,14 +4,16 @@
 \usepackage{amsmath, amssymb}
 \usepackage{graphicx}
 \usepackage[margin=2.5cm]{geometry}
+\usepackage{placeins}
+\usepackage{float}
 
 \title{\textbf{Trabajo Práctico Número 1}}
 
 % Estructura para 3 integrantes
 \author{
     \begin{tabular}{c c c}
-        Lopez Matias & Nombre Integrante 2 & Nombre Integrante 3 \\
-        Legajo: 02670/0 & Legajo: XXXXX/X & Legajo: XXXXX/X
+        Lopez, Matias & Silicaro Pera, Isidro & Pacchialat, Taciano \\
+        Legajo: 02670/0 & Legajo: 03326/9 & Legajo: 03358/8
     \end{tabular}
     \vspace{0.5cm} \\
     \textit{Minería de Datos}
@@ -105,31 +107,45 @@ Los cortes numéricos calculados son: $0.979$, $11.5$ y $22.0$.
     \label{fig:rango_lum}
 \end{figure}
 
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.9\textwidth]{imagenes/Punto_C.png}
+    \caption{Correlación lineal entre Luminosidad y Temperatura a mano.}
+    \label{fig:punto_c}
+\end{figure}
+
+
+
+
 \section{Correlación lineal (Pearson)}
 
 Al calcular la correlación lineal de Pearson entre la Luminosidad y la Temperatura, se obtuvieron los siguientes resultados:
 
 \begin{center}
-\renewcommand{\arraystretch}{1.5}
-\begin{tabular}{|l|c|}
-    \hline
-    \textbf{Atributo} & \textbf{Valor} \\
-    \hline
-    \textbf{Correlación Lineal} & $0.5878$ \\
-    \hline
-    \textbf{Intensidad} & Débil \\
-    \hline
-    \textbf{Tipo} & Positiva \\
-    \hline
-\end{tabular}
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{|l|c|}
+        \hline
+        \textbf{Atributo} & \textbf{Valor} \\
+        \hline
+        \textbf{Correlación Lineal} & $0.5878$ \\
+        \hline
+        \textbf{Intensidad} & Débil \\
+        \hline
+        \textbf{Tipo} & Positiva \\
+        \hline
+    \end{tabular}
 \end{center}
 
 \begin{figure}[htbp]
     \centering
-    % \includegraphics[width=0.7\textwidth]{imagenes/correlacion_luminosidad_temperatura.png}
     \caption{Diagrama de dispersión de Luminosidad vs Temperatura.}
     \label{fig:corr}
 \end{figure}
+
+Como se puede observar, si comparamos el valor obtenido con las librerías de software y el obtenido a mano,
+podemos hallar una leve discrepancia. Esto se debe a que el valor de la foto fué obtenido mediante
+calculadora. 
 
 \section{Diagrama de Caja de Tukey ``a mano''}
 
@@ -164,12 +180,30 @@ Se calculó el diagrama de caja de Tukey para la variable \textbf{Luminosidad}. 
 \end{tabular}
 \end{center}
 
+\pagebreak
 % ESPACIO PARA LA FOTO DEL DIAGRAMA A MANO
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
-    % \includegraphics[width=0.8\textwidth]{imagenes/FOTO_TUKEY_MANO.jpg}
+    \includegraphics[width=0.9\textwidth]{imagenes/Punto_D.png}
     \caption{Cálculos y dibujo manual del Diagrama de Caja de Tukey para Luminosidad.}
     \label{fig:tukey_mano}
 \end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{imagenes/Punto_D_Figura.png}
+    \caption{Dibujo manual del Diagrama de Caja de Tukey para Luminosidad.}
+    \label{fig:tukey_mano_2}
+\end{figure}
+
+\FloatBarrier
+
+La diferencia entre los valores de los cuartiles calculados de forma manual y los
+obtenidos mediante las herramientas de Python radica en que, cuando se lleva a cabo
+manualmente, se realiza con el método original. Por otro lado, al hacerlo con Python
+las librerías automáticamente realizan una interpolación entre las muestras, causando
+que el cuartil 3 (y todos los valores derivados del cuartil 3) se vean modificados levemente. 
+
+
 
 \end{document}
