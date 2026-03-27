@@ -7,22 +7,39 @@
 \usepackage{placeins}
 \usepackage{float}
 
-\title{\textbf{Trabajo Práctico Número 1}}
-
-% Estructura para 3 integrantes
-\author{
-    \begin{tabular}{c c c}
-        Lopez, Matias & Silicaro Pera, Isidro & Pacchialat, Taciano \\
-        Legajo: 02670/0 & Legajo: 03326/9 & Legajo: 03358/8
-    \end{tabular}
-    \vspace{0.5cm} \\
-    \textit{Minería de Datos}
-}
-\date{\today}
-
 \begin{document}
 
-\maketitle
+\begin{titlepage}
+    \centering
+    \vspace*{3cm}
+    
+    {\Huge \textbf{Trabajo Práctico Número 1}} \\[1cm]
+    
+    {\LARGE \textit{Minería de Datos}} \\[2cm]
+    
+    {\Large \textbf{Grupo [Número de Grupo]}} \\[0.5cm]
+    
+    {\Large \textbf{Tutor:} [Nombre del Tutor]} \\[2.5cm]
+    
+    {\Large \textbf{Integrantes:}} \\[0.5cm]
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{|l|c|}
+        \hline
+        \textbf{Nombre y Apellido} & \textbf{Legajo} \\
+        \hline
+        Lopez, Matias & 02670/0 \\
+        Silicaro Pera, Isidro & 03326/9 \\
+        Pacchialat, Taciano & 03358/8 \\
+        \hline
+    \end{tabular}
+    
+    \vfill
+    
+    {\large \today}
+    \vspace*{2cm}
+\end{titlepage}
+
+% El entorno titlepage ya hizo el salto de página automáticamente acá.
 
 \section{Medidas descriptivas (media, cuartiles, etc.)}
 
@@ -116,8 +133,6 @@ Los cortes numéricos calculados son: $0.979$, $11.5$ y $22.0$.
 \end{figure}
 
 
-
-
 \section{Correlación lineal (Pearson)}
 
 Al calcular la correlación lineal de Pearson entre la Luminosidad y la Temperatura, se obtuvieron los siguientes resultados:
@@ -144,7 +159,7 @@ Al calcular la correlación lineal de Pearson entre la Luminosidad y la Temperat
 \end{figure}
 
 Como se puede observar, si comparamos el valor obtenido con las librerías de software y el obtenido a mano,
-podemos hallar una leve discrepancia. Esto se debe a que el valor de la foto fué obtenido mediante
+podemos hallar una leve discrepancia. Esto se debe a que el valor de la foto fue obtenido mediante
 calculadora. 
 
 \section{Diagrama de Caja de Tukey ``a mano''}
@@ -203,7 +218,5 @@ obtenidos mediante las herramientas de Python radica en que, cuando se lleva a c
 manualmente, se realiza con el método original. Por otro lado, al hacerlo con Python
 las librerías automáticamente realizan una interpolación entre las muestras, causando
 que el cuartil 3 (y todos los valores derivados del cuartil 3) se vean modificados levemente. 
-
-
 
 \end{document}
