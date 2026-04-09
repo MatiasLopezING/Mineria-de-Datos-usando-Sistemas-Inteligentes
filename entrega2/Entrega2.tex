@@ -34,6 +34,38 @@ A continuación, se presenta la tabla con los resultados finales tras realizar t
     \caption{Tabla de resultados de las iteraciones de K-medias.}
 \end{figure}
 
+% Inciso C
+
+\subsection*{Inciso C}
+El algoritmo de K-medias funciona de la siguiente manera: se asigna cada punto al centro más cercano y luego se recalculan los centros como el promedio de los puntos asignados. De suceder que en una iteración las asignaciones no cambian, entonces los promedios tampoco cambian. A este punto se repetirá el cálculo con los mismos centroides, por lo que en la siguiente iteración las distancias vuelven a ser las mismas, por lo que las asignaciones también permanecen iguales. En los siguientes gráficos puede interpretarse gráficamente por qué no habrán cambios.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imagenes/incisoC1.png}
+    \caption{Primera iteración del K-medias.}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imagenes/incisoC2.png}
+    \caption{Segunda iteración del K-medias.}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imagenes/incisoC4.png}
+    \caption{Tercera iteración del K-medias.}
+\end{figure}
+En este caso, el resultado final además hace que cada centroide quede a igual distancia de sus dos puntos, porque es el punto medio entre ellos. De manera que es más fácil observar por qué el algoritmo converge y no cambia en siguientes iteraciones.
+
+% Inciso D
+
+\subsection*{Inciso D}
+La tabla con los resultados finales tras realizar tres iteraciones del algoritmo K-medias con los nuevos centroides ($c_1, c_2$).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{imagenes/incisoD.png}
+    \caption{Tabla de resultados de las iteraciones de K-medias con centroides cambiados.}
+\end{figure}
+
 \newpage
 \subsection*{Anexo: Cálculos de cada inciso}
 En las siguientes imágenes se adjuntan los cálculos desarrollados a mano correspondientes a las asignaciones de distancias y actualización de centroides para cada iteración.
@@ -54,6 +86,20 @@ En las siguientes imágenes se adjuntan los cálculos desarrollados a mano corre
     \centering
     \includegraphics[width=0.8\textwidth]{imagenes/IncisoB3.jpeg}
     \caption{Cálculos a mano - Parte 3.}
+\end{figure}
+
+% Calculos a mano Inciso D
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[angle=-90, width=0.8\textwidth]{imagenes/calculosD1.jpg}
+    \caption{Cálculos a mano - Parte 4.}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[angle=-90, width=0.8\textwidth]{imagenes/calculosD2.jpg}
+    \caption{Cálculos a mano - Parte 5.}
 \end{figure}
 
 \end{document}
