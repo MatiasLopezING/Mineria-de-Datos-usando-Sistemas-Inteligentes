@@ -66,6 +66,29 @@ La tabla con los resultados finales tras realizar tres iteraciones del algoritmo
     \caption{Tabla de resultados de las iteraciones de K-medias con centroides cambiados.}
 \end{figure}
 
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{imagenes/incisoD.png}
+    \caption{Tabla de resultados de las iteraciones de K-medias con centroides cambiados.}
+\end{figure}
+
+% Inciso E
+
+\subsection*{Inciso E}
+Se muestra a continuación el movimiento de los centroides cuando sus posiciones iniciales son las siguientes:
+\[ c_1 = (2, 3), c_2 = (2, -1) \]
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{imagenes/incisoE.png}
+    \caption{Plot de centroides y puntos con las nuevas coordenadas iniciales.}
+\end{figure}
+
+\subsection*{Inciso F}
+Si modificamos el algoritmo K-Medias con un $k = 4$ en un conjunto de datos fijo y se varían los valores de los centroides iniciales, las características que se verán modificadas serán los valores finales de los centroides y la cantidad de ejemplos por centroide. Esto es debido a que el valor de $k$ representa la cantidad de centroides y por ende la cantidad de grupos a formar, por lo que esa cantidad permanece fija. La elección de los centroides iniciales puede modificar la cantidad de iteraciones necesarias para que converja, así como sus valores finales y la cantidad de ejemplos por grupo. Esta conclusión la obtenemos mediante la realización del presente ejercicio 2. 
+
 \newpage
 \subsection*{Anexo: Cálculos de cada inciso}
 En las siguientes imágenes se adjuntan los cálculos desarrollados a mano correspondientes a las asignaciones de distancias y actualización de centroides para cada iteración.
