@@ -148,6 +148,7 @@ INPUT ./imagenes/incisoE.png
 INPUT ./imagenes/incisoE.png
 INPUT ./imagenes/incisoE.png
 INPUT ./imagenes/incisoE.png
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 INPUT ./imagenes/IncisoB1.jpeg
 INPUT ./imagenes/IncisoB1.jpeg
 INPUT ./imagenes/IncisoB1.jpeg
@@ -184,8 +185,10 @@ INPUT ./imagenes/CalculosE2.png
 INPUT ./imagenes/CalculosE2.png
 INPUT ./imagenes/CalculosE2.png
 INPUT Entrega2.aux
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb

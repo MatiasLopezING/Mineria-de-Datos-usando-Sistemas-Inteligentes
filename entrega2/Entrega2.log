@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.3.23)  10 APR 2026 12:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.3.23)  10 APR 2026 12:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -311,52 +311,57 @@ Package pdftex.def Info: imagenes/incisoC4.png  used on input line 53.
 File: imagenes/incisoD.png Graphic file (type png)
 <use imagenes/incisoD.png>
 Package pdftex.def Info: imagenes/incisoD.png  used on input line 65.
-(pdftex.def)             Requested size: 182.09486pt x 39.92726pt.
+(pdftex.def)             Requested size: 364.19667pt x 79.85909pt.
 <imagenes/incisoE.png, id=62, 448.074pt x 399.6531pt>
 File: imagenes/incisoE.png Graphic file (type png)
 <use imagenes/incisoE.png>
 Package pdftex.def Info: imagenes/incisoE.png  used on input line 77.
-(pdftex.def)             Requested size: 455.24411pt x 406.05522pt.
- [4 <./imagenes/incisoC4.png> <./imagenes/incisoD.png>] [5 <./imagenes/incisoE.png>]
-<imagenes/IncisoB1.jpeg, id=73, 1259.70625pt x 1606.0pt>
+(pdftex.def)             Requested size: 273.14923pt x 243.63557pt.
+ [4 <./imagenes/incisoC4.png> <./imagenes/incisoD.png>]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 103.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 103.
+ [5 <./imagenes/incisoE.png>]
+<imagenes/IncisoB1.jpeg, id=75, 1259.70625pt x 1606.0pt>
 File: imagenes/IncisoB1.jpeg Graphic file (type jpg)
 <use imagenes/IncisoB1.jpeg>
-Package pdftex.def Info: imagenes/IncisoB1.jpeg  used on input line 90.
+Package pdftex.def Info: imagenes/IncisoB1.jpeg  used on input line 117.
 (pdftex.def)             Requested size: 364.19667pt x 464.30676pt.
-<imagenes/IncisoB2.jpeg, id=74, 1217.54875pt x 1606.0pt>
+<imagenes/IncisoB2.jpeg, id=76, 1217.54875pt x 1606.0pt>
 File: imagenes/IncisoB2.jpeg Graphic file (type jpg)
 <use imagenes/IncisoB2.jpeg>
-Package pdftex.def Info: imagenes/IncisoB2.jpeg  used on input line 96.
+Package pdftex.def Info: imagenes/IncisoB2.jpeg  used on input line 123.
 (pdftex.def)             Requested size: 364.19667pt x 480.3824pt.
  [6 <./imagenes/IncisoB1.jpeg>]
-<imagenes/IncisoB3.jpeg, id=78, 1380.15625pt x 1063.975pt>
+<imagenes/IncisoB3.jpeg, id=80, 1380.15625pt x 1063.975pt>
 File: imagenes/IncisoB3.jpeg Graphic file (type jpg)
 <use imagenes/IncisoB3.jpeg>
-Package pdftex.def Info: imagenes/IncisoB3.jpeg  used on input line 102.
+Package pdftex.def Info: imagenes/IncisoB3.jpeg  used on input line 129.
 (pdftex.def)             Requested size: 364.19667pt x 280.76688pt.
  [7 <./imagenes/IncisoB2.jpeg>]
-<imagenes/calculosD1.jpg, id=83, 2360.82pt x 2192.19pt>
+<imagenes/calculosD1.jpg, id=85, 2360.82pt x 2192.19pt>
 File: imagenes/calculosD1.jpg Graphic file (type jpg)
 <use imagenes/calculosD1.jpg>
-Package pdftex.def Info: imagenes/calculosD1.jpg  used on input line 110.
+Package pdftex.def Info: imagenes/calculosD1.jpg  used on input line 137.
 (pdftex.def)             Requested size: 2360.81429pt x 2192.18468pt.
  [8 <./imagenes/IncisoB3.jpeg>]
-<imagenes/calculosD2.jpg, id=87, 2360.82pt x 2425.06pt>
+<imagenes/calculosD2.jpg, id=89, 2360.82pt x 2425.06pt>
 File: imagenes/calculosD2.jpg Graphic file (type jpg)
 <use imagenes/calculosD2.jpg>
-Package pdftex.def Info: imagenes/calculosD2.jpg  used on input line 116.
+Package pdftex.def Info: imagenes/calculosD2.jpg  used on input line 143.
 (pdftex.def)             Requested size: 2360.81429pt x 2425.05411pt.
  [9 <./imagenes/calculosD1.jpg>]
-<imagenes/CalculosE.png, id=91, 6638.8025pt x 9389.0775pt>
+<imagenes/CalculosE.png, id=93, 6638.8025pt x 9389.0775pt>
 File: imagenes/CalculosE.png Graphic file (type png)
 <use imagenes/CalculosE.png>
-Package pdftex.def Info: imagenes/CalculosE.png  used on input line 122.
+Package pdftex.def Info: imagenes/CalculosE.png  used on input line 149.
 (pdftex.def)             Requested size: 364.19667pt x 515.03984pt.
  [10 <./imagenes/calculosD2.jpg>]
-<imagenes/CalculosE2.png, id=95, 1063.975pt x 964.60374pt>
+<imagenes/CalculosE2.png, id=97, 1063.975pt x 964.60374pt>
 File: imagenes/CalculosE2.png Graphic file (type png)
 <use imagenes/CalculosE2.png>
-Package pdftex.def Info: imagenes/CalculosE2.png  used on input line 129.
+Package pdftex.def Info: imagenes/CalculosE2.png  used on input line 156.
 (pdftex.def)             Requested size: 364.19667pt x 330.16873pt.
  [11 <./imagenes/CalculosE.png>] [12 <./imagenes/CalculosE2.png>] (./Entrega2.aux
 LaTeX Info: Redefining \. on input line 8.
@@ -368,18 +373,18 @@ L3 programming layer <2024-01-22>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 4854 strings out of 474222
- 80930 string characters out of 5748733
- 1926975 words of memory out of 5000000
- 27076 multiletter control sequences out of 15000+600000
- 562018 words of font info for 49 fonts, out of 8000000 for 9000
+ 4867 strings out of 474222
+ 81162 string characters out of 5748733
+ 1934975 words of memory out of 5000000
+ 27088 multiletter control sequences out of 15000+600000
+ 562326 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  68i,17n,79p,791b,427s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on Entrega2.pdf (12 pages, 3406800 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on Entrega2.pdf (12 pages, 3429282 bytes).
 PDF statistics:
- 127 PDF objects out of 1000 (max. 8388607)
- 66 compressed objects within 1 object stream
+ 137 PDF objects out of 1000 (max. 8388607)
+ 72 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  91 words of extra memory for PDF output out of 10000 (max. 10000000)
 

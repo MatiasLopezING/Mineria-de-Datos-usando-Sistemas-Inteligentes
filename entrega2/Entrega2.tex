@@ -62,7 +62,7 @@ La tabla con los resultados finales tras realizar tres iteraciones del algoritmo
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.4\textwidth]{imagenes/incisoD.png}
+    \includegraphics[width=0.8\textwidth]{imagenes/incisoD.png}
     \caption{Tabla de resultados de las iteraciones de K-medias con centroides cambiados.}
 \end{figure}
 
@@ -74,9 +74,36 @@ Se muestra a continuación el movimiento de los centroides cuando sus posiciones
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{imagenes/incisoE.png}
+    \includegraphics[width=0.6\textwidth]{imagenes/incisoE.png}
     \caption{Plot de centroides y puntos con las nuevas coordenadas iniciales.}
 \end{figure}
+
+Y ahora se muestra la tabla de resultados: 
+
+\begin{table}[ht]
+\centering
+\small
+\setlength{\tabcolsep}{3pt} % opcional: reduce separación horizontal entre columnas
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lccc ccc ccc}
+\hline
+\textbf{Puntos} & \multicolumn{3}{c}{\textbf{Iteración 1}} & \multicolumn{3}{c}{\textbf{Iteración 2}} & \multicolumn{3}{c}{\textbf{Iteración 3}} \\
+ & Dist a $c_1$ & Dist a $c_2$ & Centroide & Dist a $c_1$ & Dist a $c_2$ & Centroide & Dist a $c_1$ & Dist a $c_2$ & Centroide \\
+\hline
+$x_1=(2,0)$ & 9.00  & 1.00  & $c_2$ & 11.56 & 0.00  & $c_2$ & 11.56 & 0.00  & $c_2$ \\
+$x_2=(1,2)$ & 2.00  & 10.00 & $c_1$ & 4.56  & 5.00  & $c_1$ & 4.56  & 5.00  & $c_1$ \\
+$x_3=(3,4)$ & 2.00  & 26.00 & $c_1$ & 0.56  & 17.00 & $c_1$ & 0.56  & 17.00 & $c_1$ \\
+$x_4=(4,4)$ & 5.00  & 29.00 & $c_1$ & 2.22  & 20.00 & $c_1$ & 2.22  & 20.00 & $c_1$ \\
+\hline
+\textbf{Nuevos Centros} & \textbf{$c_1:(2.67,\,3.33)$} & \textbf{$c_2:(2.00,\,0.00)$} & 
+& \textbf{$c_1:(2.67,\,3.33)$} & \textbf{$c_2:(2.00,\,0.00)$} & 
+& \textbf{$c_1:(2.67,\,3.33)$} & \textbf{$c_2:(2.00,\,0.00)$} & \\
+\hline
+\end{tabular}%
+}
+\caption{Resultados del inciso E tabulados.}
+\label{tab:kmeans_inciso_e}
+\end{table}
 
 \subsection*{Inciso F}
 Si modificamos el algoritmo K-Medias con un $k = 4$ en un conjunto de datos fijo y se varían los valores de los centroides iniciales, las características que se verán modificadas serán los valores finales de los centroides y la cantidad de ejemplos por centroide. Esto es debido a que el valor de $k$ representa la cantidad de centroides y por ende la cantidad de grupos a formar, por lo que esa cantidad permanece fija. La elección de los centroides iniciales puede modificar la cantidad de iteraciones necesarias para que converja, así como sus valores finales y la cantidad de ejemplos por grupo. Esta conclusión la obtenemos mediante la realización del presente ejercicio 2. 
