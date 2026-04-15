@@ -1,0 +1,117 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{geometry}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{hyperref}
+\usepackage{enumitem}
+
+\geometry{top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	urlcolor=blue,
+	pdftitle={Elección del dataset},
+	pdfauthor={Grupo de trabajo}
+}
+
+\renewcommand{\arraystretch}{1.15}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.65em}
+\setlength{\emergencystretch}{2em}
+
+\title{\textbf{Elección y Descripción del Conjunto de Datos, Grupo 1}}
+\author{Matías López, Isidro Silicaro Pera, Taciano Pacchialat}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Introducción}
+
+En este trabajo se utilizará el conjunto de datos \textit{Sleep Health \& Daily Performance Dataset}, disponible en Kaggle bajo el nombre \url{https://www.kaggle.com/datasets/mohankrishnathalla/sleep-health-and-daily-performance-dataset}.
+
+El dataset fue seleccionado porque reúne hábitos de vida e indicadores fisiológicos vinculados al sueño. Esa combinación lo vuelve apropiado para tareas de análisis de datos, además de permitir estudiar relaciones entre estilo de vida, descanso y rendimiento cognitivo.
+
+\section{Origen y características generales}
+
+La versión publicada en Kaggle contiene \textbf{100.000 registros} y \textbf{32 columnas}. Los datos son sintéticos, pero fueron generados con relaciones estadísticas coherentes con estudios de salud del sueño y con perfiles ocupacionales diferenciados. No se reportan valores faltantes.
+
+De manera general, el conjunto de datos incluye:
+
+\begin{itemize}[leftmargin=*]
+	\item Variables demográficas: edad, género, ocupación, país y cronotipo (inclinación natural del cuerpo para dormirse y despertarse a una cierta hora);
+	\item Variables fisiológicas: duración del sueño, calidad del sueño, porcentaje de REM, porcentaje de sueño profundo, latencia de sueño, frecuencia en la que se despertó durante el sueño y frecuencia cardíaca en reposo;
+	\item Variables de hábitos: consumo de cafeína y alcohol antes de dormir, sueño asistido, tiempo frente a pantallas, ejercicio diario, pasos diarios y si la persona realiza turnos rotativos en el trabajo;
+	\item Variables contextuales: temperatura de la habitación, estación del año y tipo de día (soleado, nublado, etc.);
+	\item Variables de salida: desempeño cognitivo, riesgo de trastorno del sueño y sensación subjetiva de haber descansado.
+\end{itemize}
+
+\section{Descripción de las variables}
+
+En la Tabla~\ref{tab:variables} se resume el significado de cada atributo incluido en el archivo \path{sleep_health_dataset.csv}.
+
+\small
+\begin{longtable}{>{\raggedright\arraybackslash}p{3.2cm}>{\raggedright\arraybackslash}p{2.0cm}>{\raggedright\arraybackslash}p{8.8cm}}
+\caption{Descripción de las variables del dataset.}\label{tab:variables}\\
+\toprule
+\textbf{Variable} & \textbf{Tipo} & \textbf{Descripción} \\
+\midrule
+\endfirsthead
+
+\toprule
+\textbf{Variable} & \textbf{Tipo} & \textbf{Descripción} \\
+\midrule
+\endhead
+
+\bottomrule
+\endfoot
+
+\path{person_id} & Entero & Identificador único de cada registro. \\
+\path{age} & Entero & Edad de la persona, en años. \\
+\path{gender} & Categórica & Género reportado. \\
+\path{occupation} & Categórica & Ocupación principal de la persona. \\
+\path{bmi} & Numérica & Índice de masa corporal. \\
+\path{country} & Categórica & País de residencia. \\
+\path{sleep_duration_hrs} & Numérica & Duración del sueño nocturno en horas. \\
+\path{sleep_quality_score} & Numérica & Puntaje de calidad del sueño. \\
+\path{rem_percentage} & Numérica & Porcentaje de sueño REM. \\
+\path{deep_sleep_percentage} & Numérica & Porcentaje de sueño profundo. \\
+\path{sleep_latency_mins} & Entero & Minutos necesarios para conciliar el sueño. \\
+\path{wake_episodes_per_night} & Entero & Cantidad de despertares durante la noche. \\
+\path{caffeine_mg_before_bed} & Entero & Miligramos de cafeína consumidos antes de acostarse. \\
+\path{alcohol_units_before_bed} & Numérica & Unidades de alcohol consumidas antes de acostarse. \\
+\path{screen_time_before_bed_mins} & Entero & Minutos de uso de pantallas antes de dormir. \\
+\path{exercise_day} & Binaria & Indica si realizó ejercicio ese día. \\
+\path{steps_that_day} & Entero & Cantidad de pasos realizados durante el día. \\
+\path{nap_duration_mins} & Entero & Duración de la siesta, en minutos. \\
+\path{stress_score} & Numérica & Puntaje de estrés autoinformado. \\
+\path{work_hours_that_day} & Numérica & Cantidad de horas trabajadas ese día. \\
+\path{chronotype} & Categórica & Cronotipo o preferencia horaria (por ejemplo, morning, neutral, evening). \\
+\path{mental_health_condition} & Categórica & Condición de salud mental reportada. \\
+\path{heart_rate_resting_bpm} & Entero & Frecuencia cardíaca en reposo, en latidos por minuto. \\
+\path{sleep_aid_used} & Binaria & Indica si se utilizó ayuda para dormir. \\
+\path{shift_work} & Binaria & Indica si la persona realiza trabajo por turnos. \\
+\path{room_temperature_celsius} & Numérica & Temperatura de la habitación en grados Celsius. \\
+\path{weekend_sleep_diff_hrs} & Numérica & Diferencia de horas de sueño entre fin de semana y días de semana. \\
+\path{season} & Categórica & Estación del año correspondiente al registro. \\
+\path{day_type} & Categórica & Tipo de día: día hábil o fin de semana. \\
+\path{cognitive_performance_score} & Numérica & Puntaje de desempeño cognitivo asociado al día siguiente. \\
+\path{sleep_disorder_risk} & Categórica & Nivel de riesgo de trastorno del sueño. \\
+\path{felt_rested} & Binaria & Variable objetivo que indica si la persona se sintió descansada. \\
+
+\end{longtable}
+\normalsize
+
+\section{Información complementaria del dataset}
+
+El dataset contiene 100.000 ejemplos y 32 atributos. Incluye atributos numéricos (\path{sleep_duration_hrs}, \path{stress_score}), categóricos (\path{occupation}, \path{chronotype}, \path{season}) y binarios (\path{exercise_day}, \path{felt_rested}). Según la descripción oficial en Kaggle, no se trata de una encuesta ni de scraping directo, sino de un dataset sintético. Los registros fueron generados para imitar patrones realistas de sueño y desempeño diario, preservando relaciones estadísticas plausibles entre variables de hábitos, salud y rendimiento, sin exponer datos personales reales.El dataset no presenta valores faltantes. La nomenclatura de variables ya se encuentra unificada en formato \texttt{snake\_case}, lo que simplifica el preprocesamiento. 
+
+
+\end{document}
