@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.3.22)  17 APR 2026 18:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.3.22)  17 APR 2026 18:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -366,7 +366,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 85.
 
-c:/Users/ml328/Desktop/MineriaDeDatos/MIDUSI2026 - Público/entrega_final/eleccion_dataset/eleccion_dataset.tex:111: ignored error: Infinite glue shrinkage found in box being split [2] [3] [4] (eleccion_dataset.aux
+c:/Users/ml328/Desktop/MineriaDeDatos/MIDUSI2026 - Público/entrega_final/eleccion_dataset/eleccion_dataset.tex:111: ignored error: Infinite glue shrinkage found in box being split [2] [3] (eleccion_dataset.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
 )
@@ -378,17 +378,17 @@ Package rerunfilecheck Info: File `eleccion_dataset.out' has not changed.
 (rerunfilecheck)             Checksum: 9523B32A1DBE0AC999D70197F98A8AAF;1086.
  ) 
 Here is how much of TeX's memory you used:
- 10974 strings out of 467870
- 173483 string characters out of 5418355
+ 10973 strings out of 467870
+ 173477 string characters out of 5418355
  628396 words of memory out of 5000000
  39732 multiletter control sequences out of 15000+600000
  639632 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,7n,79p,658b,598s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\ml328\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1000.pk> <C:\Users\ml328\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1000.pk> <C:\Users\ml328\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk> <C:\Users\ml328\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1095.pk> <C:\Users\ml328\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1095.pk> <C:\Users\ml328\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1095.pk> <C:\Users\ml328\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\Users\ml328\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\ml328\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\ml328\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk>
-Output written on eleccion_dataset.pdf (4 pages, 119031 bytes).
+Output written on eleccion_dataset.pdf (3 pages, 117797 bytes).
 PDF statistics:
- 393 PDF objects out of 1000 (max. 8388607)
- 11 named destinations out of 1000 (max. 500000)
+ 386 PDF objects out of 1000 (max. 8388607)
+ 10 named destinations out of 1000 (max. 500000)
  41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

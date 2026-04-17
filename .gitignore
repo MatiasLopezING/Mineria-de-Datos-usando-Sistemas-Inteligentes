@@ -18,4 +18,18 @@ entrega1/*.fls
 entrega1/*.log
 entrega1/*.synctex.gz
 
+# LaTeX files
+entrega2/*.aux
+entrega2/*.fdb_latexmk
+entrega2/*.fls
+entrega2/*.log
+entrega2/*.synctex.gz
+
+# LaTeX files
+entrega_final/*.aux
+entrega_final/*.fdb_latexmk
+entrega_final/*.fls
+entrega_final/*.log
+entrega_final/*.synctex.gz
+
 Individual
