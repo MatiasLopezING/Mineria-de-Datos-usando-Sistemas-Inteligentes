@@ -26,6 +26,13 @@ entrega2/*.log
 entrega2/*.synctex.gz
 
 # LaTeX files
+entrega3/*.aux
+entrega3/*.fdb_latexmk
+entrega3/*.fls
+entrega3/*.log
+entrega3/*.synctex.gz
+
+# LaTeX files
 entrega_final/*.aux
 entrega_final/*.fdb_latexmk
 entrega_final/*.fls

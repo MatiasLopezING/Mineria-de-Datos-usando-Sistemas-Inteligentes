@@ -1,0 +1,95 @@
+\documentclass[11pt,a4paper]{article}
+
+% Paquetes básicos
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{geometry}
+\geometry{top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm}
+
+% Manejo de imágenes y PDFs
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{pdfpages}
+\usepackage{adjustbox}
+
+\begin{document}
+
+% ---------------------------------------------------------
+% CARÁTULA
+% ---------------------------------------------------------
+% Se incluye el PDF de la carátula compartida por el grupo
+\includepdf[pages=-]{Caratula.pdf}
+
+% ---------------------------------------------------------
+% EJERCICIO 4: Naive Bayes
+% ---------------------------------------------------------
+\section*{4. Aplicación de un modelo Naive Bayes}
+
+Para la resolución de este ejercicio se aplicó el modelo Naïve Bayes considerando el atributo \textit{Color} como discreto y el atributo \textit{Esfericidad} como continuo, asumiendo que este último sigue una distribución Normal. 
+
+Los cálculos detallados de las densidades de probabilidad y los productos de verosimilitud correspondientes a cada clase fueron desarrollados de forma manuscrita. Los mismos pueden consultarse de forma detallada en el \textbf{Anexo: Procedimientos Manuscritos} al final de este documento.
+
+\subsection*{a) Clases Equiprobables: P(Pera) = 0.5 y P(Manzana) = 0.5}
+
+Tras aplicar el teorema de Bayes y la hipótesis MAP sobre los ejemplos dados, se obtuvieron los siguientes resultados:
+
+\begin{table}[H]
+\centering
+\begin{adjustbox}{width=\textwidth}
+\begin{tabular}{|l|c|c|c|c|c|c|}
+\hline
+\textbf{Color} & \textbf{Esfericidad} & \textbf{P(x | Pera)} & \textbf{P(x | Manzana)} & \textbf{P(x|Pera)*P(P)} & \textbf{P(x|Manz)*P(M)} & \textbf{Predicción} \\ \hline
+Amarillo & 0.6 & 0.12098 & 1.00632 & 0.06049 & 0.50316 & \textbf{Manzana} \\ \hline
+Mezcla & 0.8 & 1.19682 & 0.00000 & 0.59841 & 0.00000 & \textbf{Pera} \\ \hline
+\end{tabular}
+\end{adjustbox}
+\caption{Resultados obtenidos con probabilidades a priori equiprobables.}
+\end{table}
+
+\subsection*{b) Clases NO Equiprobables: P(Manzana) = 0.01 y P(Pera) = 0.99}
+
+En este escenario, se observa cómo la probabilidad a priori de la clase Pera tiene un peso determinante en la clasificación final, incluso cuando los atributos individuales presentan una mayor verosimilitud para la clase Manzana.
+
+\begin{table}[H]
+\centering
+\begin{adjustbox}{width=\textwidth}
+\begin{tabular}{|l|c|c|c|c|c|c|}
+\hline
+\textbf{Color} & \textbf{Esfericidad} & \textbf{P(x | Pera)} & \textbf{P(x | Manzana)} & \textbf{P(x|Pera)*P(P)} & \textbf{P(x|Manz)*P(M)} & \textbf{Predicción} \\ \hline
+Amarillo & 0.6 & 0.12098 & 1.00632 & 0.11977 & 0.01006 & \textbf{Pera} \\ \hline
+Mezcla & 0.8 & 1.19682 & 0.00000 & 1.18485 & 0.00000 & \textbf{Pera} \\ \hline
+\end{tabular}
+\end{adjustbox}
+\caption{Resultados obtenidos con sesgo en las probabilidades a priori.}
+\end{table}
+
+\newpage
+% ---------------------------------------------------------
+% EJERCICIO 5
+% ---------------------------------------------------------
+\section*{5. Título del Ejercicio 5}
+% Espacio reservado para el desarrollo de los integrantes Silicaro Pera y Pacchialat.
+
+
+% ---------------------------------------------------------
+% ANEXO: PROCEDIMIENTOS MANUSCRITOS
+% ---------------------------------------------------------
+\newpage
+\section*{Anexo: Procedimientos Manuscritos}
+
+A continuación se adjuntan las capturas de los procedimientos y cálculos analíticos realizados manualmente para la resolución del Ejercicio 4.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{4IncisoA.jpeg}
+    \caption{Desarrollo manuscrito del Inciso A.}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{4IncisoB.jpeg}
+    \caption{Desarrollo manuscrito del Inciso B.}
+\end{figure}
+
+\end{document}
