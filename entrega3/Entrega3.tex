@@ -168,6 +168,49 @@ Temp & Habitable & Lum & $P(x|F)$ & $P(x|K)$ & $P(x|F)P(F)$ & $P(x|K)P(K)$ & Pre
 \caption{Clasificación de los tres primeros ejemplos (varianza muestral)}
 \end{table}
 
+\subsection*{c) Comparación entre Dataset y Modelo}
+
+Al extender la predicción al resto del conjunto de datos utilizando Python, se obtuvo:
+
+\[
+\text{accuracy}_{\text{original}} = 0.80
+\]
+
+Esto implica que el modelo clasifica correctamente el 80\% de los ejemplos del dataset original. Por lo tanto, las predicciones no coinciden completamente con las etiquetas reales.
+
+\subsection*{d) Reentrenamiento agregando un nuevo ejemplo}
+
+Se agregó el registro:
+
+\[
+(\text{Temperatura}=20000,\ \text{Habitable}=\text{No},\ \text{Luminosidad}=35,\ \text{Clase}=K)
+\]
+
+Al reentrenar el modelo NB con varianza muestral, se observaron estos cambios:
+
+\begin{itemize}
+    \item Cambian las probabilidades a priori: $P(K)$ pasa de $0.60$ a $0.6364$ y $P(F)$ de $0.40$ a $0.3636$.
+    \item La clase K cambia fuertemente en atributos continuos (suben su media y su varianza, especialmente en Temperatura y Luminosidad), porque el nuevo ejemplo es extremo respecto a los anteriores.
+    \item La clase F mantiene sus parámetros de media y varianza, ya que no recibió ejemplos nuevos.
+\end{itemize}
+
+En resumen, el impacto principal del nuevo dato cae sobre la clase K y sobre los priors del modelo.
+
+\subsection*{e) Nuevo accuracy y cambio de predicción}
+
+Con el modelo reentrenado del inciso d), el nuevo resultado fue:
+
+\[
+\text{accuracy}_{\text{nuevo}} = 0.7273
+\]
+
+El accuracy cambió (disminuyó de $0.80$ a $0.7273$). Además, cambió la predicción de un ejemplo del conjunto original; el ejemplo con índice 2 antes se predecía K, y luego se predijo F, y su etiqueta real es K.
+
+
+Esto ocurre porque el nuevo ejemplo extremo modifica la distribución estimada de la clase K y cambia los productos utilizados por Naive Bayes.
+
+
+
 % ---------------------------------------------------------
 % ANEXO: PROCEDIMIENTOS MANUSCRITOS
 % ---------------------------------------------------------
