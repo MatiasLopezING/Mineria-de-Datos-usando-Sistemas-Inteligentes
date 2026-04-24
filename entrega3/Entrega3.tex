@@ -127,11 +127,11 @@ Esta técnica se conoce como estimación por máxima verosimilitud. Debido a que
 \textbf{Atributo / Valor} & \textbf{Clase F} & \textbf{Clase K} \\
 \hline
 Temperatura $\mu$ & 5100 & 2866.67 \\
-Temperatura $\sigma$ & 2086.86 & 1231.08 \\
+Temperatura $\sigma$ & 2409.7 & 1348.58 \\
 Habitable = Si & 0.25 & 0.50 \\
 Habitable = No & 0.75 & 0.50 \\
 Luminosidad $\mu$ & 11.75 & 3.33 \\
-Luminosidad $\sigma$ & 7.63 & 1.49 \\
+Luminosidad $\sigma$ & 8.80 & 1.63 \\
 \hline
 \end{tabular}
 \caption{Parámetros por atributo y clase}
@@ -160,12 +160,12 @@ $P(\text{Clase K})$ & 0.60 \\
 \hline
 Temp & Habitable & Lum & $P(x|F)$ & $P(x|K)$ & $P(x|F)P(F)$ & $P(x|K)P(K)$ & Pred \\
 \hline
-1900 & No & 1 & 8.57e-7 & 9.36e-6 & 3.43e-7 & 5.62e-6 & K \\
-2300 & No & 2 & 1.35e-6 & 2.61e-5 & 5.40e-7 & 1.57e-5 & K \\
-5500 & No & 5 & 4.98e-6 & 2.36e-6 & 1.99e-6 & 1.40e-6 & F \\
+1900 & No & 1 & 1.11e-6 & 1.01e-5 & 4.42e-7 & 6.04e-6 & K \\
+2300 & No & 2 & 1.55e-6 & 2.37e-5 & 6.21e-7 & 1.42e-5 & K \\
+5500 & No & 5 & 4.14e-6 & 3.19e-6 & 1.65e-6 & 1.91e-6 & K \\
 \hline
 \end{tabular}
-\caption{Clasificación de los tres primeros ejemplos}
+\caption{Clasificación de los tres primeros ejemplos (varianza muestral)}
 \end{table}
 
 % ---------------------------------------------------------
