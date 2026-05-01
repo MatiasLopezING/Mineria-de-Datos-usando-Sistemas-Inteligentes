@@ -262,7 +262,7 @@ Dado el gran número de dimensiones (124), se describe la totalidad de columnas 
 
 \section{Criterio preliminar de depuración y tratamiento de datos faltantes}
 
-Como primer paso en la depuración, se analizó la composición del dataset según el género de las competiciones. Del total de 8.337 peleas registradas, 7.471 corresponden a combates masculinos y 866 a combates femeninos.
+El primer paso en el proceso de depuración consistió en analizar la composición del conjunto de datos según la categoría de los combates. Del total de 8.337 peleas registradas, 7.471 corresponden a la categoría masculina y 866 a la femenina, tal como se ilustra en la Figura \ref{fig:peleas_dist}.
 
 \begin{figure}[H]
     \centering
@@ -271,9 +271,7 @@ Como primer paso en la depuración, se analizó la composición del dataset seg�
     \label{fig:peleas_dist}
 \end{figure}
 
-Dada esta marcada diferencia de volumen, se ha decidido centrar el análisis y el correspondiente modelo predictivo exclusivamente en las peleas masculinas, a fin de evitar sesgos y mantener el posterior análisis sobre un conjunto de datos homogéneo. Posteriormente, sobre este nuevo subconjunto, se evaluó la cantidad de datos faltantes.
-
-Si bien el proceso de depuración definitivo se realizará tras un análisis exploratorio exhaustivo, se ha planteado un criterio preliminar para el manejo de valores faltantes y la selección de características, orientado específicamente a responder las tres preguntas centrales del trabajo. 
+Debido a esta considerable diferencia en el volumen de registros, se decidió centrar el análisis y el desarrollo del modelo predictivo exclusivamente en las peleas masculinas. Esta medida busca evitar sesgos y asegurar que el análisis posterior se realice sobre un conjunto de datos homogéneo. A partir de este nuevo subconjunto, se procedió a evaluar la proporción de datos faltantes (ver Figura \ref{fig:cobertura_y_nulos}).
 
 \begin{figure}[H]
     \centering
@@ -282,7 +280,9 @@ Si bien el proceso de depuración definitivo se realizará tras un análisis exp
     \label{fig:cobertura_y_nulos}
 \end{figure}
 
-Previamente al modelado, también resulta valioso entender la dinámica estructural de los enfrentamientos. Como se observa en la Figura \ref{fig:estructura_combate}, se exploraron cuatro métricas contextuales clave: la cantidad de peleas por división de peso, las vías o métodos de cierre del combate, la distribución del round de finalización y la duración total en minutos. Este análisis general permite vislumbrar cómo tienden a resolverse los encuentros en los distintos rangos de peso y tiempo, estableciendo una base descriptiva sólida.
+Si bien la depuración definitiva se llevará a cabo tras un análisis exploratorio más profundo, se estableció un criterio preliminar para el manejo de los valores nulos y la selección de variables. Este enfoque está orientado específicamente a responder las tres preguntas centrales de este trabajo. 
+
+Antes de avanzar con el modelado, es fundamental comprender la dinámica estructural de los enfrentamientos. Como se observa en la Figura \ref{fig:estructura_combate}, se exploraron cuatro métricas contextuales clave: la cantidad de peleas por división de peso, los métodos de finalización del combate, la distribución de los rounds de cierre y la duración total en minutos. Este resumen descriptivo permite vislumbrar cómo tienden a resolverse los encuentros según el peso y el tiempo.
 
 \begin{figure}[H]
     \centering
@@ -291,33 +291,43 @@ Previamente al modelado, también resulta valioso entender la dinámica estructu
     \label{fig:estructura_combate}
 \end{figure}
 
+Para complementar esta visión estática de los combates, se analizó también la progresión histórica de estas métricas. La Figura \ref{fig:evolucion_metodos_duracion} refleja la evolución temporal de los métodos de finalización y la duración promedio, evidenciando cómo han cambiado las tendencias de resolución (decisiones, nocauts y sumisiones) a lo largo de los años en la franquicia.
+
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{EvolucionTemporalDelDataset.png}
-    \caption{Evolución histórica de la UFC: distribución de métodos de finalización, duración promedio de los combates, proporción de peleas titulares y métricas técnicas de striking y grappling por año.}
-    \label{fig:EvolucionTemporal}
+    \includegraphics[width=1\textwidth]{EvolucionDeFinalizacionYduracionDeLasPeleas.png}
+    \caption{Evolución temporal de los métodos de finalización y de la duración promedio de los combates. Se muestra la variación en la proporción de decisiones, nocauts y sumisiones a lo largo del tiempo, junto con la duración media de las peleas por año.}
+    \label{fig:evolucion_metodos_duracion}
 \end{figure}
 
+Finalmente, la Figura \ref{fig:evolucion_tecnica} expone la evolución competitiva y técnica general de la UFC. Allí se contrasta el porcentaje de peleas por el título respecto al total, junto con variaciones en métricas de combate fundamentales, tanto de \textit{striking} (golpes conectados y recibidos por minuto) como de \textit{grappling} (derribos y sumisiones promedio).
 
-A continuación, se detalla el enfoque proyectado para cada una de las preguntas de investigación:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{EvolucionCompetitivaYtecnicaDeLaUFC.png}
+    \caption{Evolución competitiva y técnica de la UFC. Se presenta el porcentaje de peleas titulares por año junto con la evolución de métricas de striking (golpes conectados y recibidos por minuto) y grappling (derribos y sumisiones promedio).}
+    \label{fig:evolucion_tecnica}
+\end{figure}
 
-\subsection*{1. ¿Qué luchador tiene mayor probabilidad de ganar una pelea dada?}
-Dado que este problema se abordará como una tarea de clasificación binaria, es de vital importancia utilizar únicamente información disponible \textbf{antes} de que ocurra el combate. 
+%A continuación, se detalla el enfoque proyectado para cada una de las preguntas de investigación:
 
-Por lo tanto, se descartarán todas las estadísticas recolectadas \textit{durante} la pelea en sí (tales como la cantidad de golpes conectados en un round específico, tiempos de control y porcentajes de precisión). Las variables a conservar incluyen metadatos del evento (división, si es por el título, cantidad de rounds) y características pre-combate de cada peleador (récord de victorias/derrotas, postura, edad calculada a partir de la fecha de nacimiento y atributos físicos). 
+%\subsection*{1. ¿Qué luchador tiene mayor probabilidad de ganar una pelea dada?}
+%Dado que este problema se abordará como una tarea de clasificación binaria, es de vital importancia utilizar únicamente información disponible \textbf{antes} de que ocurra el combate. 
 
-Los valores faltantes en estas variables retenidas se imputarán empleando sus respectivas modas o medianas segmentadas por división. Finalmente, se filtrarán estrictamente las peleas sin un ganador definido para poder entrenar adecuadamente el modelo clasificador (ej. Regresión Logística o Random Forest).
+%Por lo tanto, se descartarán todas las estadísticas recolectadas \textit{durante} la pelea en sí (tales como la cantidad de golpes conectados en un round específico, tiempos de control y porcentajes de precisión). Las variables a conservar incluyen metadatos del evento (división, si es por el título, cantidad de rounds) y características pre-combate de cada peleador (récord de victorias/derrotas, postura, edad calculada a partir de la fecha de nacimiento y atributos físicos). 
 
-\subsection*{2. Si soy un luchador con determinadas características, ¿qué tipo de pelea me conviene aceptar?}
-En este escenario, el objetivo es recomendar el contexto de pelea que maximice la probabilidad de victoria. 
-Se mantendrán las características físicas y de historial del luchador (previamente imputadas), centrando el análisis en las variables de contexto: cantidad de rounds pactados, división, si hay un título en juego y el referí. 
+%Los valores faltantes en estas variables retenidas se imputarán empleando sus respectivas modas o medianas segmentadas por división. Finalmente, se filtrarán estrictamente las peleas sin un ganador definido para poder entrenar adecuadamente el modelo clasificador (ej. Regresión Logística o Random Forest).
 
-Para variables de contexto con datos faltantes (por ejemplo, la cantidad de rounds), se realizará una imputación basada en la naturaleza del combate (utilizando la variable \textit{title\_fight} como pista, ya que estas suelen ser a 5 rounds). En el caso de valores ausentes en el campo del árbitro, se generará una categoría independiente (\textit{Unknown}). Se construirá un modelo que prediga la probabilidad de ganar en función de las características fijas del luchador interactuando con las distintas combinaciones posibles del contexto de pelea.
+%\subsection*{2. Si soy un luchador con determinadas características, ¿qué tipo de pelea me conviene aceptar?}
+%En este escenario, el objetivo es recomendar el contexto de pelea que maximice la probabilidad de victoria. 
+%Se mantendrán las características físicas y de historial del luchador (previamente imputadas), centrando el análisis en las variables de contexto: cantidad de rounds pactados, división, si hay un título en juego y el referí. 
 
-\subsection*{3. Si soy una persona con determinadas características, ¿qué estilo me conviene practicar?}
-Esta pregunta requiere cambiar el nivel de análisis: de un enfoque por combate individual a un perfil agregado por luchador. 
-Para determinar un estilo de pelea (por ejemplo, \textit{Striker} puro, \textit{Grappler} o \textit{Balanceado}), se utilizarán estadísticas históricas acumuladas de cada combatiente (promedio de golpes significativos, derribos y sumisiones). 
+%Para variables de contexto con datos faltantes (por ejemplo, la cantidad de rounds), se realizará una imputación basada en la naturaleza del combate (utilizando la variable \textit{title\_fight} como pista, ya que estas suelen ser a 5 rounds). En el caso de valores ausentes en el campo del árbitro, se generará una categoría independiente (\textit{Unknown}). Se construirá un modelo que prediga la probabilidad de ganar en función de las características fijas del luchador interactuando con las distintas combinaciones posibles del contexto de pelea.
 
-Al crear este nuevo dataset agrupado por luchador, aquellos registros mínimos que presenten valores nulos en columnas esenciales de golpes (como \textit{sig\_str\_landed}) podrán ser directamente eliminados sin impacto significativo (representan menos del 1\% del conjunto). Una vez consolidada la base limpia, se aplicarán algoritmos de agrupamiento (ej. \textit{K-Means}) sobre las estadísticas ofensivas para asignar un estilo definitivo a cada peleador. La recomendación final consistirá en buscar en este espacio a los luchadores físicamente más similares a la persona consultante que posean un porcentaje de victorias superior al 50\%, recomendando el estilo predominante de este subgrupo exitoso.
+%\subsection*{3. Si soy una persona con determinadas características, ¿qué estilo me conviene practicar?}
+%Esta pregunta requiere cambiar el nivel de análisis: de un enfoque por combate individual a un perfil agregado por luchador. 
+%Para determinar un estilo de pelea (por ejemplo, \textit{Striker} puro, \textit{Grappler} o \textit{Balanceado}), se utilizarán estadísticas históricas acumuladas de cada combatiente (promedio de golpes significativos, derribos y sumisiones). 
+
+%Al crear este nuevo dataset agrupado por luchador, aquellos registros mínimos que presenten valores nulos en columnas esenciales de golpes (como \textit{sig\_str\_landed}) podrán ser directamente eliminados sin impacto significativo (representan menos del 1\% del conjunto). Una vez consolidada la base limpia, se aplicarán algoritmos de agrupamiento (ej. \textit{K-Means}) sobre las estadísticas ofensivas para asignar un estilo definitivo a cada peleador. La recomendación final consistirá en buscar en este espacio a los luchadores físicamente más similares a la persona consultante que posean un porcentaje de victorias superior al 50\%, recomendando el estilo predominante de este subgrupo exitoso.
 
 \end{document}
