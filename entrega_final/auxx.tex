@@ -291,6 +291,14 @@ Previamente al modelado, también resulta valioso entender la dinámica estructu
     \label{fig:estructura_combate}
 \end{figure}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{EvolucionTemporalDelDataset.png}
+    \caption{Evolución histórica de la UFC: distribución de métodos de finalización, duración promedio de los combates, proporción de peleas titulares y métricas técnicas de striking y grappling por año.}
+    \label{fig:EvolucionTemporal}
+\end{figure}
+
+
 A continuación, se detalla el enfoque proyectado para cada una de las preguntas de investigación:
 
 \subsection*{1. ¿Qué luchador tiene mayor probabilidad de ganar una pelea dada?}
@@ -311,11 +319,5 @@ Esta pregunta requiere cambiar el nivel de análisis: de un enfoque por combate 
 Para determinar un estilo de pelea (por ejemplo, \textit{Striker} puro, \textit{Grappler} o \textit{Balanceado}), se utilizarán estadísticas históricas acumuladas de cada combatiente (promedio de golpes significativos, derribos y sumisiones). 
 
 Al crear este nuevo dataset agrupado por luchador, aquellos registros mínimos que presenten valores nulos en columnas esenciales de golpes (como \textit{sig\_str\_landed}) podrán ser directamente eliminados sin impacto significativo (representan menos del 1\% del conjunto). Una vez consolidada la base limpia, se aplicarán algoritmos de agrupamiento (ej. \textit{K-Means}) sobre las estadísticas ofensivas para asignar un estilo definitivo a cada peleador. La recomendación final consistirá en buscar en este espacio a los luchadores físicamente más similares a la persona consultante que posean un porcentaje de victorias superior al 50\%, recomendando el estilo predominante de este subgrupo exitoso.
-
-\section{Información complementaria del dataset}
-
-En complemento a la información principal consolidada, los archivos secundarios adjuntos en la descarga original listan por separado a los luchadores, peleas y eventos, lo que abre posibilidades para cruzar datos en bases más segmentadas si el trabajo lo requiriese a futuro. 
-
-La gran riqueza técnica del conjunto de datos radica en su profunda distinción estadística para cada rincón del octágono, permitiendo medir y comparar en igualdad de condiciones el impacto en cabeza, cuerpo, manejo en diferentes distancias y tiempos de control de cada competidor.
 
 \end{document}
