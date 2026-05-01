@@ -10,6 +10,8 @@
 \usepackage{tabularx}
 \usepackage{hyperref}
 \usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{float}
 
 \geometry{top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm}
 \hypersetup{
@@ -260,14 +262,34 @@ Dado el gran número de dimensiones (124), se describe la totalidad de columnas 
 
 \section{Criterio preliminar de depuración y tratamiento de datos faltantes}
 
+Como primer paso en la depuración, se analizó la composición del dataset según el género de las competiciones. Del total de 8.337 peleas registradas, 7.471 corresponden a combates masculinos y 866 a combates femeninos.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{DistribucionDePeleas.png}
+    \caption{Distribución de peleas: Masculinas vs Femeninas.}
+    \label{fig:peleas_dist}
+\end{figure}
+
+Dada esta marcada diferencia de volumen, se ha decidido centrar el análisis y el correspondiente modelo predictivo exclusivamente en las peleas masculinas, a fin de evitar sesgos y mantener el posterior análisis sobre un conjunto de datos homogéneo. Posteriormente, sobre este nuevo subconjunto, se evaluó la cantidad de datos faltantes.
+
 Si bien el proceso de depuración definitivo se realizará tras un análisis exploratorio exhaustivo, se ha planteado un criterio preliminar para el manejo de valores faltantes y la selección de características, orientado específicamente a responder las tres preguntas centrales del trabajo. 
 
-De manera general, los datos faltantes se pueden clasificar en tres grupos según su volumen:
-\begin{itemize}[leftmargin=*]
-    \item \textbf{Bajo porcentaje de faltantes ($<5\%$):} Variables como el peso, la altura o el árbitro. Dada la poca cantidad, se puede optar por imputar mediante la mediana o la moda, o en su defecto, descartar dichos registros. Resulta crítico el manejo de la variable objetivo (\textit{winner}), por lo que cualquier registro sin este dato será eliminado, ya que no permite el entrenamiento de modelos predictivos.
-    \item \textbf{Porcentaje moderado (5-20\%):} Variables como el alcance (\textit{reach}) o tiempos de control en el suelo (\textit{ctrl}). Estos casos requieren estrategias de imputación más cuidadosas o basadas en subgrupos (por ejemplo, imputar el alcance utilizando la mediana respectiva de cada división de peso).
-    \item \textbf{Alto porcentaje de faltantes ($>30-50\%$):} Diversas métricas de precisión (\textit{accuracy}) durante el combate. Para la mayoría de los modelos, estas columnas se descartarán, dado que no aportan información confiable y muchas veces corresponden a eventos específicos que ocurren durante el combate.
-\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{DistribucionDeNulos.png}
+    \caption{Cobertura temporal de las peleas por año (arriba) y análisis de atributos con mayor porcentaje de datos faltantes (abajo).}
+    \label{fig:cobertura_y_nulos}
+\end{figure}
+
+Previamente al modelado, también resulta valioso entender la dinámica estructural de los enfrentamientos. Como se observa en la Figura \ref{fig:estructura_combate}, se exploraron cuatro métricas contextuales clave: la cantidad de peleas por división de peso, las vías o métodos de cierre del combate, la distribución del round de finalización y la duración total en minutos. Este análisis general permite vislumbrar cómo tienden a resolverse los encuentros en los distintos rangos de peso y tiempo, estableciendo una base descriptiva sólida.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{Imagen3.png}
+    \caption{Análisis exploratorio: cantidad de peleas por división, método de cierre, round de finalización y duración de los combates.}
+    \label{fig:estructura_combate}
+\end{figure}
 
 A continuación, se detalla el enfoque proyectado para cada una de las preguntas de investigación:
 
@@ -292,6 +314,8 @@ Al crear este nuevo dataset agrupado por luchador, aquellos registros mínimos q
 
 \section{Información complementaria del dataset}
 
-El archivo \path{UFC.csv} reúne con detalle 124 atributos, y en los otros archivos adjuntos de la descarga se encuentran listados por separado luchadores, peleas y eventos, abriendo posibilidades de cruces en bases más segmentadas. La riqueza técnica del conjunto radica en la distinción estadística para cada rincón en el octágono, midiendo trabajo en cabeza, cuerpo, distancias y porcentajes de control. Se trata de un archivo real alimentado gradualmente a partir del scraping del sitio \url{http://ufcstats.com/statistics/events/completed}.
+En complemento a la información principal consolidada, los archivos secundarios adjuntos en la descarga original listan por separado a los luchadores, peleas y eventos, lo que abre posibilidades para cruzar datos en bases más segmentadas si el trabajo lo requiriese a futuro. 
+
+La gran riqueza técnica del conjunto de datos radica en su profunda distinción estadística para cada rincón del octágono, permitiendo medir y comparar en igualdad de condiciones el impacto en cabeza, cuerpo, manejo en diferentes distancias y tiempos de control de cada competidor.
 
 \end{document}
