@@ -275,12 +275,31 @@ Debido a esta considerable diferencia en el volumen de registros, se decidió ce
 
 \begin{figure}[H]
     \centering
+    \includegraphics[width=0.85\textwidth]{CortePeleas.png}
+    \caption{Cantidad de peleas conservadas según el corte temporal seleccionado.}
+    \label{fig:corte-temporal-ufc}
+\end{figure}
+
+Otra consideración a tener en cuenta es el corte temporal. A partir de los objetivos del proyecto, se decidió concentrar el análisis principal en peleas desde 2010 en adelante. Este recorte temporal permite trabajar con una etapa más representativa de la UFC moderna, con reglas más estables, mayor profesionalización de los peleadores, divisiones más consolidadas y métricas técnicas más comparables. Las peleas anteriores pueden utilizarse como contexto histórico, pero no como base principal para entrenar modelos orientados a decisiones actuales.
+
+\begin{figure}[H]
+    \centering
     \includegraphics[width=1\textwidth]{DistribucionDeNulos.png}
     \caption{Cobertura temporal de las peleas por año (arriba) y análisis de atributos con mayor porcentaje de datos faltantes (abajo).}
     \label{fig:cobertura_y_nulos}
 \end{figure}
 
-Si bien la depuración definitiva se llevará a cabo tras un análisis exploratorio más profundo, se estableció un criterio preliminar para el manejo de los valores nulos y la selección de variables. Este enfoque está orientado específicamente a responder las tres preguntas centrales de este trabajo. 
+Si bien la depuración definitiva se llevará a cabo tras un análisis exploratorio más profundo, se estableció un criterio preliminar para el manejo de los valores nulos y la selección de variables. Este enfoque está orientado específicamente a responder las tres preguntas centrales de este trabajo. Pero, por ahora, ¿cuál es la calidad de este dataset? Observemos el siguiente gráfico.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{DatosFaltantes.png}
+    \caption{Proporción de datos completos en las 30 columnas con mayor cantidad de valores faltantes para peleas masculinas de UFC desde 2010.}
+    \label{fig:datos-faltantes}
+\end{figure}
+
+\noindent
+El gráfico evidencia que el dataset presenta una buena completitud general en variables físicas y biográficas, pero mayores faltantes en métricas técnicas específicas del combate. Esto permite distinguir entre variables aptas para un análisis pre-pelea, como edad, altura, alcance o postura, y variables que deben tratarse con precaución o excluirse, como estadísticas generadas durante la pelea. 
 
 Antes de avanzar con el modelado, es fundamental comprender la dinámica estructural de los enfrentamientos. Como se observa en la Figura \ref{fig:estructura_combate}, se exploraron cuatro métricas contextuales clave: la cantidad de peleas por división de peso, los métodos de finalización del combate, la distribución de los rounds de cierre y la duración total en minutos. Este resumen descriptivo permite vislumbrar cómo tienden a resolverse los encuentros según el peso y el tiempo.
 
@@ -291,11 +310,31 @@ Antes de avanzar con el modelado, es fundamental comprender la dinámica estruct
     \label{fig:estructura_combate}
 \end{figure}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{VentajasPerfilesVictoria.png}
+    \caption{Ventajas pre-pelea y perfiles técnicos asociados a los métodos de victoria en peleas masculinas de UFC desde 2010.}
+    \label{fig:ventajas-perfiles-ufc}
+\end{figure}
+
+\noindent
+El primer gráfico analiza variables disponibles antes de la pelea, evitando utilizar métricas generadas durante el combate, como golpes conectados o derribos concretados. Esta decisión es importante porque el objetivo del trabajo es aproximarse a una predicción previa del resultado, no explicar el resultado una vez ocurrida la pelea. En ese sentido, variables como edad, altura, alcance, peso y récord previo son más adecuadas para un enfoque predictivo.
+
+\vspace{0.3cm}
+
+\noindent
+A partir del gráfico se puede observar que las ventajas físicas o de trayectoria previa presentan asociaciones moderadas con la victoria, pero ninguna de ellas determina por sí sola el resultado. Esto sugiere que ganar una pelea no depende únicamente de una característica aislada, sino de la combinación entre características físicas, experiencia, estilo técnico, emparejamiento y contexto competitivo.
+
+\vspace{0.3cm}
+
+\noindent
+El segundo gráfico cruza dos dimensiones técnicas históricas del ganador: volumen de golpeo e intentos promedio de sumisión. La superposición entre métodos de victoria indica que los estilos no aparecen completamente separados. Aunque los ganadores por KO/TKO tienden a relacionarse más con el volumen de striking y los ganadores por sumisión con mayor actividad grappler, existen muchos casos intermedios. Esto refuerza la idea de que los perfiles modernos de UFC son híbridos y que un modelo predictivo debería combinar múltiples variables técnicas, físicas y contextuales.
+
 Para complementar esta visión estática de los combates, se analizó también la progresión histórica de estas métricas. La Figura \ref{fig:evolucion_metodos_duracion} refleja la evolución temporal de los métodos de finalización y la duración promedio, evidenciando cómo han cambiado las tendencias de resolución (decisiones, nocauts y sumisiones) a lo largo de los años en la franquicia.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{EvolucionDeFinalizacionYduracionDeLasPeleas.png}
+    \includegraphics[width=1\textwidth]{Evolucion_Metodos_Duracion.png}
     \caption{Evolución temporal de los métodos de finalización y de la duración promedio de los combates. Se muestra la variación en la proporción de decisiones, nocauts y sumisiones a lo largo del tiempo, junto con la duración media de las peleas por año.}
     \label{fig:evolucion_metodos_duracion}
 \end{figure}
@@ -304,7 +343,7 @@ Finalmente, la Figura \ref{fig:evolucion_tecnica} expone la evolución competiti
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{EvolucionCompetitivaYtecnicaDeLaUFC.png}
+    \includegraphics[width=1\textwidth]{Evolucion_Tecnica.png}
     \caption{Evolución competitiva y técnica de la UFC. Se presenta el porcentaje de peleas titulares por año junto con la evolución de métricas de striking (golpes conectados y recibidos por minuto) y grappling (derribos y sumisiones promedio).}
     \label{fig:evolucion_tecnica}
 \end{figure}
