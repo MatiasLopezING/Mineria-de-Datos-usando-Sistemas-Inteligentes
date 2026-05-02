@@ -289,7 +289,17 @@ Otra consideración a tener en cuenta es el corte temporal. A partir de los obje
     \label{fig:cobertura_y_nulos}
 \end{figure}
 
-Si bien la depuración definitiva se llevará a cabo tras un análisis exploratorio más profundo, se estableció un criterio preliminar para el manejo de los valores nulos y la selección de variables. Este enfoque está orientado específicamente a responder las tres preguntas centrales de este trabajo. 
+Si bien la depuración definitiva se llevará a cabo tras un análisis exploratorio más profundo, se estableció un criterio preliminar para el manejo de los valores nulos y la selección de variables. Este enfoque está orientado específicamente a responder las tres preguntas centrales de este trabajo. Pero, por ahora, ¿cuál es la calidad de este dataset? Observemos el siguiente gráfico.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{DatosFaltantes.png}
+    \caption{Proporción de datos completos en las 30 columnas con mayor cantidad de valores faltantes para peleas masculinas de UFC desde 2010.}
+    \label{fig:datos-faltantes}
+\end{figure}
+
+\noindent
+El gráfico evidencia que el dataset presenta una buena completitud general en variables físicas y biográficas, pero mayores faltantes en métricas técnicas específicas del combate. Esto permite distinguir entre variables aptas para un análisis pre-pelea, como edad, altura, alcance o postura, y variables que deben tratarse con precaución o excluirse, como estadísticas generadas durante la pelea. 
 
 Antes de avanzar con el modelado, es fundamental comprender la dinámica estructural de los enfrentamientos. Como se observa en la Figura \ref{fig:estructura_combate}, se exploraron cuatro métricas contextuales clave: la cantidad de peleas por división de peso, los métodos de finalización del combate, la distribución de los rounds de cierre y la duración total en minutos. Este resumen descriptivo permite vislumbrar cómo tienden a resolverse los encuentros según el peso y el tiempo.
 
