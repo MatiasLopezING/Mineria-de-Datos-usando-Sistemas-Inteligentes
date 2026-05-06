@@ -75,48 +75,73 @@ El accuracy obtenido tras evaluar el árbol construido sobre el propio conjunto 
 % ---------------------------------------------------------
 % EJERCICIO 7: Efecto del tamaño del árbol
 % ---------------------------------------------------------
-\section*{7. Efecto del tamaño del árbol}
+\section*{7. Efecto del Tamaño del Árbol}
 
-En esta sección se analiza cómo la variación de los hiperparámetros impacta en el tamaño del árbol y en su rendimiento tanto en el conjunto de entrenamiento como de testeo. Se utilizó el archivo \textbf{diabetes\_nominal\_train} para el entrenamiento y \textbf{diabetes\_nominal\_test.xlsx} para la evaluación, empleando \textit{information gain} como medida de desorden y \textit{min\_error\_decrease} $= 0.01$.
+Tendremos como objetivo analizar el comportamiento y el rendimiento de los algoritmos de árboles de decisión aplicados a la clasificación. Para ello se utiliza un conjunto de datos pre-procesado con atributos nominales, facilitando la construcción de modelos basados en la ganancia de información.
 
-\subsection*{a) Árbol con min\_samples\_split = 40 y min\_samples\_leaf = 20}
+La metodología será la siguiente:
+\begin{itemize}
+    \item \textbf{Configuración del Modelo:} Se ajustan los parámetros de control de crecimiento del árbol, específicamente el mínimo de muestras para realizar una división (\textit{min\_samples\_split}) y el mínimo de muestras permitidas en un nodo hoja (\textit{min\_samples\_leaf}).
+    \item \textbf{Entrenamiento y Evaluación:} Se entrena el clasificador utilizando el conjunto de datos \texttt{diabetes\_nominal\_train.xlsx} y se evalúa su desempeño frente al conjunto de prueba \texttt{diabetes\_nominal\_test.xlsx}.
+    \item \textbf{Análisis de Complejidad:} Se observa la relación entre la restricción de los parámetros y el tamaño resultante del árbol (medido en cantidad de nodos), contrastando estos resultados con las tasas de acierto (\textit{accuracy}) obtenidas en ambas etapas.
+\end{itemize}
 
-% Completar con la observación de la tasa de aciertos y el tamaño del árbol.
+A través de esta comparativa, se busca identificar el fenómeno de sobreajuste (\textit{overfitting}) y determinar cómo la variación en el tamaño de la estructura del árbol impacta directamente en su capacidad de generalización sobre datos no observados durante el entrenamiento.
 
-\subsection*{b) Árbol con min\_samples\_split = 100 y min\_samples\_leaf = 50}
 
-% Completar con la observación del tamaño del árbol y el rendimiento.
 
-\subsection*{c) Árbol con min\_samples\_split = 20 y min\_samples\_leaf = 10}
+% --- Árbol del Inciso A ---
+\subsection*{a) Estructura del Árbol A}
+\begin{figure}[htpb]
+    \centering
+    % Reemplaza "arbol_a.png" por el nombre real de tu archivo
+    \includegraphics[width=0.8\textwidth]{arbol_a.png} 
+    \caption{Estructura del árbol de decisión para el inciso (a).}
+    \label{fig:arbol_a}
+\end{figure}
+\newpage
 
-% Completar con la observación del tamaño del árbol y el rendimiento.
 
-\subsection*{d) Análisis y Conclusiones}
+% --- Árbol del Inciso B ---
+\subsection*{b) Estructura del Árbol B}
+\begin{figure}[htpb]
+    \centering
+    % Reemplaza "arbol_b.png" por el nombre real de tu archivo
+    \includegraphics[width=0.8\textwidth]{arbol_b.png} 
+    \caption{Estructura del árbol de decisión con pre-poda estricta, inciso (b).}
+    \label{fig:arbol_b}
+\end{figure}
+\newpage
 
-\textbf{¿Qué ocurre con el tamaño y complejidad del árbol en cada caso?}
-% Respuesta
+% --- Árbol del Inciso C ---
+\subsection*{c) Estructura del Árbol C}
+\begin{figure}[htpb]
+    \centering
+    % Reemplaza "arbol_c.png" por el nombre real de tu archivo
+    \includegraphics[width=0.71\textwidth]{arbol_c.png} 
+    \caption{Estructura del árbol de decisión para el inciso (c).}
+    \label{fig:arbol_c}
+\end{figure}
+\newpage
 
-\textbf{¿Se observan diferencias en la performance del árbol en ambos conjuntos de datos? ¿A qué se deben estas diferencias?}
-% Respuesta
 
-\vspace{0.5cm}
 
-A modo de resumen, se presenta la siguiente tabla con los resultados de cada inciso:
+\subsection*{7.1 Tabla de Resultados}
 
-\begin{table}[H]
+\begin{table}[htpb]
 \centering
 \begin{tabular}{|l|c|c|c|}
 \hline
-\textbf{Inciso} & \textbf{c)} & \textbf{a)} & \textbf{b)} \\ \hline
-\textit{min\_samples\_split} & 20 & 40 & 100 \\ \hline
-\textit{min\_samples\_leaf}  & 10 & 20 & 50 \\ \hline
-Tamaño del árbol             &    &    &    \\ \hline
-\textit{Accuracy Train}      &    &    &    \\ \hline
-\textit{Accuracy Test}       &    &    &    \\ \hline
+\textbf{Inciso}              & \textbf{c)} & \textbf{a)} & \textbf{b)} \\ \hline
+\textit{min\_samples\_split} & 20          & 40          & 100         \\ \hline
+\textit{min\_samples\_leaf}  & 10          & 20          & 50          \\ \hline
+Tamaño del árbol             &  56           &  22           &  9           \\ \hline
+\textit{Accuracy Train}      &  0.7728           &  0.7164           &  0.7135           \\ \hline
+\textit{Accuracy Test}       &  0.5584           &  0.5844           &  0.5455           \\ \hline
 \end{tabular}
-\caption{Comparación del tamaño del árbol y accuracy para distintos hiperparámetros.}
+\caption{Comparación de parámetros y resultados de los árboles de decisión.}
+\label{tab:resultados_arboles}
 \end{table}
-
 
 % ---------------------------------------------------------
 % ANEXO: PROCEDIMIENTOS MANUSCRITOS
