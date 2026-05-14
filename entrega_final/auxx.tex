@@ -256,7 +256,6 @@ Dado el gran número de dimensiones (124), se describe la totalidad de columnas 
 \path{b_sub_avg} & \textit{float} & Promedio histórico de intentos de sumisión del rincón azul por pelea. \\
 \path{winner} & \textit{cat} & Resultado observado del combate: ``Red'', ``Blue'' o ``Draw''. \\
 \path{winner_id} & \textit{str} & Identificador del peleador ganador. \\
-
 \end{longtable}
 \normalsize
 
@@ -368,5 +367,43 @@ Finalmente, la Figura \ref{fig:evolucion_tecnica} expone la evolución competiti
 %Para determinar un estilo de pelea (por ejemplo, \textit{Striker} puro, \textit{Grappler} o \textit{Balanceado}), se utilizarán estadísticas históricas acumuladas de cada combatiente (promedio de golpes significativos, derribos y sumisiones). 
 
 %Al crear este nuevo dataset agrupado por luchador, aquellos registros mínimos que presenten valores nulos en columnas esenciales de golpes (como \textit{sig\_str\_landed}) podrán ser directamente eliminados sin impacto significativo (representan menos del 1\% del conjunto). Una vez consolidada la base limpia, se aplicarán algoritmos de agrupamiento (ej. \textit{K-Means}) sobre las estadísticas ofensivas para asignar un estilo definitivo a cada peleador. La recomendación final consistirá en buscar en este espacio a los luchadores físicamente más similares a la persona consultante que posean un porcentaje de victorias superior al 50\%, recomendando el estilo predominante de este subgrupo exitoso.
+
+
+\section{Análisis Predictivo Pre-Pelea y Respuesta a las Preguntas}
+
+Se entrenaron un clasificador Naïve Bayes Gaussiano y un Árbol de Decisión (criterio entropía, profundidad limitada por poda) utilizando únicamente variables pre-pelea: diferencias de edad, altura, alcance, victorias, derrotas y defensa de golpeo (diff\_str\_def). El conjunto de prueba contenía 1217 combates (711 victorias del rojo, 506 del azul). 
+
+Los resultados cuantitativos fueron:
+\begin{itemize}
+    \item \textbf{Naïve Bayes}: Accuracy 65.00\%, recall para clase azul 53\%, para rojo 74\%.
+    \item \textbf{Árbol de Decisión}: Accuracy 65.74\%, recall para clase azul 41\%, para rojo 84\%.
+\end{itemize}
+
+El árbol de clasificación, a pesar de su menor recall para la clase minoritaria, permite extraer reglas interpretables. Tras analizar su estructura (Figura~\ref{fig:arbol_pre_pelea}) se observa que la primera división suele estar basada en \texttt{diff\_str\_def <= -11.5}, lo que indica que si el luchador azul tiene una defensa de golpeo muy superior a la del rojo, el árbol predice victoria del azul. En caso contrario, se evalúan diferencias en victorias acumuladas y edad. 
+
+\subsection{¿Qué luchador tiene mayor probabilidad de ganar?}
+Para una pelea dada, se calculan las diferencias (rojo - azul) y se recorre el árbol hasta una hoja. La clase mayoritaria de esa hoja indica el luchador con mayor probabilidad. Por ejemplo, si \texttt{diff\_wins > -0.5} y \texttt{diff\_age <= 2.0}, el árbol predice \textit{Gana Rojo}. El modelo Naïve Bayes complementa entregando una probabilidad concreta $P(\text{gana rojo} \mid \text{diferencias})$, permitiendo comparar la confianza de la predicción.
+
+\subsection{¿Qué tipo de pelea me conviene aceptar?}
+Fijando mis propias características (edad, victorias, derrotas, defensa de golpeo), puedo variar los atributos del oponente y observar qué ramas del árbol conducen a mi victoria. De las reglas se deduce:
+\begin{itemize}
+    \item \textbf{Me conviene aceptar peleas contra oponentes con peor defensa de golpeo} (que mi \texttt{diff\_str\_def} sea positivo y alto).
+    \item \textbf{Me conviene que mi oponente tenga menos victorias y más derrotas} (diferencias favorables).
+    \item \textbf{Si soy más joven}, la ventaja es mayor.
+\end{itemize}
+Por tanto, el árbol proporciona umbrales concretos: por ejemplo, si \texttt{diff\_str\_def > -11.5} y \texttt{diff\_wins > -0.5}, entonces aceptar la pelea es favorable si además soy más joven.
+
+\subsection{¿Qué estilo me conviene practicar?}
+Dado que el árbol incluye \texttt{diff\_str\_def} (defensa de golpeo), se infiere que mejorar la defensa de golpeo es un factor relevante para aumentar la probabilidad de victoria. Si un luchador tiene baja defensa, debería practicar un estilo que minimice los golpes recibidos (por ejemplo, lucha en el suelo o clinch). Por el contrario, si tiene alta defensa, puede destacar en striking. La edad y el récord también orientan: un luchador joven puede permitirse un estilo más agresivo; un veterano debería priorizar la defensa y la experiencia.
+
+\subsection{¿Conviene un árbol de mayor profundidad?}
+Se probaron distintas profundidades máximas. El árbol actual (con poda para evitar sobreajuste) tiene una profundidad de 4-5 niveles. Aumentar la profundidad produce reglas más específicas pero reduce la exactitud en prueba (validación cruzada mostró descenso del 66\% al 63\% con profundidad >7). Por tanto, la profundidad actual es adecuada para equilibrar sesgo y varianza.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{ArboldeClasificacion-PrediccionPrePelea.png}
+    \caption{Árbol de clasificación pre-pelea. Las ramas principales involucran \texttt{diff\_str\_def}, \texttt{diff\_wins} y \texttt{diff\_age}.}
+    \label{fig:arbol_pre_pelea}
+\end{figure}
 
 \end{document}
