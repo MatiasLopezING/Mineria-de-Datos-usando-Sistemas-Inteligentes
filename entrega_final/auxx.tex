@@ -12,6 +12,7 @@
 \usepackage{enumitem}
 \usepackage{graphicx}
 \usepackage{float}
+\usepackage{amsmath}
 
 \geometry{top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm}
 \hypersetup{
@@ -27,7 +28,7 @@
 \setlength{\parskip}{0.65em}
 \setlength{\emergencystretch}{2em}
 
-\title{\textbf{Elección y Descripción del Conjunto de Datos, Grupo 1}}
+\title{\textbf{Trabajo Final - Grupo 1}}
 \author{Matías López, Isidro Silicaro Pera, Taciano Pacchialat}
 \date{}
 
@@ -281,12 +282,36 @@ Debido a esta considerable diferencia en el volumen de registros, se decidió ce
 
 Otra consideración a tener en cuenta es el corte temporal. A partir de los objetivos del proyecto, se decidió concentrar el análisis principal en peleas desde 2010 en adelante. Este recorte temporal permite trabajar con una etapa más representativa de la UFC moderna, con reglas más estables, mayor profesionalización de los peleadores, divisiones más consolidadas y métricas técnicas más comparables. Las peleas anteriores pueden utilizarse como contexto histórico, pero no como base principal para entrenar modelos orientados a decisiones actuales.
 
+
+También se evaluó la presencia de registros duplicados en el conjunto de datos. Al tratarse de un dataset histórico de eventos deportivos, la existencia de duplicados responde a errores en el proceso de recolección de datos o fallos en la carga de los mismos y no a circunstancias naturales del deporte. Sin embargo, \textbf{no se han encontrado duplicados} en el dataset. La manera en la que esto se confirmó fue buscando filas exactamente iguales, o peleas repetidas que quizás difieren por algún error de tipeo en otra columna (principalmente por fecha y peleadores). Ambas arrojaron cero coincidencias. 
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{DistribucionDeNulos.png}
     \caption{Cobertura temporal de las peleas por año (arriba) y análisis de atributos con mayor porcentaje de datos faltantes (abajo).}
     \label{fig:cobertura_y_nulos}
 \end{figure}
+
+Se aplicó un análisis visual mediante Boxplots para identificar valores atípicos en variables métricas fundamentales del combate, como la duración de la pelea y el volumen de golpes por minuto.
+
+En lo que respecta a los outliers estadísticos (o casos excepcionales), hemos decidido poner el foco en métricas determinantes de un combate: duración y golpeo.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{outliers.png}
+    \caption{Análisis visual para identificar valores atípicos en métricas del combate.}
+    \label{fig:outliers}
+\end{figure}
+
+En el primero los valores atípicos inferiores corresponden a luchadores que basan su estrategia en llevar el combate al suelo repetidas veces. En las métricas de golpeo, los outliers superiores representan desempeños atléticos excepcionales (volumen de striking muy por encima de la media) y los inferiores los rendimientos menos deslumbrantes. Pero como estos outliers no pertenecen a errores de medición o carga (como lo sería un tiempo de pelea negativo), sino a eventos reales y posibles en el marco de un combate, se decide conservar la totalidad de los mismos. Eliminarlos implicaría sesgar el análisis, la capacidad de conectar muchos golpes o la incapacidad de ello son variables que un modelo debe incluir.
+
+Otro análisis a tener en cuenta es la correlación entre los atributos. Observemos el siguiente gráfico:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{heatmap.png}
+    \caption{Matriz de Pearson para visualizar correlación entre las variables físicas y de rendimiento deportivo.}
+    \label{fig:heatmap}
+\end{figure}
+Algunos puntos a destacar son la fuerte correlación positiva (0.87) entre la altura y la envergadura, lo cual es esperable ya que las personas altas suelen tener brazos más largos; la correlación moderada de (0.49) entre los golpes conectados y recibidos, indicando que los peleadores con estrategias muy ofensivas tienden a exponerse a más golpes.
 
 Si bien la depuración definitiva se llevará a cabo tras un análisis exploratorio más profundo, se estableció un criterio preliminar para el manejo de los valores nulos y la selección de variables. Este enfoque está orientado específicamente a responder las tres preguntas centrales de este trabajo. Pero, por ahora, ¿cuál es la calidad de este dataset? Observemos el siguiente gráfico.
 
@@ -346,6 +371,23 @@ Finalmente, la Figura \ref{fig:evolucion_tecnica} expone la evolución competiti
     \caption{Evolución competitiva y técnica de la UFC. Se presenta el porcentaje de peleas titulares por año junto con la evolución de métricas de striking (golpes conectados y recibidos por minuto) y grappling (derribos y sumisiones promedio).}
     \label{fig:evolucion_tecnica}
 \end{figure}
+
+Para darle un cierre a esta etapa de análisis se aplicó un modelo de aprendizaje no supervisado (K-medias) para identificar perfiles y estilos de combate. Las variables seleccionadas fueron estandarizadas previamente.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{clustering.png}
+    \caption{Separación de perfiles clásicos del MMA mediante Clustering por K-Medias.}
+    \label{fig:clustering}
+\end{figure}
+Al segmentar la población en 3 clusters, el algoritmo logró separar con precisión los arquetipos clásicos del MMA:
+
+\begin{itemize}
+    \item \textbf{Cluster 1 (Strikers):} Atletas que se caracterizan por una frecuencia de golpeo significativamente superior a la media, manteniendo estadísticas casi nulas en el juego de suelo. Son los especialistas en el combate de pie.
+    \item \textbf{Cluster 2 (Grapplers):} Competidores que sobresalen por su alta tasa de derribos y control. Basan su estrategia de victoria en la sujeción y el dominio en el piso.
+    \item \textbf{Cluster 0 (Estilo Mixto / Promedio):} Constituye el grupo más denso de la muestra, como es esperable. Contiene a peleadores con métricas equilibradas.
+\end{itemize}
+
+El conjunto de datos resultante es robusto, se encuentra libre de redundancias críticas y cuenta con una tipología clara, quedando en condiciones óptimas para la implementación de modelos predictivos de resultados de combate.
 
 %A continuación, se detalla el enfoque proyectado para cada una de las preguntas de investigación:
 
