@@ -61,11 +61,16 @@ A continuación, se presentan de forma resumida las tablas con los resultados fi
         & \textbf{ZeroR} & \textbf{OneR} & \textbf{PRISM} \\ \hline
         \textbf{Reglas} 
         % Escribe aquí las reglas de ZeroR
-        & Si(todo)entoces Resultado=No Inflado
+        & Si(todo)entonces Resultado=No Inflado
         % Escribe aquí las reglas de OneR
         & Si(Estira)entonces Resultado=Inflado
         % Escribe aquí las reglas de PRISM
-        \\ \hline
+        & \begin{enumerate}
+            \item \textbf{R1:} Si Estira = Si $\land$ Color = Amarillo $\rightarrow$ Inflado
+            \item \textbf{R2:} Si Estira = Si $\land$ Edad = Adulto $\rightarrow$ Inflado
+            \item \textbf{R3:} Si Estira = No $\rightarrow$ No Inflado
+            \item \textbf{R4:} Si Color = Rojo $\land$ Edad = Niño $\rightarrow$ No Inflado
+        \end{enumerate}
     \end{tabular}
     \caption{Comparativa de las reglas generadas por cada algoritmo.}
 \end{table}
@@ -110,6 +115,12 @@ Finalmente, se detalla el error total asociado a cada atributo en su conjunto, l
     \caption{Error total calculado para cada atributo.}
 \end{table}
 
+\subsection*{b) Resolución manual mediante el algoritmo PRISM}
+
+El algoritmo PRISM construye un conjunto de reglas modular evaluando cada clase objetivo por separado. En cada iteración, se busca la condición que minimice el error de clasificación (calculado como la proporción de falsos positivos sobre el total de instancias que cumplen la condición). Una vez alcanzado un error de $0$, la regla se consolida, se eliminan del conjunto de datos las instancias cubiertas por ella y se repite el proceso hasta cubrir todos los casos de la clase analizada.
+
+Nuevamente, el desarrollo manual puede encontrarse en su anexo correspondiente.
+
 \clearpage % Salto de página para que el anexo empiece en hoja nueva
 
 \section*{Anexo: Resoluciones Manuales}
@@ -132,10 +143,25 @@ En esta sección se adjuntan las fotografías con el detalle de los cálculos re
     \caption{Cálculos manuales: Cálculos de tasas de error para OneR (Inciso a)}
 \end{figure}
 
+\subsection*{Ejercicio 2.b - PRISM}
 \begin{figure}[H]
     \centering
-    % Descomenta y ajusta el nombre del archivo de la foto
-    % \includegraphics[width=0.8\textwidth]{imagenes/resolucion_prism.jpg}
+    \includegraphics[width=0.8\textwidth]{incisob1.png}
+    \caption{Cálculos manuales: Algoritmo PRISM}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{incisob2.png}
+    \caption{Cálculos manuales: Algoritmo PRISM}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{incisob3.png}
+    \caption{Cálculos manuales: Algoritmo PRISM}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{incisob4.png}
     \caption{Cálculos manuales: Algoritmo PRISM}
 \end{figure}
 
