@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.3.22)  22 MAY 2026 12:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.3.22)  22 MAY 2026 13:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -341,11 +341,11 @@ File: lstlang1.sty 2025/11/14 1.11b listings language file
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <9> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 163.
  [4]
-<EjercicioA.jpeg, id=61, 1223.57124pt x 1604.99625pt>
+<EjercicioA.jpeg, id=61, 1238.6275pt x 1606.0pt>
 File: EjercicioA.jpeg Graphic file (type jpg)
 <use EjercicioA.jpeg>
 Package pdftex.def Info: EjercicioA.jpeg  used on input line 195.
-(pdftex.def)             Requested size: 364.19667pt x 477.7066pt.
+(pdftex.def)             Requested size: 364.19667pt x 472.22206pt.
 <incisob1.png, id=62, 933.4875pt x 735.74875pt>
 File: incisob1.png Graphic file (type png)
 <use incisob1.png>
@@ -379,15 +379,15 @@ L3 programming layer <2025-12-24>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 6985 strings out of 467870
- 109231 string characters out of 5418355
- 815319 words of memory out of 5000000
- 35807 multiletter control sequences out of 15000+600000
+ 6984 strings out of 467870
+ 109223 string characters out of 5418355
+ 814170 words of memory out of 5000000
+ 35806 multiletter control sequences out of 15000+600000
  630401 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  68i,17n,90p,595b,1313s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/ml328/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/ml328/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/ml328/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/ml328/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/ml328/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/ml328/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/ml328/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/ml328/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Users/ml328/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on p5g1.pdf (7 pages, 3944548 bytes).
+Output written on p5g1.pdf (7 pages, 3991570 bytes).
 PDF statistics:
  119 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
