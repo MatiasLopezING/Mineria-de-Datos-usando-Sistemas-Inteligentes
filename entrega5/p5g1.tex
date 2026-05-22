@@ -6,6 +6,26 @@
 \usepackage{geometry}
 \geometry{a4paper, margin=2.5cm}
 \usepackage{pdfpages}
+\usepackage{listings}
+\usepackage{xcolor}
+
+% Configuración de estilo para el código Python
+\lstset{
+    backgroundcolor=\color{gray!10},   
+    basicstyle=\ttfamily\small,
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=4,
+    frame=single
+}
+
+
 
 \begin{document}
 
@@ -120,6 +140,46 @@ Finalmente, se detalla el error total asociado a cada atributo en su conjunto, l
 El algoritmo PRISM construye un conjunto de reglas modular evaluando cada clase objetivo por separado. En cada iteración, se busca la condición que minimice el error de clasificación (calculado como la proporción de falsos positivos sobre el total de instancias que cumplen la condición). Una vez alcanzado un error de $0$, la regla se consolida, se eliminan del conjunto de datos las instancias cubiertas por ella y se repite el proceso hasta cubrir todos los casos de la clase analizada.
 
 Nuevamente, el desarrollo manual puede encontrarse en su anexo correspondiente.
+
+\subsection*{c) Resultado del algoritmo comenzando por la clase \texttt{Inflado = no}}
+
+En caso de comenzar por la clase "No Inflado", las reglas resultado serían las mismas pero cambiaría el orden en el que las evaluamos. Como se evalúan las clases por separado, el conjunto de datos de entrenamiento se reinicia cuando cambiamos el objetivo, retornando los mismos errores para las mismas reglas. 
+
+\subsection*{d) Verificación de resultados del inciso a)}
+
+Mediante el snippet de código que se muestra a continuación, se corroboró que los resultados son correctos.
+
+\begin{lstlisting}[language=Python]
+df = df_globos_tr.copy()
+
+X = df.drop(columns=['Orden', 'Resultado'])
+y = df['Resultado']
+
+model = PRISMClassifier(min_rule_support=1)
+model.fit(X, y)
+
+y_pred = model.predict(X)
+
+print("\nReglas Obtenidas por PRISM:")
+print("-" * 30)
+print(model.pretty_print(np.unique(y)))
+
+score = accuracy_score(y, y_pred)
+print(f"\nAccuracy (Tasa de acierto): {score:.2f}")
+\end{lstlisting}
+
+\textbf{Resultados obtenidos:}
+\begin{verbatim}
+Reglas Obtenidas por PRISM:
+------------------------------
+(Estira=Si) AND (Color=Amarillo)   => Inflado
+(Estira=Si) AND (Edad=Adulto)      => Inflado
+(Estira=No)                        => No Inflado
+(Color=Rojo) AND (Edad=Niño)       => No Inflado
+
+Accuracy (Tasa de acierto): 1.00
+\end{verbatim}
+
 
 \clearpage % Salto de página para que el anexo empiece en hoja nueva
 
