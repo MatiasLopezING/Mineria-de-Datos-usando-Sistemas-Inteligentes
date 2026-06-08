@@ -1,0 +1,28 @@
+# Python Virtual Environment
+.venv/
+__pycache__/
+*.pyc
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# LaTeX auxiliary files
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.bbl
+*.blg
+
+# LaTeX build directories (e.g. informe/build/)
+**/build/*
+
+# Do not ignore the compiled PDFs inside build directories
+!**/build/**/*.pdf
+!**/build/*.pdf
+
+# Do not ignore any PDF files in general
+!*.pdf

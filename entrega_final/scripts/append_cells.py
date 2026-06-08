@@ -208,7 +208,7 @@ plt.legend(handles[-K_optimo:], labels[-K_optimo:], loc='upper right')
 plt.tight_layout()
 plt.show()"""
 
-with open('Pfinal.ipynb', 'r', encoding='utf-8') as f:
+with open('../notebooks/Pfinal.ipynb', 'r', encoding='utf-8') as f:
     nb = json.load(f)
 
 for code in [c1, c2, c3]:
@@ -221,7 +221,7 @@ for code in [c1, c2, c3]:
     }
     nb["cells"].append(new_cell)
 
-with open('Pfinal.ipynb', 'w', encoding='utf-8') as f:
+with open('../notebooks/Pfinal.ipynb', 'w', encoding='utf-8') as f:
     json.dump(nb, f, indent=1, ensure_ascii=False)
 
 print("Cells added.")

@@ -1,6 +1,6 @@
 import json
 
-with open('Pfinal.ipynb', 'r', encoding='utf-8') as f:
+with open('../notebooks/Pfinal.ipynb', 'r', encoding='utf-8') as f:
     nb = json.load(f)
 
 for cell in nb['cells']:
