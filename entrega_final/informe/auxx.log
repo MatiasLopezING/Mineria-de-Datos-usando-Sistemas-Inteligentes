@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.4.24)  15 MAY 2026 13:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.6.5)  8 JUN 2026 21:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -50,7 +50,7 @@ on input line 2086.
 LaTeX Encoding Info:    Ignoring declaration for text command \SS (encoding ?) 
 on input line 2111.
 \U@D=\dimen149
-\l@unhyphenated=\language3
+\l@unhyphenated=\language6
 
 (/usr/share/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read2
@@ -62,16 +62,6 @@ Package babel Info: Importing font and identification data for spanish
 
 (/home/taci/texmf/tex/generic/babel-spanish/spanish.ldf
 Language: spanish.ldf 2021/05/27 v5.0q Spanish support from the babel system
-
-
-Package babel Warning: No hyphenation patterns were preloaded for
-(babel)                the language 'Spanish' into the format.
-(babel)                Please, configure your TeX system to add them and
-(babel)                rebuild the format. Now I will use the patterns
-(babel)                preloaded for \language=0 instead on input line 51.
-
-Package babel Info: Hyphen rules for 'spanish' set to \l@english
-(babel)             (\language0). Reported on input line 52.
 \es@quottoks=\toks19
 \es@quotdepth=\count285
 Package babel Info: Making " an active character on input line 570.
@@ -83,7 +73,8 @@ LaTeX Encoding Info:    Redeclaring text command \guillemotleft (encoding OT1)
 on input line 6.
 LaTeX Encoding Info:    Redeclaring text command \guillemotright (encoding OT1)
  on input line 6.
- (/usr/share/texmf-dist/tex/latex/geometry/geometry.sty
+
+(/usr/share/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
 
 (/usr/share/texmf-dist/tex/latex/graphics/keyval.sty
@@ -398,7 +389,7 @@ LaTeX Info: Redefining \Relbar on input line 970.
 LaTeX Info: Redefining \[ on input line 2950.
 LaTeX Info: Redefining \] on input line 2951.
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 24.
+Package hyperref Info: Option `colorlinks' set `true' on input line 25.
 
 (/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
@@ -411,26 +402,26 @@ Package babel Info: 'spanish' activates 'spanish' shorthands.
 )
 \openout1 = `auxx.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Info: Redefining \. on input line 35.
-LaTeX Info: Redefining \% on input line 35.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Info: Redefining \. on input line 36.
+LaTeX Info: Redefining \% on input line 36.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -475,7 +466,7 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 Package color Info: Driver file: pdftex.def on input line 149.
 
 (/usr/share/texmf-dist/tex/latex/graphics/mathcolor.ltx))
-Package hyperref Info: Link coloring ON on input line 35.
+Package hyperref Info: Link coloring ON on input line 36.
  (./auxx.out)
 (./auxx.out)
 \@outlinefile=\write3
@@ -505,7 +496,7 @@ e
 )) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (16.7511pt too wide) in paragraph at lines 85--86
+Overfull \hbox (16.7511pt too wide) in paragraph at lines 86--87
 \T1/cmr/m/n/10.95 ba-jo el nom-bre [][]$\T1/cmtt/m/n/10.95 https : / / www . ka
 ggle . com / datasets / neelagiriaditya / ufc-[]datasets-[]1994-[]2025$[][]\T1/
 cmr/m/n/10.95 . 
@@ -513,7 +504,7 @@ cmr/m/n/10.95 .
 
 [2]
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 108.
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 109.
  [3]
 ignored: Infinite glue shrinkage found in box being split [4]
 ignored: Infinite glue shrinkage
@@ -523,153 +514,177 @@ ignored: Infinite glue shrinkage found in box being split [
 ignored: Infinite glue shrinkage found in box being split [7]
 ignored: Infinite glue shrinkage f
 ound in box being split [8]
-<DistribucionDePeleas.png, id=100, 367.8543pt x 365.6862pt>
-File: DistribucionDePeleas.png Graphic file (type png)
-<use DistribucionDePeleas.png>
-Package pdftex.def Info: DistribucionDePeleas.png  used on input line 269.
+<../figures/DistribucionDePeleas.png, id=99, 367.8543pt x 365.6862pt>
+File: ../figures/DistribucionDePeleas.png Graphic file (type png)
+<use ../figures/DistribucionDePeleas.png>
+Package pdftex.def Info: ../figures/DistribucionDePeleas.png  used on input lin
+e 270.
 (pdftex.def)             Requested size: 273.14923pt x 271.54097pt.
-<DistribucionDeNulos.png, id=103, 987.2082pt x 842.6682pt>
-File: DistribucionDeNulos.png Graphic file (type png)
-<use DistribucionDeNulos.png>
-Package pdftex.def Info: DistribucionDeNulos.png  used on input line 278.
-(pdftex.def)             Requested size: 455.24411pt x 388.59644pt.
+<../figures/CortePeleas.png, id=102, 698.1282pt x 552.8655pt>
+File: ../figures/CortePeleas.png Graphic file (type png)
+<use ../figures/CortePeleas.png>
+Package pdftex.def Info: ../figures/CortePeleas.png  used on input line 279.
+(pdftex.def)             Requested size: 386.96027pt x 306.43904pt.
  [9
 pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.282 
-       <./DistribucionDePeleas.png>]
-<CortePeleas.png, id=112, 698.1282pt x 552.8655pt>
-File: CortePeleas.png Graphic file (type png)
-<use CortePeleas.png>
-Package pdftex.def Info: CortePeleas.png  used on input line 287.
-(pdftex.def)             Requested size: 386.96027pt x 306.43904pt.
+l.283 
+       <../figures/DistribucionDePeleas.png>]
+<../figures/DistribucionDeNulos.png, id=110, 987.2082pt x 842.6682pt>
+File: ../figures/DistribucionDeNulos.png Graphic file (type png)
+<use ../figures/DistribucionDeNulos.png>
+Package pdftex.def Info: ../figures/DistribucionDeNulos.png  used on input line
+ 291.
+(pdftex.def)             Requested size: 455.24411pt x 388.59644pt.
  [10
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.291 
-       <./DistribucionDeNulos.png>]
-<outliers.png, id=120, 1000.2168pt x 422.0568pt>
-File: outliers.png Graphic file (type png)
-<use outliers.png>
-Package pdftex.def Info: outliers.png  used on input line 299.
+l.295 
+       <../figures/CortePeleas.png>]
+<../figures/outliers.png, id=117, 1000.2168pt x 422.0568pt>
+File: ../figures/outliers.png Graphic file (type png)
+<use ../figures/outliers.png>
+Package pdftex.def Info: ../figures/outliers.png  used on input line 301.
 (pdftex.def)             Requested size: 455.24411pt x 192.10054pt.
  [11
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.303 
-       <./CortePeleas.png>]
-<heatmap.png, id=128, 672.8337pt x 566.5968pt>
-File: heatmap.png Graphic file (type png)
-<use heatmap.png>
-Package pdftex.def Info: heatmap.png  used on input line 309.
+l.305 
+       <../figures/DistribucionDeNulos.png>]
+<../figures/heatmap.png, id=123, 672.8337pt x 566.5968pt>
+File: ../figures/heatmap.png Graphic file (type png)
+<use ../figures/heatmap.png>
+Package pdftex.def Info: ../figures/heatmap.png  used on input line 311.
 (pdftex.def)             Requested size: 455.24411pt x 383.37006pt.
  [12
 pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.313 A
+l.315 A
        lgunos puntos a destacar son la fuerte correlación positiva (0.87) e...
- <./outliers.png>]
-<DatosFaltantes.png, id=136, 917.1063pt x 478.4274pt>
-File: DatosFaltantes.png Graphic file (type png)
-<use DatosFaltantes.png>
-Package pdftex.def Info: DatosFaltantes.png  used on input line 319.
+ <../figures/outliers.png>]
+<../figures/DatosFaltantes.png, id=130, 917.1063pt x 478.4274pt>
+File: ../figures/DatosFaltantes.png Graphic file (type png)
+<use ../figures/DatosFaltantes.png>
+Package pdftex.def Info: ../figures/DatosFaltantes.png  used on input line 321.
+
 (pdftex.def)             Requested size: 432.48051pt x 225.61282pt.
  [13
 pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.323 
-       <./heatmap.png>]
-<Imagen3.png, id=145, 1276.2882pt x 842.6682pt>
-File: Imagen3.png Graphic file (type png)
-<use Imagen3.png>
-Package pdftex.def Info: Imagen3.png  used on input line 331.
+l.325 
+       <../figures/heatmap.png>]
+<../figures/Imagen3.png, id=139, 1276.2882pt x 842.6682pt>
+File: ../figures/Imagen3.png Graphic file (type png)
+<use ../figures/Imagen3.png>
+Package pdftex.def Info: ../figures/Imagen3.png  used on input line 333.
 (pdftex.def)             Requested size: 455.24411pt x 300.57011pt.
  [14
 pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.335 
-       <./DatosFaltantes.png>]
-<VentajasPerfilesVictoria.png, id=152, 919.9971pt x 992.2671pt>
-File: VentajasPerfilesVictoria.png Graphic file (type png)
-<use VentajasPerfilesVictoria.png>
-Package pdftex.def Info: VentajasPerfilesVictoria.png  used on input line 338.
+l.337 
+       <../figures/DatosFaltantes.png>]
+<../figures/VentajasPerfilesVictoria.png, id=147, 919.9971pt x 992.2671pt>
+File: ../figures/VentajasPerfilesVictoria.png Graphic file (type png)
+<use ../figures/VentajasPerfilesVictoria.png>
+Package pdftex.def Info: ../figures/VentajasPerfilesVictoria.png  used on input
+ line 340.
 (pdftex.def)             Requested size: 432.48051pt x 466.45645pt.
  [15
 pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.342 
-       <./Imagen3.png>] [16
+l.344 
+       <../figures/Imagen3.png>] [16
 pdfTeX warning (ext4): destination with the same identifier (name{figure.8}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.355 
-       <./VentajasPerfilesVictoria.png>]
-<Evolucion_Metodos_Duracion.png, id=168, 1421.31pt x 491.436pt>
-File: Evolucion_Metodos_Duracion.png Graphic file (type png)
-<use Evolucion_Metodos_Duracion.png>
-Package pdftex.def Info: Evolucion_Metodos_Duracion.png  used on input line 360
-.
-(pdftex.def)             Requested size: 455.24411pt x 157.4052pt.
-<Evolucion_Tecnica.png, id=170, 1702.9221pt x 491.436pt>
-File: Evolucion_Tecnica.png Graphic file (type png)
-<use Evolucion_Tecnica.png>
-Package pdftex.def Info: Evolucion_Tecnica.png  used on input line 369.
-(pdftex.def)             Requested size: 455.24411pt x 131.36972pt.
-<clustering.png, id=172, 711.1368pt x 422.0568pt>
-File: clustering.png Graphic file (type png)
-<use clustering.png>
-Package pdftex.def Info: clustering.png  used on input line 377.
-(pdftex.def)             Requested size: 455.24411pt x 270.18626pt.
+l.357 
+       <../figures/VentajasPerfilesVictoria.png>]
+<../figures/Evolucion_Metodos_Duracion.png, id=160, 1421.0691pt x 490.2315pt>
+File: ../figures/Evolucion_Metodos_Duracion.png Graphic file (type png)
+<use ../figures/Evolucion_Metodos_Duracion.png>
+Package pdftex.def Info: ../figures/Evolucion_Metodos_Duracion.png  used on inp
+ut line 362.
+(pdftex.def)             Requested size: 455.24411pt x 157.04184pt.
+<../figures/Evolucion_Tecnica.png, id=162, 1699.0677pt x 490.2315pt>
+File: ../figures/Evolucion_Tecnica.png Graphic file (type png)
+<use ../figures/Evolucion_Tecnica.png>
+Package pdftex.def Info: ../figures/Evolucion_Tecnica.png  used on input line 3
+71.
+(pdftex.def)             Requested size: 455.24411pt x 131.34694pt.
  [17
 pdfTeX warning (ext4): destination with the same identifier (name{figure.9}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.380 \end{figure}
-                  
+l.377 
+      
 pdfTeX warning (ext4): destination with the same identifier (name{figure.10}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.380 \end{figure}
-                   <./Evolucion_Metodos_Duracion.png> <./Evolucion_Tecnica.png>
-] [18
+l.377 
+       <../figures/Evolucion_Metodos_Duracion.png> <../figures/Evolucion_Tecnic
+a.png>]
+<../figures/clustering.png, id=172, 711.1368pt x 422.0568pt>
+File: ../figures/clustering.png Graphic file (type png)
+<use ../figures/clustering.png>
+Package pdftex.def Info: ../figures/clustering.png  used on input line 380.
+(pdftex.def)             Requested size: 455.24411pt x 270.18626pt.
+<../figures/codo_y_silouette.png, id=173, 860.21375pt x 504.88625pt>
+File: ../figures/codo_y_silouette.png Graphic file (type png)
+<use ../figures/codo_y_silouette.png>
+Package pdftex.def Info: ../figures/codo_y_silouette.png  used on input line 38
+9.
+(pdftex.def)             Requested size: 455.24411pt x 267.20323pt.
+ [18
 pdfTeX warning (ext4): destination with the same identifier (name{figure.11}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.420     \item \textbf
-                       {Árbol de Decisión}: Accuracy 65.74\%, recall para ...
- <./clustering.png>]
-<ArboldeClasificacion-PrediccionPrePelea.png, id=188, 1148.3703pt x 589.7232pt>
-
-File: ArboldeClasificacion-PrediccionPrePelea.png Graphic file (type png)
-<use ArboldeClasificacion-PrediccionPrePelea.png>
-Package pdftex.def Info: ArboldeClasificacion-PrediccionPrePelea.png  used on i
-nput line 445.
-(pdftex.def)             Requested size: 409.71692pt x 210.40152pt.
- [19] [20
+l.393 
+       <../figures/clustering.png>] [19
 pdfTeX warning (ext4): destination with the same identifier (name{figure.12}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.450 \end{document}
-                     <./ArboldeClasificacion-PrediccionPrePelea.png>]
+l.446 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has
+ been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.446 
+       <../figures/codo_y_silouette.png (PNG copy)>] [20]
+<../figures/ArboldeClasificacion-PrediccionPrePelea.png, id=199, 1148.3703pt x 
+589.7232pt>
+File: ../figures/ArboldeClasificacion-PrediccionPrePelea.png Graphic file (type
+ png)
+<use ../figures/ArboldeClasificacion-PrediccionPrePelea.png>
+Package pdftex.def Info: ../figures/ArboldeClasificacion-PrediccionPrePelea.png
+  used on input line 491.
+(pdftex.def)             Requested size: 409.71692pt x 210.40152pt.
+ [21] [22
+pdfTeX warning (ext4): destination with the same identifier (name{figure.13}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.496 \end{document}
+                     <../figures/ArboldeClasificacion-PrediccionPrePelea.png>]
 (./auxx.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
@@ -682,32 +697,34 @@ Package rerunfilecheck Info: File `auxx.out' has not changed.
 (rerunfilecheck)             Checksum: C193CB4FB3C089D2B0A1125C01C1760A;2816.
  ) 
 Here is how much of TeX's memory you used:
- 12235 strings out of 469515
- 188413 string characters out of 5470807
- 710454 words of memory out of 5000000
- 40691 multiletter control sequences out of 15000+600000
- 644677 words of font info for 75 fonts, out of 8000000 for 9000
- 14 hyphenation exceptions out of 8191
- 75i,8n,79p,753b,605s stack positions out of 10000i,1000n,20000p,200000b,200000s
- </home/taci/.texlive/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600pk> <
-/home/taci/.texlive/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.600pk> </hom
-e/taci/.texlive/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </home/ta
-ci/.texlive/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </home/taci/.
-texlive/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1095.600pk> </home/taci/.texl
-ive/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbi1095.600pk> </home/taci/.texlive/
-texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/taci/.texlive/texm
-f-var/fonts/pk/ljfour/jknappen/ec/ecti1095.600pk> </home/taci/.texlive/texmf-va
-r/fonts/pk/ljfour/jknappen/ec/ecbx1095.600pk> </home/taci/.texlive/texmf-var/fo
-nts/pk/ljfour/jknappen/ec/ecrm1095.600pk> </home/taci/.texlive/texmf-var/fonts/
-pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/taci/.texlive/texmf-var/fonts/pk/l
-jfour/jknappen/ec/ecrm1200.600pk> </home/taci/.texlive/texmf-var/fonts/pk/ljfou
-r/jknappen/ec/ecbx1728.600pk></usr/share/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on auxx.pdf (20 pages, 2239701 bytes).
+ 12286 strings out of 469453
+ 190488 string characters out of 5469038
+ 710761 words of memory out of 5000000
+ 40740 multiletter control sequences out of 15000+600000
+ 647355 words of font info for 81 fonts, out of 8000000 for 9000
+ 40 hyphenation exceptions out of 8191
+ 75i,9n,79p,753b,605s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ </home/taci/.texlive/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900.600pk> <
+/home/taci/.texlive/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx0900.600pk> </hom
+e/taci/.texlive/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600pk> </home/ta
+ci/.texlive/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.600pk> </home/taci/.
+texlive/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </home/taci/.texl
+ive/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </home/taci/.texlive/
+texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1095.600pk> </home/taci/.texlive/texm
+f-var/fonts/pk/ljfour/jknappen/ec/ecbi1095.600pk> </home/taci/.texlive/texmf-va
+r/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/taci/.texlive/texmf-var/fo
+nts/pk/ljfour/jknappen/ec/ecti1095.600pk> </home/taci/.texlive/texmf-var/fonts/
+pk/ljfour/jknappen/ec/ecbx1095.600pk> </home/taci/.texlive/texmf-var/fonts/pk/l
+jfour/jknappen/ec/ecrm1095.600pk> </home/taci/.texlive/texmf-var/fonts/pk/ljfou
+r/jknappen/ec/ecbx1440.600pk> </home/taci/.texlive/texmf-var/fonts/pk/ljfour/jk
+nappen/ec/ecrm1200.600pk> </home/taci/.texlive/texmf-var/fonts/pk/ljfour/jknapp
+en/ec/ecbx1728.600pk></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
+10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/sh
+are/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on auxx.pdf (22 pages, 2313643 bytes).
 PDF statistics:
- 753 PDF objects out of 1000 (max. 8388607)
- 216 compressed objects within 3 object streams
- 47 named destinations out of 1000 (max. 500000)
- 141 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 796 PDF objects out of 1000 (max. 8388607)
+ 226 compressed objects within 3 object streams
+ 51 named destinations out of 1000 (max. 500000)
+ 146 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -373,22 +373,50 @@ Finalmente, la Figura \ref{fig:evolucion_tecnica} expone la evolución competiti
     \label{fig:evolucion_tecnica}
 \end{figure}
 
-Para darle un cierre a esta etapa de análisis se aplicó un modelo de aprendizaje no supervisado (K-medias) para identificar perfiles y estilos de combate. Las variables seleccionadas fueron estandarizadas previamente.
+Para darle un cierre a esta etapa de análisis, se aplicó un modelo de aprendizaje no supervisado (K-medias) sobre múltiples atributos técnicos para identificar estilos de combate. Se utilizaron las variables: golpes conectados por minuto, precisión de golpeo, golpes recibidos, defensa de golpeo, promedio de derribos, precisión de derribo, defensa de derribo y promedio de sumisiones, todas estandarizadas previamente.
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{clustering.png}
     \caption{Separación de perfiles clásicos del MMA mediante Clustering por K-Medias.}
     \label{fig:clustering}
 \end{figure}
-Al segmentar la población en 3 clusters, el algoritmo logró separar con precisión los arquetipos clásicos del MMA:
+
+Para justificar la elección de $k=3$, se aplicaron el método del codo y el cálculo de silhouette. El gráfico del codo mostró una inflexión clara en $k=3$, y el silhouette también confirmó que este valor ofrece la mejor separación entre grupos.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{codo_y_silouette.png}
+    \caption{Método del codo y Silhouette graficados.}
+    \label{fig:codo-silhouette}
+\end{figure}
+
+Al segmentar la población en 3 clusters, se lograron diferenciar tres arquetipos, los cuales se describen a partir de sus centroides (ver Tabla \ref{tab:centroides}):
+
+\begin{table}[H]
+    \centering
+    \footnotesize
+    \setlength{\tabcolsep}{3.5pt}
+    \begin{tabular}{ccccccccc}
+        \toprule
+        \textbf{Cluster} & \textbf{splm} & \textbf{str\_acc (\%)} & \textbf{sapm} & \textbf{str\_def (\%)} & \textbf{td\_avg} & \textbf{td\_acc (\%)} & \textbf{td\_def (\%)} & \textbf{sub\_avg} \\
+        \midrule
+        0 & 4.53 & 45.99 & 4.28 & 53.96 & 0.81 & 31.34 & 69.52 & 0.28 \\
+        1 & 3.11 & 45.86 & 2.74 & 57.14 & 2.40 & 47.01 & 66.64 & 0.57 \\
+        2 & 2.62 & 41.92 & 3.55 & 48.88 & 1.40 & 28.52 & 38.55 & 1.09 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Valores de los centroides en la escala original para cada cluster.}
+    \label{tab:centroides}
+\end{table}
 
 \begin{itemize}
-    \item \textbf{Cluster 1 (Strikers):} Atletas que se caracterizan por una frecuencia de golpeo significativamente superior a la media, manteniendo estadísticas casi nulas en el juego de suelo. Son los especialistas en el combate de pie.
-    \item \textbf{Cluster 2 (Grapplers):} Competidores que sobresalen por su alta tasa de derribos y control. Basan su estrategia de victoria en la sujeción y el dominio en el piso.
-    \item \textbf{Cluster 0 (Estilo Mixto / Promedio):} Constituye el grupo más denso de la muestra, como es esperable. Contiene a peleadores con métricas equilibradas.
+    \item \textbf{Cluster 0 (Estilo Mixto):} Agrupa a peleadores con métricas intermedias y equilibradas. Conectan alrededor de 4.5 golpes por minuto y tienen un promedio de derribos moderado, representando a luchadores todoterreno.
+    \item \textbf{Cluster 1 (Strikers):} Atletas con alto volumen de golpes y buena precisión, que reciben menos daño (sapm bajo) y muestran buena defensa de derribo, pero sus intentos de llevar la pelea al suelo y buscar sumisiones son casi nulos.
+    \item \textbf{Cluster 2 (Grapplers):} Competidores con una alta tasa de derribos y control en el suelo, con el mayor promedio de sumisiones (sub\_avg alto), pero que conectan menor cantidad de golpes y muestran la menor precisión de golpeo.
 \end{itemize}
 
-El conjunto de datos resultante es robusto, se encuentra libre de redundancias críticas y cuenta con una tipología clara, quedando en condiciones óptimas para la implementación de modelos predictivos de resultados de combate.
+El conjunto de datos resultante es sólido, no tiene redundancias críticas y define estilos de pelea de forma precisa. Esto lo deja en condiciones ideales para implementar modelos predictivos.
 
 %A continuación, se detalla el enfoque proyectado para cada una de las preguntas de investigación:
 
@@ -414,13 +442,29 @@ El conjunto de datos resultante es robusto, se encuentra libre de redundancias c
 
 \section{Análisis Predictivo Pre-Pelea y Respuesta a las Preguntas}
 
-Se entrenaron un clasificador Naïve Bayes Gaussiano y un Árbol de Decisión (criterio entropía, profundidad limitada por poda) utilizando únicamente variables pre-pelea: diferencias de edad, altura, alcance, victorias, derrotas y defensa de golpeo (diff\_str\_def). El conjunto de prueba contenía 1217 combates (711 victorias del rojo, 506 del azul). 
+Se entrenaron un clasificador Naïve Bayes Gaussiano y un Árbol de Decisión (criterio entropía, profundidad máxima de 5) utilizando únicamente variables pre-pelea: diferencias de edad, altura, alcance, victorias, derrotas y defensa de golpeo (diff\_str\_def). 
 
-Los resultados cuantitativos fueron:
+Para evaluar estos modelos, se definió un modelo base (baseline). El conjunto de prueba contiene 1217 combates, donde 711 son victorias del rincón rojo y 506 del rincón azul. Por tanto, predecir siempre que ganará el rincón rojo arroja una precisión base del 58,42\%.
+
+El Árbol de Decisión logró una exactitud del 65,74\% en el conjunto de prueba, lo que demuestra una mejora de más de 7 puntos porcentuales con respecto a la predicción estática (baseline). Además, el algoritmo tiene una dificultad de cómputo en la fase de entrenamiento de $\mathcal{O}(n \cdot d \log(n))$, donde $n$ es la cantidad de muestras y $d$ la de atributos, y de $\mathcal{O}(\text{profundidad})$ en la predicción. En el dominio de las MMA, esto es sumamente útil porque permite evaluar ventajas en tiempo real de forma instantánea.
+
+Las métricas detalladas por clase para el Árbol de Decisión muestran el siguiente comportamiento:
+
+\textbf{En Entrenamiento:}
 \begin{itemize}
-    \item \textbf{Naïve Bayes}: Accuracy 65.00\%, recall para clase azul 53\%, para rojo 74\%.
-    \item \textbf{Árbol de Decisión}: Accuracy 65.74\%, recall para clase azul 41\%, para rojo 84\%.
+    \item \textbf{Precisión (Precision):} 64\% general. Ayuda a confiar en que la predicción de victoria de un luchador es segura y no una falsa alarma. Útil para estrategias de apuestas y selección de peleas.
+    \item \textbf{Recall:} 65\% para la clase Azul y 63\% para la clase Roja. Indica qué proporción de las victorias reales logra encontrar el modelo. Crucial para no perder de vista oportunidades reales de victoria.
+    \item \textbf{F1-Score:} 65\% para la Azul y 64\% para la Roja. Brinda un balance entre precisión y recall, ideal porque en MMA los falsos positivos y falsos negativos tienen costos estratégicos diferentes.
 \end{itemize}
+La matriz de confusión en entrenamiento arrojó 3209 verdaderos negativos, 1696 falsos positivos, 1770 falsos negativos y 3056 verdaderos positivos.
+
+\textbf{En Prueba:}
+\begin{itemize}
+    \item \textbf{Precisión (Precision):} 61\% para la clase Azul y 64\% para la clase Roja. 
+    \item \textbf{Recall:} 63\% para la Azul y 62\% para la Roja.
+    \item \textbf{F1-Score:} 62\% para la Azul y 63\% para la Roja.
+\end{itemize}
+La matriz de confusión en prueba evidenció 739 verdaderos negativos, 438 falsos positivos, 479 falsos negativos y 777 verdaderos positivos.
 
 El árbol de clasificación, a pesar de su menor recall para la clase minoritaria, permite extraer reglas interpretables. Tras analizar su estructura (Figura~\ref{fig:arbol_pre_pelea}) se observa que la primera división suele estar basada en \texttt{diff\_str\_def <= -11.5}, lo que indica que si el luchador azul tiene una defensa de golpeo muy superior a la del rojo, el árbol predice victoria del azul. En caso contrario, se evalúan diferencias en victorias acumuladas y edad. 
 
