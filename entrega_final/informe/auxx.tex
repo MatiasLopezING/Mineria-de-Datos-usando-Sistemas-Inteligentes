@@ -400,7 +400,17 @@ Finalmente, la Figura \ref{fig:evolucion_tecnica} expone la evolución competiti
     \label{fig:evolucion_tecnica}
 \end{figure}
 
-Para darle un cierre a esta etapa de análisis, se aplicó un modelo de aprendizaje no supervisado (K-medias) sobre múltiples atributos técnicos para identificar estilos de combate. Se utilizaron las variables: golpes conectados por minuto, precisión de golpeo, golpes recibidos, defensa de golpeo, promedio de derribos, precisión de derribo, defensa de derribo y promedio de sumisiones, todas estandarizadas previamente.
+\section{Agrupamiento de estilos de combate (Clustering por K-medias)}
+\label{sec:agrupamientos}
+
+Para caracterizar los estilos de pelea presentes en la población se aplicó aprendizaje no supervisado mediante \textbf{K-medias}. En lugar de un único agrupamiento, se construyeron varias clusterizaciones complementarias que muestran distintas facetas del estilo de combate: desde una visión amplia con ocho métricas técnicas, hasta espacios más reducidos e interpretables que aíslan ejes concretos (ofensa contra defensa, perfil de striking y perfil de riesgo). Reunirlas en una misma sección permite contrastar qué estructura emerge según el subconjunto de variables elegido.
+
+Todos los agrupamientos comparten una metodología común. Las variables se estandarizan a media cero y varianza unitaria para que ninguna domine la distancia euclídea por su escala. El número óptimo de grupos se valida con el método del codo (inercia) y el índice de Silhouette, eligiendo el $k$ que maximiza esta última. Finalmente, cuando el espacio tiene más de dos dimensiones, los datos se proyectan mediante análisis de componentes principales (PCA) a dos dimensiones para poder visualizar la separación de los grupos; las cruces negras de cada gráfico marcan los centroides proyectados en ese espacio reducido. Salvo el primer agrupamiento —que opera sobre el registro técnico de cada peleador por combate— los demás deduplican el dataset a una fila por peleador, promediando históricamente cada variable para que los competidores con más peleas registradas no sesguen los centroides; ese subconjunto comprende \textbf{1891 peleadores únicos}.
+
+\subsection{Estilos clásicos del MMA}
+\label{subsec:cluster-ocho}
+
+El primer agrupamiento busca recuperar los arquetipos clásicos del MMA a partir de un espacio técnico amplio. Se utilizaron ocho variables históricas estandarizadas: golpes significativos conectados por minuto (\texttt{splm}), precisión de golpeo (\texttt{str\_acc}), golpes recibidos por minuto (\texttt{sapm}), defensa de golpeo (\texttt{str\_def}), promedio de derribos (\texttt{td\_avg}), precisión de derribo (\texttt{td\_acc}), defensa de derribo (\texttt{td\_def}) y promedio de intentos de sumisión (\texttt{sub\_avg}).
 
 \begin{figure}[H]
     \centering
@@ -409,16 +419,16 @@ Para darle un cierre a esta etapa de análisis, se aplicó un modelo de aprendiz
     \label{fig:clustering}
 \end{figure}
 
-Para justificar la elección de $k=3$, se aplicaron el método del codo y el cálculo de silhouette. El gráfico del codo mostró una inflexión clara en $k=3$, y el silhouette también confirmó que este valor ofrece la mejor separación entre grupos.
+Para justificar la elección de $k=3$ se aplicaron el método del codo y el cálculo de Silhouette. El gráfico del codo mostró una inflexión clara en $k=3$, y la Silhouette confirmó que este valor ofrece la mejor separación entre grupos.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{codo_y_silouette.png}
-    \caption{Método del codo y Silhouette graficados.}
+    \caption{Método del codo y Silhouette graficados para el agrupamiento de ocho métricas técnicas.}
     \label{fig:codo-silhouette}
 \end{figure}
 
-Al segmentar la población en 3 clusters, se lograron diferenciar tres arquetipos, los cuales se describen a partir de sus centroides (ver Tabla \ref{tab:centroides}):
+Al segmentar la población en 3 clusters se diferenciaron tres arquetipos, descritos a partir de sus centroides (ver Tabla~\ref{tab:centroides}):
 
 \begin{table}[H]
     \centering
@@ -443,28 +453,170 @@ Al segmentar la población en 3 clusters, se lograron diferenciar tres arquetipo
     \item \textbf{Cluster 2 (Grapplers):} Competidores con una alta tasa de derribos y control en el suelo, con el mayor promedio de sumisiones (sub\_avg alto), pero que conectan menor cantidad de golpes y muestran la menor precisión de golpeo.
 \end{itemize}
 
-El conjunto de datos resultante es sólido, no tiene redundancias críticas y define estilos de pelea de forma precisa. Esto lo deja en condiciones ideales para implementar modelos predictivos.
+\subsection{Matriz ofensa $\times$ defensa, pie $\times$ suelo}
+\label{subsec:cluster-ofensa-defensa}
 
-%A continuación, se detalla el enfoque proyectado para cada una de las preguntas de investigación:
+El agrupamiento anterior captura la estructura general, pero mezcla ejes ofensivos y defensivos. Para obtener una lectura más nítida se construyó un segundo agrupamiento basado en cuatro variables que forman una \textbf{matriz ofensa $\times$ defensa} en dos planos de combate:
 
-%\subsection*{1. ¿Qué luchador tiene mayor probabilidad de ganar una pelea dada?}
-%Dado que este problema se abordará como una tarea de clasificación binaria, es de vital importancia utilizar únicamente información disponible \textbf{antes} de que ocurra el combate. 
+\begin{table}[H]
+    \centering
+    \small
+    \begin{tabular}{lcc}
+        \toprule
+        \textbf{Dimensión} & \textbf{Ofensiva} & \textbf{Defensiva} \\
+        \midrule
+        Pie (striking)    & \texttt{splm} — golpes/min         & \texttt{str\_def} — \% golpes evitados \\
+        Suelo (grappling) & \texttt{td\_avg} — derribos/pelea  & \texttt{td\_def} — \% derribos neutralizados \\
+        \bottomrule
+    \end{tabular}
+    \caption{Variables seleccionadas para el agrupamiento ofensa $\times$ defensa, pie $\times$ suelo.}
+    \label{tab:vars-4}
+\end{table}
 
-%Por lo tanto, se descartarán todas las estadísticas recolectadas \textit{durante} la pelea en sí (tales como la cantidad de golpes conectados en un round específico, tiempos de control y porcentajes de precisión). Las variables a conservar incluyen metadatos del evento (división, si es por el título, cantidad de rounds) y características pre-combate de cada peleador (récord de victorias/derrotas, postura, edad calculada a partir de la fecha de nacimiento y atributos físicos). 
+Esta selección es conceptualmente limpia: cruza atacar/defender con striking/grappling y detecta al peleador integral (competente en las cuatro dimensiones) frente al unidimensional. Todas las variables son históricas y están disponibles antes de la pelea, por lo que no introducen \textit{leakage}. Además, se evitan deliberadamente la altura y la envergadura, que presentan entre sí una correlación de 0,87, tal como se observó en la matriz de correlación técnica.
 
-%Los valores faltantes en estas variables retenidas se imputarán empleando sus respectivas modas o medianas segmentadas por división. Finalmente, se filtrarán estrictamente las peleas sin un ganador definido para poder entrenar adecuadamente el modelo clasificador (ej. Regresión Logística o Random Forest).
+Tras deduplicar a una fila por peleador y estandarizar, se validó el número óptimo de grupos mediante el codo y la Silhouette (Figura~\ref{fig:codo-silhouette-4vars}), y se proyectaron los datos con PCA a dos dimensiones (Figura~\ref{fig:clustering-4vars-pca}).
 
-%\subsection*{2. Si soy un luchador con determinadas características, ¿qué tipo de pelea me conviene aceptar?}
-%En este escenario, el objetivo es recomendar el contexto de pelea que maximice la probabilidad de victoria. 
-%Se mantendrán las características físicas y de historial del luchador (previamente imputadas), centrando el análisis en las variables de contexto: cantidad de rounds pactados, división, si hay un título en juego y el referí. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{codo_silhouette_4vars.png}
+    \caption{Método del codo e índice de Silhouette para el agrupamiento ofensa $\times$ defensa, pie $\times$ suelo. La línea punteada señala el número óptimo de grupos.}
+    \label{fig:codo-silhouette-4vars}
+\end{figure}
 
-%Para variables de contexto con datos faltantes (por ejemplo, la cantidad de rounds), se realizará una imputación basada en la naturaleza del combate (utilizando la variable \textit{title\_fight} como pista, ya que estas suelen ser a 5 rounds). En el caso de valores ausentes en el campo del árbitro, se generará una categoría independiente (\textit{Unknown}). Se construirá un modelo que prediga la probabilidad de ganar en función de las características fijas del luchador interactuando con las distintas combinaciones posibles del contexto de pelea.
+El índice de Silhouette alcanza su máximo en $k = 2$ (valor $= 0{,}25$), lo que indica que con este espacio de cuatro variables la separación más nítida se produce en dos arquetipos. Los centroides en la escala original se presentan en la Tabla~\ref{tab:centroides-4vars}:
 
-%\subsection*{3. Si soy una persona con determinadas características, ¿qué estilo me conviene practicar?}
-%Esta pregunta requiere cambiar el nivel de análisis: de un enfoque por combate individual a un perfil agregado por luchador. 
-%Para determinar un estilo de pelea (por ejemplo, \textit{Striker} puro, \textit{Grappler} o \textit{Balanceado}), se utilizarán estadísticas históricas acumuladas de cada combatiente (promedio de golpes significativos, derribos y sumisiones). 
+\begin{table}[H]
+    \centering
+    \footnotesize
+    \setlength{\tabcolsep}{4pt}
+    \begin{tabular}{ccccc}
+        \toprule
+        \textbf{Grupo} & \textbf{splm} & \textbf{str\_def (\%)} & \textbf{td\_avg} & \textbf{td\_def (\%)} \\
+        \midrule
+        0 & 2{,}33 & 47{,}46 & 1{,}63 & 33{,}06 \\
+        1 & 3{,}91 & 55{,}77 & 1{,}45 & 70{,}36 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Centroides en escala original para el agrupamiento ofensa $\times$ defensa ($k = 2$, 1891 peleadores únicos).}
+    \label{tab:centroides-4vars}
+\end{table}
 
-%Al crear este nuevo dataset agrupado por luchador, aquellos registros mínimos que presenten valores nulos en columnas esenciales de golpes (como \textit{sig\_str\_landed}) podrán ser directamente eliminados sin impacto significativo (representan menos del 1\% del conjunto). Una vez consolidada la base limpia, se aplicarán algoritmos de agrupamiento (ej. \textit{K-Means}) sobre las estadísticas ofensivas para asignar un estilo definitivo a cada peleador. La recomendación final consistirá en buscar en este espacio a los luchadores físicamente más similares a la persona consultante que posean un porcentaje de victorias superior al 50\%, recomendando el estilo predominante de este subgrupo exitoso.
+La lectura de los centroides revela dos perfiles bien diferenciados:
+
+\begin{itemize}
+    \item \textbf{Grupo 0 — Peleador sin defensa consolidada:} con menor volumen de golpeo (2,33 golpes significativos por minuto) y un promedio de derribos algo más elevado (1,63 por pelea), pero con una defensa de striking relativamente baja (47,5\,\%) y, llamativamente, la defensa de derribos más débil del conjunto (33,1\,\%). Se trata de peleadores cuyo desarrollo ofensivo no va acompañado de una capacidad defensiva equivalente, en particular frente al grappling rival.
+    \item \textbf{Grupo 1 — Peleador técnico y defensivamente completo:} conecta mayor volumen ofensivo en pie (3,91 golpes por minuto) y muestra la mejor defensa de striking del conjunto (55,8\,\%), combinada con una defensa de derribos notablemente superior (70,4\,\%). Es el perfil del peleador técnicamente maduro: genera presión ofensiva sostenida y, al mismo tiempo, neutraliza con eficacia tanto los golpes como los intentos de derribo del rival.
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.90\textwidth]{clustering_4vars_pca.png}
+    \caption{Proyección en dos componentes principales de los grupos obtenidos con las variables \texttt{splm}, \texttt{str\_def}, \texttt{td\_avg} y \texttt{td\_def}. Las cruces negras indican los centroides proyectados en el espacio reducido.}
+    \label{fig:clustering-4vars-pca}
+\end{figure}
+
+Este análisis complementa el agrupamiento de ocho variables presentado previamente: al reducir el espacio a cuatro dimensiones con interpretación directa, la separación entre grupos resulta más limpia e informativa. La distinción fundamental no reside en el estilo de ataque —ambos grupos derriban en proporciones similares— sino en el nivel de madurez defensiva, lo que sugiere que la capacidad de neutralizar tanto el golpeo como el derribo rival es el atributo que mejor caracteriza al peleador técnicamente más completo dentro de la población analizada.
+
+\subsection{Perfil de striking puro}
+\label{subsec:cluster-striking}
+
+El tercer agrupamiento se concentra exclusivamente en el juego de pie, descartando toda variable de grappling. Utiliza tres dimensiones poco redundantes entre sí que describen cómo pelea un atleta cuando intercambia golpes: cuánto tira (volumen, \texttt{splm}), qué tan bien conecta (precisión, \texttt{str\_acc}) y qué tan bien evita ser golpeado (defensa, \texttt{str\_def}). La premisa es que estos tres ejes separan arquetipos de striker interpretables —el de volumen bruto, el francotirador preciso y el muro defensivo— sin la información mezclada que aportan los derribos o las sumisiones.
+
+Siguiendo la metodología común (una fila por peleador, estandarización y validación por codo y Silhouette), el índice de Silhouette alcanza su máximo en $k = 4$ (valor $= 0{,}27$), como muestra la Figura~\ref{fig:codo-silhouette-striking}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{codo_silhouette_striking.png}
+    \caption{Método del codo e índice de Silhouette para el perfil de striking puro (\texttt{splm}, \texttt{str\_acc}, \texttt{str\_def}). La línea punteada señala el número óptimo de grupos ($k = 4$).}
+    \label{fig:codo-silhouette-striking}
+\end{figure}
+
+Los centroides en la escala original (Tabla~\ref{tab:centroides-striking}) revelan que, además de los tres arquetipos esperados, emerge un cuarto perfil de bajo rendimiento de pie:
+
+\begin{table}[H]
+    \centering
+    \footnotesize
+    \setlength{\tabcolsep}{5pt}
+    \begin{tabular}{ccccc}
+        \toprule
+        \textbf{Grupo} & \textbf{splm} & \textbf{str\_acc (\%)} & \textbf{str\_def (\%)} & \textbf{\# peleadores} \\
+        \midrule
+        0 & 2{,}93 & 40{,}35 & 59{,}71 & 696 \\
+        1 & 5{,}34 & 49{,}94 & 54{,}02 & 438 \\
+        2 & 2{,}90 & 50{,}91 & 46{,}24 & 478 \\
+        3 & 1{,}92 & 32{,}43 & 44{,}30 & 279 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Centroides en escala original para el perfil de striking puro ($k = 4$, 1891 peleadores únicos).}
+    \label{tab:centroides-striking}
+\end{table}
+
+\begin{itemize}
+    \item \textbf{Grupo 0 — El muro defensivo:} volumen y precisión moderados (2,93 golpes/min, 40,4\,\%) pero la mejor defensa de golpeo del conjunto (59,7\,\%). No abruma con volumen ni destaca por su puntería, sino por lo difícil que resulta golpearlo.
+    \item \textbf{Grupo 1 — El de volumen bruto:} el mayor caudal de golpeo con diferencia (5,34 golpes/min) y buena precisión (49,9\,\%), sostenido sobre una defensa correcta (54,0\,\%). Es el striker de presión que inunda al rival con cantidad.
+    \item \textbf{Grupo 2 — El francotirador preciso:} volumen bajo (2,90 golpes/min) pero la mayor precisión del conjunto (50,9\,\%), a costa de la defensa más floja entre los tres arquetipos activos (46,2\,\%). Tira menos, pero conecta el mayor porcentaje de lo que lanza.
+    \item \textbf{Grupo 3 — Striker limitado:} bajo en las tres métricas (1,92 golpes/min, 32,4\,\% de precisión, 44,3\,\% de defensa). Reúne a peleadores con escaso desarrollo del juego de pie, probablemente competidores cuya fortaleza reside en el grappling —dimensión que este espacio no observa.
+\end{itemize}
+
+La proyección PCA (Figura~\ref{fig:clustering-striking-pca}) confirma la separación: las dos primeras componentes explican el 81,5\,\% de la varianza y ordenan a los peleadores principalmente por volumen-precisión (PC1) y por defensa (PC2).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.90\textwidth]{clustering_striking_pca.png}
+    \caption{Proyección en dos componentes principales de los grupos obtenidos con \texttt{splm}, \texttt{str\_acc} y \texttt{str\_def}. Las cruces negras indican los centroides proyectados en el espacio reducido.}
+    \label{fig:clustering-striking-pca}
+\end{figure}
+
+\subsection{Perfil de riesgo / intercambio de daño}
+\label{subsec:cluster-riesgo}
+
+El último agrupamiento captura el eje \textbf{presión contra contragolpe}: cuánto daño da y cuánto recibe un peleador. Para ello combina el volumen ofensivo (\texttt{splm}), el daño absorbido por minuto (\texttt{sapm}) y la defensa de golpeo (\texttt{str\_def}). La intención es separar al \textit{pressure fighter}, que da y recibe mucho, del \textit{outfighter}, que da y recibe poco; precisamente la correlación moderada entre \texttt{splm} y \texttt{sapm} (0,49) observada en la matriz de Pearson es la que este espacio busca aprovechar. Cabe señalar que \texttt{sapm} y \texttt{str\_def} miden parcialmente lo mismo —ambas se relacionan con recibir golpes—, por lo que conviene leer los grupos con esa redundancia en mente.
+
+Aplicada la metodología común, el índice de Silhouette alcanza su máximo en $k = 2$ (valor $= 0{,}31$, el más alto de todos los agrupamientos), como muestra la Figura~\ref{fig:codo-silhouette-riesgo}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{codo_silhouette_riesgo.png}
+    \caption{Método del codo e índice de Silhouette para el perfil de riesgo / intercambio de daño (\texttt{splm}, \texttt{sapm}, \texttt{str\_def}). La línea punteada señala el número óptimo de grupos ($k = 2$).}
+    \label{fig:codo-silhouette-riesgo}
+\end{figure}
+
+Los centroides en la escala original (Tabla~\ref{tab:centroides-riesgo}) trazan con claridad el eje de intercambio:
+
+\begin{table}[H]
+    \centering
+    \footnotesize
+    \setlength{\tabcolsep}{5pt}
+    \begin{tabular}{ccccc}
+        \toprule
+        \textbf{Grupo} & \textbf{splm} & \textbf{sapm} & \textbf{str\_def (\%)} & \textbf{\# peleadores} \\
+        \midrule
+        0 & 2{,}75 & 2{,}90 & 54{,}56 & 1262 \\
+        1 & 4{,}51 & 5{,}16 & 49{,}04 & 629 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Centroides en escala original para el perfil de riesgo / intercambio de daño ($k = 2$, 1891 peleadores únicos).}
+    \label{tab:centroides-riesgo}
+\end{table}
+
+\begin{itemize}
+    \item \textbf{Grupo 0 — Outfighter de bajo intercambio:} da poco (2,75 golpes/min) y recibe poco (2,90 golpes/min), con la mejor defensa de golpeo (54,6\,\%). Es el perfil cauto que controla la distancia y minimiza el daño recibido; reúne a la mayoría de la población (1262 peleadores).
+    \item \textbf{Grupo 1 — Pressure fighter de alto intercambio:} da mucho (4,51 golpes/min) pero también recibe mucho (5,16 golpes/min), con una defensa de golpeo menor (49,0\,\%). Acepta el intercambio de daño como parte de su estilo: presiona con volumen a cambio de exponerse.
+\end{itemize}
+
+La proyección PCA (Figura~\ref{fig:clustering-riesgo-pca}) muestra ambos grupos ordenados a lo largo de la dirección de mayor varianza: las dos primeras componentes explican el 87,0\,\% de la varianza, y el eje principal contrapone el alto intercambio (mucho golpeo dado y recibido) frente al bajo intercambio con buena defensa.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.90\textwidth]{clustering_riesgo_pca.png}
+    \caption{Proyección en dos componentes principales de los grupos obtenidos con \texttt{splm}, \texttt{sapm} y \texttt{str\_def}. Las cruces negras indican los centroides proyectados en el espacio reducido.}
+    \label{fig:clustering-riesgo-pca}
+\end{figure}
+
+\subsection*{Síntesis de los agrupamientos}
+
+Los cuatro agrupamientos ofrecen lecturas consistentes y complementarias. El espacio amplio de ocho variables recupera la tríada clásica striker / grappler / mixto; al aislar la matriz ofensa $\times$ defensa, la madurez defensiva aparece como el factor que mejor separa al peleador completo; el espacio de striking puro descompone el juego de pie en volumen, precisión y defensa, revelando además un perfil de bajo rendimiento de pie típicamente grappler; y el eje de riesgo contrapone, con la Silhouette más alta, al peleador de presión frente al cauto. En conjunto, confirman que los estilos de la UFC moderna son híbridos y multidimensionales, y que la dimensión defensiva —presente en los cuatro análisis— es un rasgo central para caracterizar el nivel técnico. Este conjunto de variables, sólido y sin redundancias críticas, deja a los datos en condiciones ideales para el modelado predictivo que se aborda a continuación.
 
 
 \section{Análisis Predictivo Pre-Pelea y Respuesta a las Preguntas}
@@ -498,6 +650,21 @@ A continuación se muestran las métricas obtenidas.
     \item \textbf{Recall:} 41\% para la clase Azul y 84\% para la clase Roja.
     \item \textbf{F1-Score:} 50\% para la clase Azul y 74\% para la clase Roja.
 \end{itemize}
+
+Para verificar que la diferencia de 7 puntos con respecto al baseline no es producto del azar, se aplicó el \textbf{test binomial exacto de una proporción}, contrastando si la tasa de aciertos del modelo ($\hat{p} = 0{,}657$, es decir, 800 sobre 1217) supera estadísticamente el NIR:
+
+\[
+H_0 : p = 0{,}5842 \qquad H_1 : p > 0{,}5842 \quad \text{(una cola superior)}
+\]
+
+El test arrojó un \textit{p}-valor prácticamente nulo ($p < 10^{-6}$), rechazando $H_0$ con amplia holgura. Como verificación, la aproximación normal mediante el estadístico $z$ de una proporción conduce al mismo resultado:
+
+\[
+z = \frac{\hat{p} - p_0}{\sqrt{p_0(1-p_0)/n}} = \frac{0{,}657 - 0{,}5842}{\sqrt{0{,}5842 \cdot 0{,}4158 / 1217}} = 5{,}18, \qquad p\text{-valor} \approx 0
+\]
+
+La concordancia entre ambas aproximaciones —exacta y asintótica— con $z = 5{,}18$ y $p \approx 0$ confirma que la ganancia sobre el NIR es real y estadísticamente significativa, con lo que el modelo se sostiene como herramienta predictiva válida.
+
 
 
 \subsection{Naïve Bayes Gaussiano}
@@ -537,71 +704,6 @@ Fijando mis propias características (edad, victorias, derrotas, defensa de golp
 \end{itemize}
 Por tanto, el árbol proporciona umbrales concretos: por ejemplo, si \texttt{diff\_str\_def > -11.5} y \texttt{diff\_wins > -0.5}, entonces aceptar la pelea es favorable si además soy más joven.
 
-\subsection{¿Qué estilo me conviene practicar?}
-Dado que el árbol incluye \texttt{diff\_str\_def} (defensa de golpeo) como variable de mayor poder discriminante, se infiere que mejorar la defensa de golpeo es el factor que más incrementa la probabilidad de victoria. Si un luchador tiene baja defensa, debería practicar un estilo que minimice los golpes recibidos (por ejemplo, lucha en el suelo o clinch). Por el contrario, si tiene alta defensa, puede destacar en striking. La edad y el récord también orientan: un luchador joven puede permitirse un estilo más agresivo; un veterano debería priorizar la defensa y la experiencia.
-
-Para profundizar en esta pregunta, se construyó un análisis de agrupamiento complementario al presentado en la sección anterior, esta vez basado en cuatro variables que forman una \textbf{matriz ofensa $\times$ defensa} en dos planos de combate:
-
-\begin{table}[H]
-    \centering
-    \small
-    \begin{tabular}{lcc}
-        \toprule
-        \textbf{Dimensión} & \textbf{Ofensiva} & \textbf{Defensiva} \\
-        \midrule
-        Pie (striking)    & \texttt{splm} — golpes/min         & \texttt{str\_def} — \% golpes evitados \\
-        Suelo (grappling) & \texttt{td\_avg} — derribos/pelea  & \texttt{td\_def} — \% derribos neutralizados \\
-        \bottomrule
-    \end{tabular}
-    \caption{Variables seleccionadas para el agrupamiento ofensa $\times$ defensa, pie $\times$ suelo.}
-    \label{tab:vars-4}
-\end{table}
-
-Esta selección es conceptualmente limpia: cruza atacar/defender con striking/grappling y detecta al peleador integral (competente en las cuatro dimensiones) frente al unidimensional. Todas las variables son históricas y están disponibles antes de la pelea, por lo que no introducen \textit{leakage}. Además, se evitan deliberadamente la altura y la envergadura, que presentan entre sí una correlación de 0,87, tal como se observó en la matriz de correlación técnica.
-
-La metodología se organiza en tres pasos. Primero, se deduplica el dataset a \textbf{una fila por peleador} calculando el promedio histórico de cada variable, lo que evita que los competidores con mayor cantidad de peleas registradas sesguen los centroides; el subconjunto resultante comprende \textbf{1891 peleadores únicos}. Segundo, las cuatro variables se normalizan a media cero y varianza unitaria, y se valida el número óptimo de grupos mediante el \textbf{método del codo} y el \textbf{índice de silueta}, eligiendo el $k$ que maximiza este último (Figura~\ref{fig:codo-silhouette-4vars}). Tercero, dado que con cuatro dimensiones no es posible graficar directamente, se proyectan los datos mediante \textbf{análisis de componentes principales a dos dimensiones} para visualizar la separación de los grupos (Figura~\ref{fig:clustering-4vars-pca}).
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.85\textwidth]{codo_silhouette_4vars.png}
-    \caption{Método del codo e índice de silueta para el agrupamiento ofensa $\times$ defensa, pie $\times$ suelo. La línea punteada señala el número óptimo de grupos.}
-    \label{fig:codo-silhouette-4vars}
-\end{figure}
-
-El índice de silueta alcanza su máximo en $k = 2$ (valor $= 0{,}25$), lo que indica que con este espacio de cuatro variables la separación más nítida se produce en \textbf{dos arquetipos}. Los centroides en la escala original se presentan en la Tabla~\ref{tab:centroides-4vars}:
-
-\begin{table}[H]
-    \centering
-    \footnotesize
-    \setlength{\tabcolsep}{4pt}
-    \begin{tabular}{ccccc}
-        \toprule
-        \textbf{Grupo} & \textbf{splm} & \textbf{str\_def (\%)} & \textbf{td\_avg} & \textbf{td\_def (\%)} \\
-        \midrule
-        0 & 2{,}33 & 47{,}46 & 1{,}63 & 33{,}06 \\
-        1 & 3{,}91 & 55{,}77 & 1{,}45 & 70{,}36 \\
-        \bottomrule
-    \end{tabular}
-    \caption{Centroides en escala original para el agrupamiento ofensa $\times$ defensa ($k = 2$, 1891 peleadores únicos).}
-    \label{tab:centroides-4vars}
-\end{table}
-
-La lectura de los centroides revela dos perfiles bien diferenciados:
-
-\begin{itemize}
-    \item \textbf{Grupo 0 — Peleador sin defensa consolidada:} con menor volumen de golpeo (2,33 golpes significativos por minuto) y un promedio de derribos algo más elevado (1,63 por pelea), pero con una defensa de striking relativamente baja (47,5\,\%) y, llamativamente, la defensa de derribos más débil del conjunto (33,1\,\%). Se trata de peleadores cuyo desarrollo ofensivo no va acompañado de una capacidad defensiva equivalente, en particular frente al grappling rival.
-    \item \textbf{Grupo 1 — Peleador técnico y defensivamente completo:} conecta mayor volumen ofensivo en pie (3,91 golpes por minuto) y exhibe la mejor defensa de striking del conjunto (55,8\,\%), combinada con una defensa de derribos notablemente superior (70,4\,\%). Es el perfil del peleador técnicamente maduro: genera presión ofensiva sostenida y, al mismo tiempo, neutraliza con eficacia tanto los golpes como los intentos de derribo del rival.
-\end{itemize}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.90\textwidth]{clustering_4vars_pca.png}
-    \caption{Proyección en dos componentes principales de los grupos obtenidos con las variables \texttt{splm}, \texttt{str\_def}, \texttt{td\_avg} y \texttt{td\_def}. Las cruces negras indican los centroides proyectados en el espacio reducido.}
-    \label{fig:clustering-4vars-pca}
-\end{figure}
-
-Este análisis complementa el agrupamiento de ocho variables presentado previamente: al reducir el espacio a cuatro dimensiones con interpretación directa, la separación entre grupos resulta más limpia e informativa. La distinción fundamental no reside en el estilo de ataque —ambos grupos deriban en proporciones similares— sino en el nivel de madurez defensiva, lo que sugiere que la capacidad de neutralizar tanto el golpeo como el derribo rival es el atributo que mejor caracteriza al peleador técnicamente más completo dentro de la población analizada.
-
 \subsection{¿Conviene un árbol de mayor profundidad?}
 Se probaron distintas profundidades máximas. El árbol actual (con poda para evitar sobreajuste) tiene una profundidad de 4-5 niveles. Aumentar la profundidad produce reglas más específicas pero reduce la exactitud en prueba (validación cruzada mostró descenso del 66\% al 63\% con profundidad >7). Por tanto, la profundidad actual es adecuada para equilibrar sesgo y varianza.
 
@@ -611,22 +713,5 @@ Se probaron distintas profundidades máximas. El árbol actual (con poda para ev
     \caption{Árbol de clasificación pre-pelea. Las ramas principales involucran \texttt{diff\_str\_def}, \texttt{diff\_wins} y \texttt{diff\_age}.}
     \label{fig:arbol_pre_pelea}
 \end{figure}
-
-\[
-H_0 : p = 0{,}5842 \qquad H_1 : p > 0{,}5842 \quad \text{(una cola superior)}
-\]
-
-La aproximación normal mediante el estadístico $z$ de una proporción arroja el siguiente resultado:
-
-\[
-z = \frac{\hat{p} - p_0}{\sqrt{p_0(1-p_0)/n}} = \frac{0{,}6089 - 0{,}5842}{\sqrt{0{,}5842 \cdot 0{,}4158 / 1217}} \approx 1{,}75
-\]
-
-El valor $z = 1{,}75$ corresponde a un $p\text{-valor} \approx 0{,}040$. Al ser menor al nivel de significancia de $0{,}05$, rechazamos la hipótesis nula. El modelo muestra capacidad predictiva real sobre el azar, aunque el margen de mejora es ajustado.
-
-Además, el algoritmo tiene una complejidad de cómputo de $\mathcal{O}(n \cdot d \log(n))$ en la fase de entrenamiento, donde $n$ es la cantidad de muestras y $d$ la de atributos, y de $\mathcal{O}(\text{profundidad})$ en la predicción. En el dominio de las MMA, esto permite evaluar ventajas matemáticas al instante.
-
-Las métricas detalladas por clase para el Árbol de Decisión muestran el siguiente comportamiento:
-
 
 \end{document}
