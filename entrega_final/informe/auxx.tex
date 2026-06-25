@@ -44,9 +44,12 @@
 	pdfauthor={Grupo de trabajo}
 }
 
+\usepackage{setspace}
+\onehalfspacing
+
 \renewcommand{\arraystretch}{1.15}
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{0.65em}
+\setlength{\parindent}{1.25cm}
+\setlength{\parskip}{0.5em}
 \setlength{\emergencystretch}{2em}
 
 \title{\textbf{Trabajo Final - Grupo 1}}
@@ -621,9 +624,9 @@ Los cuatro agrupamientos ofrecen lecturas consistentes y complementarias. El esp
 
 \section{Análisis Predictivo Pre-Pelea y Respuesta a las Preguntas}
 
-Se entrenaron un clasificador Naïve Bayes Gaussiano y un Árbol de Decisión (criterio entropía, profundidad máxima de 5) utilizando únicamente variables pre-pelea: diferencias de edad, altura, alcance, victorias, derrotas y defensa de golpeo (\texttt{diff\_str\_def}).
+Para establecer una línea de base de comparación (baseline), evaluamos el clasificador más simple: \textbf{ZeroR}. Este algoritmo generó una única regla: predecir siempre que gana el rincón rojo, debido a que es la clase mayoritaria (711 victorias rojas frente a 506 azules en los 1217 combates de prueba). Este modelo base arrojó una exactitud (accuracy) del 58,42\,\%. En consecuencia, cualquier modelo de minería de datos que implementemos a continuación debe superar matemáticamente este umbral para considerarse útil.
 
-Para evaluar estos modelos, se definió un modelo base (baseline). El conjunto de prueba contiene 1217 combates, donde 711 son victorias del rincón rojo y 506 del rincón azul. Por tanto, predecir siempre que ganará el rincón rojo arroja una precisión base del 58,42\%, lo que se conoce como \textit{No-Information Rate} (NIR).
+Para superar esta base, entrenamos un clasificador Naïve Bayes Gaussiano y un Árbol de Decisión (criterio entropía, profundidad máxima de 5) utilizando únicamente variables pre-pelea: diferencias de edad, altura, alcance, victorias, derrotas y defensa de golpeo (\texttt{diff\_str\_def}).
 
 \subsection{Árbol de Decisión}
 
@@ -635,6 +638,7 @@ A pesar de su menor recall para la clase minoritaria, permite extraer reglas int
 
 A continuación se muestran las métricas obtenidas.
 
+\noindent
 \textbf{En Entrenamiento:}
 
 \begin{itemize}
@@ -643,6 +647,7 @@ A continuación se muestran las métricas obtenidas.
     \item \textbf{F1-Score:} 50\% para la clase Azul y 75\% para la clase Roja.
 \end{itemize}
 
+\noindent
 \textbf{En Prueba:}
 
 \begin{itemize}
@@ -673,6 +678,7 @@ Para complementar el enfoque del árbol, se entrenó un modelo Naïve Bayes Gaus
 
 Elegimos el Naïve Bayes como modelo de referencia probabilístico por su rapidez y simplicidad. El algoritmo parte de un supuesto matemático fuerte: considera que todos los atributos (como la edad o la defensa) son independientes entre sí. Aunque sabemos que en el mundo real estas variables tienen cierta relación, empíricamente el método de Bayes da buenos resultados sin requerir grandes recursos de procesamiento. Sirve para calcular un porcentaje claro de quién tiene la ventaja.
 
+\noindent
 \textbf{En Entrenamiento:}
 
 \begin{itemize}
@@ -682,6 +688,7 @@ Elegimos el Naïve Bayes como modelo de referencia probabilístico por su rapide
     \item \textbf{F1-Score:} 60\% (Azul) y 73\% (Rojo).
 \end{itemize}
 
+\noindent
 \textbf{En Prueba:}
 \begin{itemize}
     \item \textbf{Exactitud (Accuracy):} 65\%
@@ -696,13 +703,15 @@ Elegimos el Naïve Bayes como modelo de referencia probabilístico por su rapide
 Para una pelea dada, se calculan las diferencias (rojo - azul) y se recorre el árbol hasta una hoja. La clase mayoritaria de esa hoja indica el luchador con mayor probabilidad. Por ejemplo, si \texttt{diff\_wins > -0.5} y \texttt{diff\_age <= 2.0}, el árbol predice \textit{Gana Rojo}. El modelo Naïve Bayes complementa entregando una probabilidad concreta $P(\text{gana rojo} \mid \text{diferencias})$, permitiendo comparar la confianza de la predicción.
 
 \subsection{¿Qué tipo de pelea me conviene aceptar?}
-Fijando mis propias características (edad, victorias, derrotas, defensa de golpeo), puedo variar los atributos del oponente y observar qué ramas del árbol conducen a mi victoria. De las reglas se deduce:
+
+A partir de las reglas extraídas del árbol de decisión, fijando las características propias y variando las del oponente, deducimos lo siguiente:
 \begin{itemize}
-    \item \textbf{Me conviene aceptar peleas contra oponentes con peor defensa de golpeo} (que mi \texttt{diff\_str\_def} sea positivo y alto).
-    \item \textbf{Me conviene que mi oponente tenga menos victorias y más derrotas} (diferencias favorables).
-    \item \textbf{Si soy más joven}, la ventaja es mayor.
+    \item \textbf{Conviene aceptar peleas contra oponentes con peor defensa de golpeo} (diferencia positiva y alta).
+    \item \textbf{Conviene que el oponente tenga menos victorias y más derrotas} (diferencias favorables).
+    \item \textbf{La ventaja aumenta al ser más joven.}
 \end{itemize}
-Por tanto, el árbol proporciona umbrales concretos: por ejemplo, si \texttt{diff\_str\_def > -11.5} y \texttt{diff\_wins > -0.5}, entonces aceptar la pelea es favorable si además soy más joven.
+
+El árbol proporciona umbrales concretos: por ejemplo, aceptar una pelea es favorable si \texttt{diff\_str\_def > -11.5}, \texttt{diff\_wins > -0.5} y además se es más joven.
 
 \subsection{¿Conviene un árbol de mayor profundidad?}
 Se probaron distintas profundidades máximas. El árbol actual (con poda para evitar sobreajuste) tiene una profundidad de 4-5 niveles. Aumentar la profundidad produce reglas más específicas pero reduce la exactitud en prueba (validación cruzada mostró descenso del 66\% al 63\% con profundidad >7). Por tanto, la profundidad actual es adecuada para equilibrar sesgo y varianza.
@@ -713,5 +722,19 @@ Se probaron distintas profundidades máximas. El árbol actual (con poda para ev
     \caption{Árbol de clasificación pre-pelea. Las ramas principales involucran \texttt{diff\_str\_def}, \texttt{diff\_wins} y \texttt{diff\_age}.}
     \label{fig:arbol_pre_pelea}
 \end{figure}
+
+\subsection{Reglas de Asociación}
+
+Para profundizar el análisis y descubrir combinaciones específicas que maximicen la probabilidad de victoria por encima de la línea de base (58,42\,\%), discretizamos las ventajas numéricas previas al combate y aplicamos el algoritmo Apriori. A continuación detallamos las cinco reglas de asociación más relevantes obtenidas:
+
+\begin{itemize}
+    \item \textbf{Regla 1:} Si [Ventaja en Golpeo, Racha de Victorias y Ventaja en Derribos] $\Rightarrow$ Gana la Pelea. (Soporte: 12.6\,\%, Confianza: 77.0\,\%, Lift: 1.31)
+    \item \textbf{Regla 2:} Si [Ventaja en Golpeo, Ventaja en Defensa y Racha de Victorias] $\Rightarrow$ Gana la Pelea. (Soporte: 12.7\,\%, Confianza: 76.6\,\%, Lift: 1.31)
+    \item \textbf{Regla 3:} Si [Ventaja en Golpeo y Racha de Victorias] $\Rightarrow$ Gana la Pelea. (Soporte: 21.6\,\%, Confianza: 74.5\,\%, Lift: 1.27)
+    \item \textbf{Regla 4:} Si [Ventaja en Defensa, Racha de Victorias y Ventaja en Derribos] $\Rightarrow$ Gana la Pelea. (Soporte: 12.1\,\%, Confianza: 73.8\,\%, Lift: 1.26)
+    \item \textbf{Regla 5:} Si [Ventaja en Golpeo, Ventaja en Defensa y Ventaja en Derribos] $\Rightarrow$ Gana la Pelea. (Soporte: 11.4\,\%, Confianza: 73.1\,\%, Lift: 1.25)
+\end{itemize}
+
+Estas reglas confirman que combinar una racha ganadora con superioridad en el intercambio de golpes asegura los mayores niveles de confianza para aceptar un combate.
 
 \end{document}

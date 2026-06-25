@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.6.19)  25 JUN 2026 18:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.6.19)  25 JUN 2026 19:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -335,7 +335,9 @@ Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
 \bigstrutjot=\dimen195
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 45.
- (/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+ (/usr/share/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2022/12/04 v6.7b set line spacing
+) (/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count327
 ) (build/auxx.aux
@@ -346,26 +348,26 @@ Package babel Info: 'spanish' activates 'spanish' shorthands.
 )
 \openout1 = `auxx.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Info: Redefining \. on input line 56.
-LaTeX Info: Redefining \% on input line 56.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Info: Redefining \. on input line 59.
+LaTeX Info: Redefining \% on input line 59.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -426,166 +428,168 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: pdftex.def on input line 149.
  (/usr/share/texmf-dist/tex/latex/graphics/mathcolor.ltx))
-Package hyperref Info: Link coloring ON on input line 56.
+Package hyperref Info: Link coloring ON on input line 59.
  (build/auxx.out) (build/auxx.out)
 \@outlinefile=\write3
 \openout3 = `auxx.out'.
 
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}]
-Overfull \hbox (16.7511pt too wide) in paragraph at lines 106--107
-\T1/cmr/m/n/10.95 ba-jo el nom-bre [][]$\T1/cmtt/m/n/10.95 https : / / www . kaggle . com / datasets / neelagiriaditya / ufc-[]datasets-[]1994-[]2025$[][]\T1/cmr/m/n/10.95 . 
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}] [2]
+Underfull \hbox (badness 2351) in paragraph at lines 109--110
+\T1/cmr/m/n/10.95 ni-ble en Kag-gle ba-jo el nom-bre [][]$\T1/cmtt/m/n/10.95 https : / / www . kaggle . com / datasets / neelagiriaditya /
  []
 
-[2]
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 129.
- [3]
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 132.
+[3]
 ignored: Infinite glue shrinkage found in box being split [4]
 ignored: Infinite glue shrinkage found in box being split [5]
 ignored: Infinite glue shrinkage found in box being split [6]
 ignored: Infinite glue shrinkage found in box being split [7]
 ignored: Infinite glue shrinkage found in box being split [8]
-<../figures/DistribucionDePeleas.png, id=123, 367.8543pt x 365.6862pt>
+ignored: Infinite glue shrinkage found in box being split [9]
+<../figures/DistribucionDePeleas.png, id=132, 367.8543pt x 365.6862pt>
 File: ../figures/DistribucionDePeleas.png Graphic file (type png)
 <use ../figures/DistribucionDePeleas.png>
-Package pdftex.def Info: ../figures/DistribucionDePeleas.png  used on input line 297.
+Package pdftex.def Info: ../figures/DistribucionDePeleas.png  used on input line 300.
 (pdftex.def)             Requested size: 273.14923pt x 271.54097pt.
-<../figures/CortePeleas.png, id=126, 698.1282pt x 552.8655pt>
+ [10]
+<../figures/CortePeleas.png, id=140, 698.1282pt x 552.8655pt>
 File: ../figures/CortePeleas.png Graphic file (type png)
 <use ../figures/CortePeleas.png>
-Package pdftex.def Info: ../figures/CortePeleas.png  used on input line 306.
+Package pdftex.def Info: ../figures/CortePeleas.png  used on input line 309.
 (pdftex.def)             Requested size: 386.96027pt x 306.43904pt.
- [9 <../figures/DistribucionDePeleas.png>]
-<../figures/DistribucionDeNulos.png, id=134, 987.2082pt x 842.6682pt>
+ [11 <../figures/DistribucionDePeleas.png>]
+<../figures/DistribucionDeNulos.png, id=147, 987.2082pt x 842.6682pt>
 File: ../figures/DistribucionDeNulos.png Graphic file (type png)
 <use ../figures/DistribucionDeNulos.png>
-Package pdftex.def Info: ../figures/DistribucionDeNulos.png  used on input line 318.
+Package pdftex.def Info: ../figures/DistribucionDeNulos.png  used on input line 321.
 (pdftex.def)             Requested size: 455.24411pt x 388.59644pt.
- [10 <../figures/CortePeleas.png>]
-<../figures/outliers.png, id=141, 1000.2168pt x 422.0568pt>
+ [12 <../figures/CortePeleas.png>]
+<../figures/outliers.png, id=154, 1000.2168pt x 422.0568pt>
 File: ../figures/outliers.png Graphic file (type png)
 <use ../figures/outliers.png>
-Package pdftex.def Info: ../figures/outliers.png  used on input line 328.
+Package pdftex.def Info: ../figures/outliers.png  used on input line 331.
 (pdftex.def)             Requested size: 455.24411pt x 192.10054pt.
- [11 <../figures/DistribucionDeNulos.png>]
-<../figures/heatmap.png, id=147, 672.8337pt x 566.5968pt>
+ [13 <../figures/DistribucionDeNulos.png>]
+<../figures/heatmap.png, id=161, 672.8337pt x 566.5968pt>
 File: ../figures/heatmap.png Graphic file (type png)
 <use ../figures/heatmap.png>
-Package pdftex.def Info: ../figures/heatmap.png  used on input line 338.
+Package pdftex.def Info: ../figures/heatmap.png  used on input line 341.
 (pdftex.def)             Requested size: 455.24411pt x 383.37006pt.
- [12 <../figures/outliers.png>]
-<../figures/DatosFaltantes.png, id=154, 917.1063pt x 478.4274pt>
+ [14 <../figures/outliers.png>]
+<../figures/DatosFaltantes.png, id=168, 917.1063pt x 478.4274pt>
 File: ../figures/DatosFaltantes.png Graphic file (type png)
 <use ../figures/DatosFaltantes.png>
-Package pdftex.def Info: ../figures/DatosFaltantes.png  used on input line 348.
+Package pdftex.def Info: ../figures/DatosFaltantes.png  used on input line 351.
 (pdftex.def)             Requested size: 432.48051pt x 225.61282pt.
- [13 <../figures/heatmap.png>]
-<../figures/Imagen3.png, id=163, 1276.2882pt x 842.6682pt>
+ [15 <../figures/heatmap.png>]
+<../figures/Imagen3.png, id=177, 1276.2882pt x 842.6682pt>
 File: ../figures/Imagen3.png Graphic file (type png)
 <use ../figures/Imagen3.png>
-Package pdftex.def Info: ../figures/Imagen3.png  used on input line 360.
+Package pdftex.def Info: ../figures/Imagen3.png  used on input line 363.
 (pdftex.def)             Requested size: 455.24411pt x 300.57011pt.
- [14 <../figures/DatosFaltantes.png>]
-<../figures/VentajasPerfilesVictoria.png, id=171, 919.9971pt x 992.2671pt>
+ [16 <../figures/DatosFaltantes.png>]
+<../figures/VentajasPerfilesVictoria.png, id=185, 919.9971pt x 992.2671pt>
 File: ../figures/VentajasPerfilesVictoria.png Graphic file (type png)
 <use ../figures/VentajasPerfilesVictoria.png>
-Package pdftex.def Info: ../figures/VentajasPerfilesVictoria.png  used on input line 367.
+Package pdftex.def Info: ../figures/VentajasPerfilesVictoria.png  used on input line 370.
 (pdftex.def)             Requested size: 432.48051pt x 466.45645pt.
- [15 <../figures/Imagen3.png>] [16 <../figures/VentajasPerfilesVictoria.png>]
-<../figures/Evolucion_Metodos_Duracion.png, id=185, 1421.0691pt x 490.2315pt>
+ [17 <../figures/Imagen3.png>] [18 <../figures/VentajasPerfilesVictoria.png>]
+<../figures/Evolucion_Metodos_Duracion.png, id=198, 1421.0691pt x 490.2315pt>
 File: ../figures/Evolucion_Metodos_Duracion.png Graphic file (type png)
 <use ../figures/Evolucion_Metodos_Duracion.png>
-Package pdftex.def Info: ../figures/Evolucion_Metodos_Duracion.png  used on input line 389.
+Package pdftex.def Info: ../figures/Evolucion_Metodos_Duracion.png  used on input line 392.
 (pdftex.def)             Requested size: 455.24411pt x 157.04184pt.
-<../figures/Evolucion_Tecnica.png, id=187, 1699.0677pt x 490.2315pt>
+<../figures/Evolucion_Tecnica.png, id=200, 1699.0677pt x 490.2315pt>
 File: ../figures/Evolucion_Tecnica.png Graphic file (type png)
 <use ../figures/Evolucion_Tecnica.png>
-Package pdftex.def Info: ../figures/Evolucion_Tecnica.png  used on input line 398.
+Package pdftex.def Info: ../figures/Evolucion_Tecnica.png  used on input line 401.
 (pdftex.def)             Requested size: 455.24411pt x 131.34694pt.
 
-Overfull \hbox (2.05675pt too wide) in paragraph at lines 403--403
+Overfull \hbox (2.05675pt too wide) in paragraph at lines 406--406
 []\T1/cmr/bx/n/14.4 Agrupamiento de es-ti-los de com-ba-te (Clus-te-ring por K-medias) 
  []
 
-[17 <../figures/Evolucion_Metodos_Duracion.png> <../figures/Evolucion_Tecnica.png>]
-<../figures/clustering.png, id=196, 711.1368pt x 422.0568pt>
+[19 <../figures/Evolucion_Metodos_Duracion.png> <../figures/Evolucion_Tecnica.png>]
+<../figures/clustering.png, id=210, 711.1368pt x 422.0568pt>
 File: ../figures/clustering.png Graphic file (type png)
 <use ../figures/clustering.png>
-Package pdftex.def Info: ../figures/clustering.png  used on input line 417.
+Package pdftex.def Info: ../figures/clustering.png  used on input line 420.
 (pdftex.def)             Requested size: 455.24411pt x 270.18626pt.
-<../figures/codo_y_silouette.png, id=197, 860.21375pt x 504.88625pt>
+ [20]
+<../figures/codo_y_silouette.png, id=216, 860.21375pt x 504.88625pt>
 File: ../figures/codo_y_silouette.png Graphic file (type png)
 <use ../figures/codo_y_silouette.png>
-Package pdftex.def Info: ../figures/codo_y_silouette.png  used on input line 426.
+Package pdftex.def Info: ../figures/codo_y_silouette.png  used on input line 429.
 (pdftex.def)             Requested size: 455.24411pt x 267.20323pt.
- [18 <../figures/clustering.png>]
+ [21 <../figures/clustering.png> <../figures/codo_y_silouette.png (PNG copy)>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 456.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\times' on input line 456.
+(hyperref)                removing `math shift' on input line 459.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 456.
+(hyperref)                removing `\times' on input line 459.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 456.
+(hyperref)                removing `math shift' on input line 459.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\times' on input line 456.
+(hyperref)                removing `math shift' on input line 459.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 456.
+(hyperref)                removing `\times' on input line 459.
 
-[19 <../figures/codo_y_silouette.png (PNG copy)>]
-<../figures/codo_silhouette_4vars.png, id=219, 553.1064pt x 335.8146pt>
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 459.
+
+<../figures/codo_silhouette_4vars.png, id=228, 553.1064pt x 335.8146pt>
 File: ../figures/codo_silhouette_4vars.png Graphic file (type png)
 <use ../figures/codo_silhouette_4vars.png>
-Package pdftex.def Info: ../figures/codo_silhouette_4vars.png  used on input line 482.
+Package pdftex.def Info: ../figures/codo_silhouette_4vars.png  used on input line 485.
 (pdftex.def)             Requested size: 386.96027pt x 234.9405pt.
- [20 <../figures/codo_silhouette_4vars.png>]
-<../figures/clustering_4vars_pca.png, id=230, 625.8582pt x 408.0846pt>
+[22]
+<../figures/clustering_4vars_pca.png, id=241, 625.8582pt x 408.0846pt>
 File: ../figures/clustering_4vars_pca.png Graphic file (type png)
 <use ../figures/clustering_4vars_pca.png>
-Package pdftex.def Info: ../figures/clustering_4vars_pca.png  used on input line 514.
+Package pdftex.def Info: ../figures/clustering_4vars_pca.png  used on input line 517.
 (pdftex.def)             Requested size: 409.71692pt x 267.15726pt.
-<../figures/codo_silhouette_striking.png, id=232, 553.5882pt x 335.8146pt>
+ [23 <../figures/codo_silhouette_4vars.png>]
+<../figures/codo_silhouette_striking.png, id=249, 553.5882pt x 335.8146pt>
 File: ../figures/codo_silhouette_striking.png Graphic file (type png)
 <use ../figures/codo_silhouette_striking.png>
-Package pdftex.def Info: ../figures/codo_silhouette_striking.png  used on input line 530.
+Package pdftex.def Info: ../figures/codo_silhouette_striking.png  used on input line 533.
 (pdftex.def)             Requested size: 386.96027pt x 234.74579pt.
- [21 <../figures/clustering_4vars_pca.png>] [22 <../figures/codo_silhouette_striking.png>]
-<../figures/clustering_striking_pca.png, id=247, 625.8582pt x 408.0846pt>
+ [24 <../figures/clustering_4vars_pca.png>] [25 <../figures/codo_silhouette_striking.png>]
+<../figures/clustering_striking_pca.png, id=265, 625.8582pt x 408.0846pt>
 File: ../figures/clustering_striking_pca.png Graphic file (type png)
 <use ../figures/clustering_striking_pca.png>
-Package pdftex.def Info: ../figures/clustering_striking_pca.png  used on input line 566.
+Package pdftex.def Info: ../figures/clustering_striking_pca.png  used on input line 569.
 (pdftex.def)             Requested size: 409.71692pt x 267.15726pt.
-<../figures/codo_silhouette_riesgo.png, id=249, 553.5882pt x 335.8146pt>
+<../figures/codo_silhouette_riesgo.png, id=267, 553.5882pt x 335.8146pt>
 File: ../figures/codo_silhouette_riesgo.png Graphic file (type png)
 <use ../figures/codo_silhouette_riesgo.png>
-Package pdftex.def Info: ../figures/codo_silhouette_riesgo.png  used on input line 580.
+Package pdftex.def Info: ../figures/codo_silhouette_riesgo.png  used on input line 583.
 (pdftex.def)             Requested size: 386.96027pt x 234.74579pt.
- [23 <../figures/clustering_striking_pca.png>]
-<../figures/clustering_riesgo_pca.png, id=259, 625.8582pt x 408.0846pt>
+ [26 <../figures/clustering_striking_pca.png>]
+<../figures/clustering_riesgo_pca.png, id=277, 625.8582pt x 408.0846pt>
 File: ../figures/clustering_riesgo_pca.png Graphic file (type png)
 <use ../figures/clustering_riesgo_pca.png>
-Package pdftex.def Info: ../figures/clustering_riesgo_pca.png  used on input line 612.
+Package pdftex.def Info: ../figures/clustering_riesgo_pca.png  used on input line 615.
 (pdftex.def)             Requested size: 409.71692pt x 267.15726pt.
- [24 <../figures/codo_silhouette_riesgo.png>] [25 <../figures/clustering_riesgo_pca.png>] [26]
-<../figures/ArboldeClasificacion-PrediccionPrePelea.png, id=283, 1148.3703pt x 589.7232pt>
+ [27 <../figures/codo_silhouette_riesgo.png>] [28 <../figures/clustering_riesgo_pca.png>] [29] [30]
+<../figures/ArboldeClasificacion-PrediccionPrePelea.png, id=304, 1148.3703pt x 589.7232pt>
 File: ../figures/ArboldeClasificacion-PrediccionPrePelea.png Graphic file (type png)
 <use ../figures/ArboldeClasificacion-PrediccionPrePelea.png>
-Package pdftex.def Info: ../figures/ArboldeClasificacion-PrediccionPrePelea.png  used on input line 712.
+Package pdftex.def Info: ../figures/ArboldeClasificacion-PrediccionPrePelea.png  used on input line 721.
 (pdftex.def)             Requested size: 409.71692pt x 210.40152pt.
- [27] [28 <../figures/ArboldeClasificacion-PrediccionPrePelea.png>] (build/auxx.aux
+ [31 <../figures/ArboldeClasificacion-PrediccionPrePelea.png>] [32] (build/auxx.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
 )
@@ -594,25 +598,25 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `auxx.out' has not changed.
-(rerunfilecheck)             Checksum: 1D18B920371B78596616739F3BB12756;4155.
+(rerunfilecheck)             Checksum: 7F175960F64526918748E1B38EBE391A;4322.
  )
 (\end occurred inside a group at level 1)
 
-### semi simple group (level 1) entered at line 139 (\begingroup)
+### semi simple group (level 1) entered at line 142 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 12453 strings out of 469453
- 194627 string characters out of 5469037
- 718718 words of memory out of 5000000
- 40877 multiletter control sequences out of 15000+600000
+ 12505 strings out of 469453
+ 195600 string characters out of 5469037
+ 721119 words of memory out of 5000000
+ 40920 multiletter control sequences out of 15000+600000
  647355 words of font info for 81 fonts, out of 8000000 for 9000
  40 hyphenation exceptions out of 8191
- 75i,9n,79p,1071b,703s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,9n,79p,1071b,718s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbi1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on build/auxx.pdf (28 pages, 3279105 bytes).
+Output written on build/auxx.pdf (32 pages, 3282851 bytes).
 PDF statistics:
- 401 PDF objects out of 1000 (max. 8388607)
- 289 compressed objects within 3 object streams
- 74 named destinations out of 1000 (max. 500000)
- 224 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 425 PDF objects out of 1000 (max. 8388607)
+ 308 compressed objects within 4 object streams
+ 79 named destinations out of 1000 (max. 500000)
+ 232 words of extra memory for PDF output out of 10000 (max. 10000000)
 
