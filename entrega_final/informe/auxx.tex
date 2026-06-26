@@ -104,6 +104,7 @@ Durante cada pelea se registran numerosas estadísticas. A continuación se defi
   \item \textbf{Reach (envergadura):} Distancia en pulgadas entre los extremos de ambas manos con los brazos extendidos horizontalmente; a mayor reach, mayor distancia de golpeo efectiva.
 \end{itemize}
 
+\pagebreak
 \section{Descripción general del dataset}
 
 En este trabajo se utilizará el conjunto de datos \textit{UFC Datasets 1994-2025}, disponible en Kaggle bajo el nombre \url{https://www.kaggle.com/datasets/neelagiriaditya/ufc-datasets-1994-2025}.
@@ -120,6 +121,7 @@ En particular, se busca responder preguntas como las siguientes:
 \item Si soy una persona con determinadas características, ¿qué estilo me conviene practicar?
 \end{itemize}
 
+\pagebreak
 \section{Origen y características generales}
 
 El conjunto de datos unificado \path{UFC.csv} disponible como parte de los datasets de UFC contiene \textbf{8.337 registros} y \textbf{124 columnas}. Reúne una vasta cantidad de atributos capturados a lo largo de décadas mostrando un detallado registro por cada pelea que ocurrió en diversas locaciones del mundo a partir de 1994 hasta inicios de 2025. 
@@ -135,6 +137,7 @@ De manera general, el conjunto de datos clasifica su información en las siguien
 
 Los datos fueron relevados haciendo un scraping del sitio \url{http://ufcstats.com/statistics/events/completed}.
 
+\pagebreak
 \section{Descripción completa de las columnas}
 
 Dado el gran número de dimensiones (124), se describe la totalidad de columnas del archivo \path{UFC.csv} agrupándolas por su función analítica. La columna \textbf{Tipo} indica el tipo de dato predominante: \textit{str} (cadena de texto), \textit{int} (entero), \textit{float} (numérico con decimales), \textit{date} (fecha), \textit{bool} (booleano) y \textit{cat} (variable categórica).
@@ -291,6 +294,7 @@ Dado el gran número de dimensiones (124), se describe la totalidad de columnas 
 \endgroup
 \normalsize
 
+\pagebreak
 \section{Criterio preliminar de depuración y tratamiento de datos faltantes}
 
 El primer paso en el proceso de depuración consistió en analizar la composición del conjunto de datos según la categoría de los combates. Del total de 8.337 peleas registradas, 7.471 corresponden a la categoría masculina y 866 a la femenina, tal como se ilustra en la Figura \ref{fig:peleas_dist}.
@@ -403,6 +407,7 @@ Finalmente, la Figura \ref{fig:evolucion_tecnica} expone la evolución competiti
     \label{fig:evolucion_tecnica}
 \end{figure}
 
+\pagebreak
 \section{Agrupamiento de estilos de combate (Clustering por K-medias)}
 \label{sec:agrupamientos}
 
@@ -623,7 +628,7 @@ La proyección PCA (Figura~\ref{fig:clustering-riesgo-pca}) muestra ambos grupos
 
 Los cuatro agrupamientos ofrecen lecturas consistentes y complementarias. El espacio amplio de ocho variables recupera la tríada clásica striker / grappler / mixto; al aislar la matriz ofensa $\times$ defensa, la madurez defensiva aparece como el factor que mejor separa al peleador completo; el espacio de striking puro descompone el juego de pie en volumen, precisión y defensa, revelando además un perfil de bajo rendimiento de pie típicamente grappler; y el eje de riesgo contrapone, con la Silhouette más alta, al peleador de presión frente al cauto. En conjunto, confirman que los estilos de la UFC moderna son híbridos y multidimensionales, y que la dimensión defensiva —presente en los cuatro análisis— es un rasgo central para caracterizar el nivel técnico. Este conjunto de variables, sólido y sin redundancias críticas, deja a los datos en condiciones ideales para el modelado predictivo que se aborda a continuación.
 
-
+\pagebreak
 \section{Análisis Predictivo Pre-Pelea y Respuesta a las Preguntas}
 
 Para establecer una línea de base de comparación (baseline), evaluamos el clasificador más simple: \textbf{ZeroR}. Este algoritmo generó una única regla: predecir siempre que gana el rincón rojo, debido a que es la clase mayoritaria (711 victorias rojas frente a 506 azules en los 1217 combates de prueba). Este modelo base arrojó una exactitud (accuracy) del 58,42\,\%. En consecuencia, cualquier modelo de minería de datos que implementemos a continuación debe superar matemáticamente este umbral para considerarse útil.
@@ -741,6 +746,7 @@ Para profundizar el análisis y descubrir combinaciones específicas que maximic
 
 Estas reglas confirman que combinar una racha ganadora con superioridad en el intercambio de golpes asegura los mayores niveles de confianza para aceptar un combate.
 
+\pagebreak
 \section{Conclusiones}
 
 Predecir resultados en un deporte tan volátil como la MMA representa un desafío analítico complejo. Para ello fue necesario una etapa de preprocesamiento rigurosa, donde se descartaron los ejemplos que a futuro producirían ruido. Se tomaron decisiones como el descarte de las peleas femeninas y las peleas previas al año 2010 con este fin, además del análisis de datos faltantes. 
