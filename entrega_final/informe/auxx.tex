@@ -410,6 +410,8 @@ Para caracterizar los estilos de pelea presentes en la población se aplicó apr
 
 Todos los agrupamientos comparten una metodología común. Las variables se estandarizan a media cero y varianza unitaria para que ninguna domine la distancia euclídea por su escala. El número óptimo de grupos se valida con el método del codo (inercia) y el índice de Silhouette, eligiendo el $k$ que maximiza esta última. Finalmente, cuando el espacio tiene más de dos dimensiones, los datos se proyectan mediante análisis de componentes principales (PCA) a dos dimensiones para poder visualizar la separación de los grupos; las cruces negras de cada gráfico marcan los centroides proyectados en ese espacio reducido. Salvo el primer agrupamiento —que opera sobre el registro técnico de cada peleador por combate— los demás deduplican el dataset a una fila por peleador, promediando históricamente cada variable para que los competidores con más peleas registradas no sesguen los centroides; ese subconjunto comprende \textbf{1891 peleadores únicos}.
 
+En términos de costo computacional, el algoritmo K-medias es altamente eficiente gracias a su complejidad temporal lineal $\mathcal{O}(n \cdot K \cdot I \cdot d)$, donde $n$ es el número de instancias, $K$ los grupos, $I$ las iteraciones y $d$ los atributos. Por el contrario, calcular el índice Silhouette representa el verdadero cuello de botella del proceso. Su complejidad es cuadrática $\mathcal{O}(n^2)$ debido a la necesidad de evaluar las distancias de cada punto contra todos los demás. Dado que nuestro dataset final filtrado consta de aproximadamente 6000 instancias, este costo cuadrático resultó manejable en la práctica y no representó un impedimento para validar la cohesión de los grupos.
+
 \subsection{Estilos clásicos del MMA}
 \label{subsec:cluster-ocho}
 
@@ -678,6 +680,8 @@ Para complementar el enfoque del árbol, se entrenó un modelo Naïve Bayes Gaus
 
 Elegimos el Naïve Bayes como modelo de referencia probabilístico por su rapidez y simplicidad. El algoritmo parte de un supuesto matemático fuerte: considera que todos los atributos (como la edad o la defensa) son independientes entre sí. Aunque sabemos que en el mundo real estas variables tienen cierta relación, empíricamente el método de Bayes da buenos resultados sin requerir grandes recursos de procesamiento. Sirve para calcular un porcentaje claro de quién tiene la ventaja.
 
+La fase de entrenamiento del Naïve Bayes demanda un costo computacional sumamente bajo, con una complejidad estrictamente lineal $\mathcal{O}(n \cdot d)$. Esto ocurre porque el algoritmo solo necesita recorrer los datos una única vez para construir las tablas de frecuencias y definir las probabilidades (a priori y de verosimilitud). Durante la etapa de predicción (test), la complejidad pasa a ser $\mathcal{O}(k \cdot d)$ por cada instancia evaluada, donde $k$ equivale al número de clases posibles (en nuestro caso, 2: Rojo o Azul). Este bajísimo costo computacional, combinado con la robustez del modelo frente al ruido, justifica fuertemente su elección como clasificador inicial.
+
 \noindent
 \textbf{En Entrenamiento:}
 
@@ -736,5 +740,29 @@ Para profundizar el análisis y descubrir combinaciones específicas que maximic
 \end{itemize}
 
 Estas reglas confirman que combinar una racha ganadora con superioridad en el intercambio de golpes asegura los mayores niveles de confianza para aceptar un combate.
+
+\section{Conclusiones}
+
+Predecir resultados en un deporte tan volátil como la MMA representa un desafío analítico complejo. Para ello fue necesario una etapa de preprocesamiento rigurosa, donde se descartaron los ejemplos que a futuro producirían ruido. Se tomaron decisiones como el descarte de las peleas femeninas y las peleas previas al año 2010 con este fin, además del análisis de datos faltantes. 
+
+En la sección de aprendizaje no supervisado, el análisis mediante K-Medias permitió identificar perfiles de combate convencionales y no convencionales. El principal hallazgo técnico de esta fase reveló que no es el volumen bruto de ataque, sino las capacidades defensivas (evitar golpes y derribos) lo que verdaderamente separa a los peleadores en niveles de habilidad.
+
+Respecto a la fase predictiva, tanto el Árbol de Decisión como el modelo Naïve Bayes lograron superar la línea base establecida por ZeroR (58,42\,\%), alcanzando un rendimiento cercano al 65\,\%. Finalmente, las Reglas de Asociación tradujeron estos datos al lenguaje natural y entendible, y revelaron que ciertas combinaciones de ventajas como sostener rachas victoriosas y mantener el control del intercambio de golpes elevan sustancialmente las probabilidades de triunfo, ofreciendo un respaldo objetivo al momento de seleccionar y aceptar futuros combates.
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{lccccc}
+        \toprule
+        \textbf{Modelo} & \textbf{Acc Train} & \textbf{Acc Test} & \textbf{F1 Train} & \textbf{F1 Test} & \textbf{Complejidad} \\
+        \midrule
+        ZeroR & 58.42\,\% & 58.42\,\% & 0\,\% / 74\,\% & 0\,\% / 74\,\% & $\mathcal{O}(1)$ \\
+        Naïve Bayes & 67.00\,\% & 65.00\,\% & 60\,\% / 73\,\% & 56\,\% / 71\,\% & $\mathcal{O}(k \cdot d)$ \\
+        Árbol de Decisión & 67.00\% & 64\,\% / 66\, \% & 50\,\% / 75\,\% & 50\,\% / 74\,\% & $\mathcal{O}(h)$ \\
+        \bottomrule
+    \end{tabular}
+    \caption{Comparativa de rendimiento y complejidad computacional (fase de predicción). Para el F1-Score del Bayes y el Árbol se detallan los valores (Clase Azul / Clase Roja). Variables de complejidad: $k$ (clases), $d$ (atributos), $h$ (profundidad).}
+    \label{tab:comparativa_modelos}
+\end{table}
 
 \end{document}

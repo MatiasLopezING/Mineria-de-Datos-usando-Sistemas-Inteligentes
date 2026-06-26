@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.6.19)  25 JUN 2026 19:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.6.19)  25 JUN 2026 21:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -449,60 +449,60 @@ ignored: Infinite glue shrinkage found in box being split [6]
 ignored: Infinite glue shrinkage found in box being split [7]
 ignored: Infinite glue shrinkage found in box being split [8]
 ignored: Infinite glue shrinkage found in box being split [9]
-<../figures/DistribucionDePeleas.png, id=132, 367.8543pt x 365.6862pt>
+<../figures/DistribucionDePeleas.png, id=136, 367.8543pt x 365.6862pt>
 File: ../figures/DistribucionDePeleas.png Graphic file (type png)
 <use ../figures/DistribucionDePeleas.png>
 Package pdftex.def Info: ../figures/DistribucionDePeleas.png  used on input line 300.
 (pdftex.def)             Requested size: 273.14923pt x 271.54097pt.
  [10]
-<../figures/CortePeleas.png, id=140, 698.1282pt x 552.8655pt>
+<../figures/CortePeleas.png, id=144, 698.1282pt x 552.8655pt>
 File: ../figures/CortePeleas.png Graphic file (type png)
 <use ../figures/CortePeleas.png>
 Package pdftex.def Info: ../figures/CortePeleas.png  used on input line 309.
 (pdftex.def)             Requested size: 386.96027pt x 306.43904pt.
  [11 <../figures/DistribucionDePeleas.png>]
-<../figures/DistribucionDeNulos.png, id=147, 987.2082pt x 842.6682pt>
+<../figures/DistribucionDeNulos.png, id=151, 987.2082pt x 842.6682pt>
 File: ../figures/DistribucionDeNulos.png Graphic file (type png)
 <use ../figures/DistribucionDeNulos.png>
 Package pdftex.def Info: ../figures/DistribucionDeNulos.png  used on input line 321.
 (pdftex.def)             Requested size: 455.24411pt x 388.59644pt.
  [12 <../figures/CortePeleas.png>]
-<../figures/outliers.png, id=154, 1000.2168pt x 422.0568pt>
+<../figures/outliers.png, id=158, 1000.2168pt x 422.0568pt>
 File: ../figures/outliers.png Graphic file (type png)
 <use ../figures/outliers.png>
 Package pdftex.def Info: ../figures/outliers.png  used on input line 331.
 (pdftex.def)             Requested size: 455.24411pt x 192.10054pt.
  [13 <../figures/DistribucionDeNulos.png>]
-<../figures/heatmap.png, id=161, 672.8337pt x 566.5968pt>
+<../figures/heatmap.png, id=165, 672.8337pt x 566.5968pt>
 File: ../figures/heatmap.png Graphic file (type png)
 <use ../figures/heatmap.png>
 Package pdftex.def Info: ../figures/heatmap.png  used on input line 341.
 (pdftex.def)             Requested size: 455.24411pt x 383.37006pt.
  [14 <../figures/outliers.png>]
-<../figures/DatosFaltantes.png, id=168, 917.1063pt x 478.4274pt>
+<../figures/DatosFaltantes.png, id=172, 917.1063pt x 478.4274pt>
 File: ../figures/DatosFaltantes.png Graphic file (type png)
 <use ../figures/DatosFaltantes.png>
 Package pdftex.def Info: ../figures/DatosFaltantes.png  used on input line 351.
 (pdftex.def)             Requested size: 432.48051pt x 225.61282pt.
  [15 <../figures/heatmap.png>]
-<../figures/Imagen3.png, id=177, 1276.2882pt x 842.6682pt>
+<../figures/Imagen3.png, id=181, 1276.2882pt x 842.6682pt>
 File: ../figures/Imagen3.png Graphic file (type png)
 <use ../figures/Imagen3.png>
 Package pdftex.def Info: ../figures/Imagen3.png  used on input line 363.
 (pdftex.def)             Requested size: 455.24411pt x 300.57011pt.
  [16 <../figures/DatosFaltantes.png>]
-<../figures/VentajasPerfilesVictoria.png, id=185, 919.9971pt x 992.2671pt>
+<../figures/VentajasPerfilesVictoria.png, id=189, 919.9971pt x 992.2671pt>
 File: ../figures/VentajasPerfilesVictoria.png Graphic file (type png)
 <use ../figures/VentajasPerfilesVictoria.png>
 Package pdftex.def Info: ../figures/VentajasPerfilesVictoria.png  used on input line 370.
 (pdftex.def)             Requested size: 432.48051pt x 466.45645pt.
  [17 <../figures/Imagen3.png>] [18 <../figures/VentajasPerfilesVictoria.png>]
-<../figures/Evolucion_Metodos_Duracion.png, id=198, 1421.0691pt x 490.2315pt>
+<../figures/Evolucion_Metodos_Duracion.png, id=202, 1421.0691pt x 490.2315pt>
 File: ../figures/Evolucion_Metodos_Duracion.png Graphic file (type png)
 <use ../figures/Evolucion_Metodos_Duracion.png>
 Package pdftex.def Info: ../figures/Evolucion_Metodos_Duracion.png  used on input line 392.
 (pdftex.def)             Requested size: 455.24411pt x 157.04184pt.
-<../figures/Evolucion_Tecnica.png, id=200, 1699.0677pt x 490.2315pt>
+<../figures/Evolucion_Tecnica.png, id=204, 1699.0677pt x 490.2315pt>
 File: ../figures/Evolucion_Tecnica.png Graphic file (type png)
 <use ../figures/Evolucion_Tecnica.png>
 Package pdftex.def Info: ../figures/Evolucion_Tecnica.png  used on input line 401.
@@ -513,83 +513,88 @@ Overfull \hbox (2.05675pt too wide) in paragraph at lines 406--406
  []
 
 [19 <../figures/Evolucion_Metodos_Duracion.png> <../figures/Evolucion_Tecnica.png>]
-<../figures/clustering.png, id=210, 711.1368pt x 422.0568pt>
+<../figures/clustering.png, id=214, 711.1368pt x 422.0568pt>
 File: ../figures/clustering.png Graphic file (type png)
 <use ../figures/clustering.png>
-Package pdftex.def Info: ../figures/clustering.png  used on input line 420.
+Package pdftex.def Info: ../figures/clustering.png  used on input line 422.
 (pdftex.def)             Requested size: 455.24411pt x 270.18626pt.
  [20]
-<../figures/codo_y_silouette.png, id=216, 860.21375pt x 504.88625pt>
+<../figures/codo_y_silouette.png, id=223, 860.21375pt x 504.88625pt>
 File: ../figures/codo_y_silouette.png Graphic file (type png)
 <use ../figures/codo_y_silouette.png>
-Package pdftex.def Info: ../figures/codo_y_silouette.png  used on input line 429.
+Package pdftex.def Info: ../figures/codo_y_silouette.png  used on input line 431.
 (pdftex.def)             Requested size: 455.24411pt x 267.20323pt.
  [21 <../figures/clustering.png> <../figures/codo_y_silouette.png (PNG copy)>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 459.
+(hyperref)                removing `math shift' on input line 461.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\times' on input line 459.
+(hyperref)                removing `\times' on input line 461.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 459.
+(hyperref)                removing `math shift' on input line 461.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 459.
+(hyperref)                removing `math shift' on input line 461.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\times' on input line 459.
+(hyperref)                removing `\times' on input line 461.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 459.
+(hyperref)                removing `math shift' on input line 461.
 
-<../figures/codo_silhouette_4vars.png, id=228, 553.1064pt x 335.8146pt>
+<../figures/codo_silhouette_4vars.png, id=234, 553.1064pt x 335.8146pt>
 File: ../figures/codo_silhouette_4vars.png Graphic file (type png)
 <use ../figures/codo_silhouette_4vars.png>
-Package pdftex.def Info: ../figures/codo_silhouette_4vars.png  used on input line 485.
+Package pdftex.def Info: ../figures/codo_silhouette_4vars.png  used on input line 487.
 (pdftex.def)             Requested size: 386.96027pt x 234.9405pt.
 [22]
-<../figures/clustering_4vars_pca.png, id=241, 625.8582pt x 408.0846pt>
+<../figures/clustering_4vars_pca.png, id=246, 625.8582pt x 408.0846pt>
 File: ../figures/clustering_4vars_pca.png Graphic file (type png)
 <use ../figures/clustering_4vars_pca.png>
-Package pdftex.def Info: ../figures/clustering_4vars_pca.png  used on input line 517.
+Package pdftex.def Info: ../figures/clustering_4vars_pca.png  used on input line 519.
 (pdftex.def)             Requested size: 409.71692pt x 267.15726pt.
  [23 <../figures/codo_silhouette_4vars.png>]
-<../figures/codo_silhouette_striking.png, id=249, 553.5882pt x 335.8146pt>
+<../figures/codo_silhouette_striking.png, id=254, 553.5882pt x 335.8146pt>
 File: ../figures/codo_silhouette_striking.png Graphic file (type png)
 <use ../figures/codo_silhouette_striking.png>
-Package pdftex.def Info: ../figures/codo_silhouette_striking.png  used on input line 533.
+Package pdftex.def Info: ../figures/codo_silhouette_striking.png  used on input line 535.
 (pdftex.def)             Requested size: 386.96027pt x 234.74579pt.
  [24 <../figures/clustering_4vars_pca.png>] [25 <../figures/codo_silhouette_striking.png>]
-<../figures/clustering_striking_pca.png, id=265, 625.8582pt x 408.0846pt>
+<../figures/clustering_striking_pca.png, id=270, 625.8582pt x 408.0846pt>
 File: ../figures/clustering_striking_pca.png Graphic file (type png)
 <use ../figures/clustering_striking_pca.png>
-Package pdftex.def Info: ../figures/clustering_striking_pca.png  used on input line 569.
+Package pdftex.def Info: ../figures/clustering_striking_pca.png  used on input line 571.
 (pdftex.def)             Requested size: 409.71692pt x 267.15726pt.
-<../figures/codo_silhouette_riesgo.png, id=267, 553.5882pt x 335.8146pt>
+<../figures/codo_silhouette_riesgo.png, id=272, 553.5882pt x 335.8146pt>
 File: ../figures/codo_silhouette_riesgo.png Graphic file (type png)
 <use ../figures/codo_silhouette_riesgo.png>
-Package pdftex.def Info: ../figures/codo_silhouette_riesgo.png  used on input line 583.
+Package pdftex.def Info: ../figures/codo_silhouette_riesgo.png  used on input line 585.
 (pdftex.def)             Requested size: 386.96027pt x 234.74579pt.
  [26 <../figures/clustering_striking_pca.png>]
-<../figures/clustering_riesgo_pca.png, id=277, 625.8582pt x 408.0846pt>
+<../figures/clustering_riesgo_pca.png, id=282, 625.8582pt x 408.0846pt>
 File: ../figures/clustering_riesgo_pca.png Graphic file (type png)
 <use ../figures/clustering_riesgo_pca.png>
-Package pdftex.def Info: ../figures/clustering_riesgo_pca.png  used on input line 615.
+Package pdftex.def Info: ../figures/clustering_riesgo_pca.png  used on input line 617.
 (pdftex.def)             Requested size: 409.71692pt x 267.15726pt.
  [27 <../figures/codo_silhouette_riesgo.png>] [28 <../figures/clustering_riesgo_pca.png>] [29] [30]
-<../figures/ArboldeClasificacion-PrediccionPrePelea.png, id=304, 1148.3703pt x 589.7232pt>
+<../figures/ArboldeClasificacion-PrediccionPrePelea.png, id=308, 1148.3703pt x 589.7232pt>
 File: ../figures/ArboldeClasificacion-PrediccionPrePelea.png Graphic file (type png)
 <use ../figures/ArboldeClasificacion-PrediccionPrePelea.png>
-Package pdftex.def Info: ../figures/ArboldeClasificacion-PrediccionPrePelea.png  used on input line 721.
+Package pdftex.def Info: ../figures/ArboldeClasificacion-PrediccionPrePelea.png  used on input line 725.
 (pdftex.def)             Requested size: 409.71692pt x 210.40152pt.
- [31 <../figures/ArboldeClasificacion-PrediccionPrePelea.png>] [32] (build/auxx.aux
+ [31 <../figures/ArboldeClasificacion-PrediccionPrePelea.png>]
+Overfull \hbox (4.47021pt too wide) in paragraph at lines 755--764
+ [][] 
+ []
+
+[32] [33] (build/auxx.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
 )
@@ -598,25 +603,25 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `auxx.out' has not changed.
-(rerunfilecheck)             Checksum: 7F175960F64526918748E1B38EBE391A;4322.
+(rerunfilecheck)             Checksum: 6E22937376BA0FA2A2F1E133212974FE;4426.
  )
 (\end occurred inside a group at level 1)
 
 ### semi simple group (level 1) entered at line 142 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 12505 strings out of 469453
- 195600 string characters out of 5469037
- 721119 words of memory out of 5000000
- 40920 multiletter control sequences out of 15000+600000
+ 12510 strings out of 469453
+ 195659 string characters out of 5469037
+ 721378 words of memory out of 5000000
+ 40922 multiletter control sequences out of 15000+600000
  647355 words of font info for 81 fonts, out of 8000000 for 9000
  40 hyphenation exceptions out of 8191
- 75i,9n,79p,1071b,718s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,10n,79p,1071b,650s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbi1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on build/auxx.pdf (32 pages, 3282851 bytes).
+Output written on build/auxx.pdf (33 pages, 3287871 bytes).
 PDF statistics:
- 425 PDF objects out of 1000 (max. 8388607)
- 308 compressed objects within 4 object streams
- 79 named destinations out of 1000 (max. 500000)
- 232 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 434 PDF objects out of 1000 (max. 8388607)
+ 316 compressed objects within 4 object streams
+ 82 named destinations out of 1000 (max. 500000)
+ 240 words of extra memory for PDF output out of 10000 (max. 10000000)
 
