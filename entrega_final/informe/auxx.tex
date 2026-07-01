@@ -631,6 +631,8 @@ Los cuatro agrupamientos ofrecen lecturas consistentes y complementarias. El esp
 \pagebreak
 \section{Análisis Predictivo Pre-Pelea y Respuesta a las Preguntas}
 
+El subconjunto depurado de combates post-2010 se particionó en un conjunto de entrenamiento (80\,\% del total, $N = 4865$ combates) y un conjunto de prueba (20\,\% del total, $N = 1217$ combates). Para este proceso se aplicó un muestreo estratificado con el fin de preservar la distribución empírica del 58,42\,\% de victorias del rincón rojo en ambas particiones, garantizando así una evaluación libre de sesgos.
+
 Para establecer una línea de base de comparación (baseline), evaluamos el clasificador más simple: \textbf{ZeroR}. Este algoritmo generó una única regla: predecir siempre que gana el rincón rojo, debido a que es la clase mayoritaria (711 victorias rojas frente a 506 azules en los 1217 combates de prueba). Este modelo base arrojó una exactitud (accuracy) del 58,42\,\%. En consecuencia, cualquier modelo de minería de datos que implementemos a continuación debe superar matemáticamente este umbral para considerarse útil.
 
 Para superar esta base, entrenamos un clasificador Naïve Bayes Gaussiano y un Árbol de Decisión (criterio entropía, profundidad máxima de 5) utilizando únicamente variables pre-pelea: diferencias de edad, altura, alcance, victorias, derrotas y defensa de golpeo (\texttt{diff\_str\_def}).
@@ -720,6 +722,10 @@ A partir de las reglas extraídas del árbol de decisión, fijando las caracter�
     \item \textbf{La ventaja aumenta al ser más joven.}
 \end{itemize}
 
+\subsection{¿Qué estilo es conveniente practicar según las cualidades físicas de la persona?}
+
+los datos indican que a los peleadores de menor envergadura les favorece acortar distancia y buscar el derribo mediante perfiles de \textit{Pressure Fighter} o de \textit{grappling} intensivo. Por el contrario, los atletas de gran envergadura obtienen mejores resultados jugando como \textit{Outfighters} de bajo intercambio (Grupo 0 del perfil de riesgo), donde pueden puntuar desde lejos sin comprometer su defensa de golpeo.
+
 El árbol proporciona umbrales concretos: por ejemplo, aceptar una pelea es favorable si \texttt{diff\_str\_def > -11.5}, \texttt{diff\_wins > -0.5} y además se es más joven.
 
 \subsection{¿Conviene un árbol de mayor profundidad?}
@@ -759,14 +765,14 @@ Respecto a la fase predictiva, tanto el Árbol de Decisión como el modelo Naïv
     \centering
     \renewcommand{\arraystretch}{1.3}
     \begin{tabular}{lccccc}
-        \toprule
-        \textbf{Modelo} & \textbf{Acc Train} & \textbf{Acc Test} & \textbf{F1 Train} & \textbf{F1 Test} & \textbf{Complejidad} \\
-        \midrule
-        ZeroR & 58.42\,\% & 58.42\,\% & 0\,\% / 74\,\% & 0\,\% / 74\,\% & $\mathcal{O}(1)$ \\
-        Naïve Bayes & 67.00\,\% & 65.00\,\% & 60\,\% / 73\,\% & 56\,\% / 71\,\% & $\mathcal{O}(k \cdot d)$ \\
-        Árbol de Decisión & 67.00\% & 64\,\% / 66\, \% & 50\,\% / 75\,\% & 50\,\% / 74\,\% & $\mathcal{O}(h)$ \\
-        \bottomrule
-    \end{tabular}
+    \toprule
+    \textbf{Modelo} & \textbf{Acc Train} & \textbf{Acc Test} & \textbf{F1 Train} & \textbf{F1 Test} & \textbf{Complejidad} \\
+    \midrule
+    ZeroR & 58.42\,\% & 58.42\,\% & 0\,\% / 74\,\%\footnote{El F1-Score del 74\,\% corresponde exclusivamente a la clase mayoritaria (Rojo). Para la clase Azul el valor es 0\,\% debido a un Recall nulo del modelo base.} & 0\,\% / 74\,\% & $\mathcal{O}(1)$ \\
+    Naïve Bayes & 67.00\,\% & 65.00\,\% & 60\,\% / 73\,\% & 56\,\% / 71\,\% & $\mathcal{O}(k \cdot d)$ \\
+    Árbol de Decisión & 63.72\,\% & 65.74\,\% & 64\,\% / 63\,\% & 61\,\% / 61\,\% & $\mathcal{O}(h)$ \\
+    \bottomrule
+\end{tabular}
     \caption{Comparativa de rendimiento y complejidad computacional (fase de predicción). Para el F1-Score del Bayes y el Árbol se detallan los valores (Clase Azul / Clase Roja). Variables de complejidad: $k$ (clases), $d$ (atributos), $h$ (profundidad).}
     \label{tab:comparativa_modelos}
 \end{table}

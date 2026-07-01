@@ -1,9 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.6.19)  25 JUN 2026 20:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.6.19)  1 JUL 2026 19:11
 entering extended mode
  restricted \write18 enabled.
+ file:line:error style messages enabled.
  %&-line parsing enabled.
-**auxx.tex
-(./auxx.tex
+**/home/taci/unlp/midusi/entrega_final/informe/auxx.tex
+(/home/taci/unlp/midusi/entrega_final/informe/auxx.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
 (/usr/share/texmf-dist/tex/latex/base/article.cls
@@ -22,45 +23,31 @@ File: size11.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
 \abovecaptionskip=\skip49
 \belowcaptionskip=\skip50
 \bibindent=\dimen148
-)
-(/usr/share/texmf-dist/tex/latex/base/inputenc.sty
+) (/usr/share/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2024/02/08 v1.3d Input encoding file
 \inpenc@prehook=\toks17
 \inpenc@posthook=\toks18
-)
-(/usr/share/texmf-dist/tex/latex/base/fontenc.sty
+) (/usr/share/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
-)
-(/usr/share/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2026/02/14 v26.3 The multilingual framework for LuaLaTeX, pdfLaT
-eX and XeLaTeX
+) (/usr/share/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2026/02/14 v26.3 The multilingual framework for LuaLaTeX, pdfLaTeX and XeLaTeX
 \babel@savecnt=\count283
-LaTeX Encoding Info:    Redeclaring text command \ij (encoding OT1) on input li
-ne 2078.
-LaTeX Encoding Info:    Redeclaring text command \IJ (encoding OT1) on input li
-ne 2080.
-LaTeX Encoding Info:    Redeclaring text command \ij (encoding T1) on input lin
-e 2082.
-LaTeX Encoding Info:    Redeclaring text command \IJ (encoding T1) on input lin
-e 2083.
-LaTeX Encoding Info:    Ignoring declaration for text command \ij (encoding ?) 
-on input line 2084.
-LaTeX Encoding Info:    Ignoring declaration for text command \IJ (encoding ?) 
-on input line 2086.
-LaTeX Encoding Info:    Ignoring declaration for text command \SS (encoding ?) 
-on input line 2111.
+LaTeX Encoding Info:    Redeclaring text command \ij (encoding OT1) on input line 2078.
+LaTeX Encoding Info:    Redeclaring text command \IJ (encoding OT1) on input line 2080.
+LaTeX Encoding Info:    Redeclaring text command \ij (encoding T1) on input line 2082.
+LaTeX Encoding Info:    Redeclaring text command \IJ (encoding T1) on input line 2083.
+LaTeX Encoding Info:    Ignoring declaration for text command \ij (encoding ?) on input line 2084.
+LaTeX Encoding Info:    Ignoring declaration for text command \IJ (encoding ?) on input line 2086.
+LaTeX Encoding Info:    Ignoring declaration for text command \SS (encoding ?) on input line 2111.
 \U@D=\dimen149
 \l@unhyphenated=\language6
-
-(/usr/share/texmf-dist/tex/generic/babel/txtbabel.def)
+ (/usr/share/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read2
 \bbl@dirlevel=\count284
-
-(/usr/share/texmf-dist/tex/generic/babel/locale/es/babel-spanish.tex)
+ (/usr/share/texmf-dist/tex/generic/babel/locale/es/babel-spanish.tex)
 Package babel Info: Importing font and identification data for spanish
 (babel)             from babel-es.ini. Reported on input line 4330.
-
-(/home/taci/texmf/tex/generic/babel-spanish/spanish.ldf
+ (/home/taci/texmf/tex/generic/babel-spanish/spanish.ldf
 Language: spanish.ldf 2021/05/27 v5.0q Spanish support from the babel system
 \es@quottoks=\toks19
 \es@quotdepth=\count285
@@ -69,22 +56,16 @@ Package babel Info: Making . an active character on input line 675.
 Package babel Info: Making < an active character on input line 722.
 Package babel Info: Making > an active character on input line 722.
 ))
-LaTeX Encoding Info:    Redeclaring text command \guillemotleft (encoding OT1) 
-on input line 6.
-LaTeX Encoding Info:    Redeclaring text command \guillemotright (encoding OT1)
- on input line 6.
-
-(/usr/share/texmf-dist/tex/latex/geometry/geometry.sty
+LaTeX Encoding Info:    Redeclaring text command \guillemotleft (encoding OT1) on input line 6.
+LaTeX Encoding Info:    Redeclaring text command \guillemotright (encoding OT1) on input line 6.
+ (/usr/share/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
-
-(/usr/share/texmf-dist/tex/latex/graphics/keyval.sty
+ (/usr/share/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 \KV@toks@=\toks20
-)
-(/usr/share/texmf-dist/tex/generic/iftex/ifvtex.sty
+) (/usr/share/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
-
-(/usr/share/texmf-dist/tex/generic/iftex/iftex.sty
+ (/usr/share/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2024/12/12 v1.0g TeX engine tests
 ))
 \Gm@cnth=\count286
@@ -99,8 +80,7 @@ Package: iftex 2024/12/12 v1.0g TeX engine tests
 \Gm@layouthoffset=\dimen156
 \Gm@layoutvoffset=\dimen157
 \Gm@dimlist=\toks21
-)
-(/usr/share/texmf-dist/tex/latex/tools/array.sty
+) (/usr/share/texmf-dist/tex/latex/tools/array.sty
 Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
 \col@sep=\dimen158
 \ar@mcellbox=\box53
@@ -109,8 +89,7 @@ Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
 \extratabsurround=\skip51
 \backup@length=\skip52
 \ar@cellbox=\box54
-)
-(/usr/share/texmf-dist/tex/latex/tools/longtable.sty
+) (/usr/share/texmf-dist/tex/latex/tools/longtable.sty
 Package: longtable 2025-10-13 v4.24 Multi-page Table package (DPC)
 \LTleft=\skip53
 \LTright=\skip54
@@ -128,8 +107,7 @@ Package: longtable 2025-10-13 v4.24 Multi-page Table package (DPC)
 \c@LT@tables=\count292
 \c@LT@chunks=\count293
 \LT@p@ftn=\toks23
-)
-(/usr/share/texmf-dist/tex/latex/booktabs/booktabs.sty
+) (/usr/share/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \heavyrulewidth=\dimen161
 \lightrulewidth=\dimen162
@@ -148,8 +126,7 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \@thisruleclass=\count296
 \@lastruleclass=\count297
 \@thisrulewidth=\dimen173
-)
-(/usr/share/texmf-dist/tex/latex/tools/tabularx.sty
+) (/usr/share/texmf-dist/tex/latex/tools/tabularx.sty
 Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
 \TX@col@width=\dimen174
 \TX@old@table=\dimen175
@@ -158,8 +135,7 @@ Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
 \TX@delta=\dimen178
 \TX@cols=\count298
 \TX@ftn=\toks24
-)
-(/usr/share/texmf-dist/tex/latex/enumitem/enumitem.sty
+) (/usr/share/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2025/02/06 v3.11 Customized lists
 \labelindent=\skip57
 \enit@outerparindent=\dimen179
@@ -167,53 +143,43 @@ Package: enumitem 2025/02/06 v3.11 Customized lists
 \enit@inbox=\box60
 \enit@count@id=\count299
 \enitdp@description=\count300
-)
-(/usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
+) (/usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
-
-(/usr/share/texmf-dist/tex/latex/graphics/graphics.sty
+ (/usr/share/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
-
-(/usr/share/texmf-dist/tex/latex/graphics/trig.sty
+ (/usr/share/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
-)
-(/usr/share/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+) (/usr/share/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 106.
-
-(/usr/share/texmf-dist/tex/latex/graphics-def/pdftex.def
+ (/usr/share/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2025/09/29 v1.2d Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen180
 \Gin@req@width=\dimen181
-)
-(/usr/share/texmf-dist/tex/latex/float/float.sty
+) (/usr/share/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count301
 \float@exts=\toks26
 \float@box=\box61
 \@float@everytoks=\toks27
 \@floatcapt=\box62
-)
-(/usr/share/texmf-dist/tex/latex/amsmath/amsmath.sty
+) (/usr/share/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2025/07/09 v2.17z AMS math features
 \@mathmargin=\skip58
 
 For additional information on amsmath, use the `?' option.
 (/usr/share/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2024/11/17 v2.01 AMS text
-
-(/usr/share/texmf-dist/tex/latex/amsmath/amsgen.sty
+ (/usr/share/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks28
 \ex@=\dimen182
-))
-(/usr/share/texmf-dist/tex/latex/amsmath/amsbsy.sty
+)) (/usr/share/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen183
-)
-(/usr/share/texmf-dist/tex/latex/amsmath/amsopn.sty
+) (/usr/share/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
 \inf@bad=\count302
@@ -263,73 +229,54 @@ LaTeX Info: Redefining \Relbar on input line 970.
 \mathdisplay@stack=\toks32
 LaTeX Info: Redefining \[ on input line 2950.
 LaTeX Info: Redefining \] on input line 2951.
-)
-(/usr/share/texmf-dist/tex/latex/hyperref/hyperref.sty
+) (/usr/share/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2026-01-29 v7.01p Hypertext links for LaTeX
-
-(/usr/share/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+ (/usr/share/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
 Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
-)
-(/usr/share/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+) (/usr/share/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
-)
-(/usr/share/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+) (/usr/share/texmf-dist/tex/generic/pdfescape/pdfescape.sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
-
-(/usr/share/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+ (/usr/share/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
 Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
-)
-(/usr/share/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
-Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
-)
-
-(/usr/share/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+) (/usr/share/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
+ (/usr/share/texmf-dist/tex/generic/infwarerr/infwarerr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-))
-(/usr/share/texmf-dist/tex/latex/hycolor/hycolor.sty
+)) (/usr/share/texmf-dist/tex/latex/hycolor/hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
-)
-(/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
+) (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2026-01-29 v2.58 Cross-referencing by name of section
-
-(/usr/share/texmf-dist/tex/latex/refcount/refcount.sty
+ (/usr/share/texmf-dist/tex/latex/refcount/refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
-)
-(/usr/share/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+) (/usr/share/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
-
-(/usr/share/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+ (/usr/share/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
 \c@section@level=\count314
-)
-(/usr/share/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+) (/usr/share/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count315
-)
-(/usr/share/texmf-dist/tex/generic/stringenc/stringenc.sty
-Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
-)
+) (/usr/share/texmf-dist/tex/generic/stringenc/stringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
 )
 \@linkdim=\dimen191
 \Hy@linkcounter=\count316
 \Hy@pagecounter=\count317
-
-(/usr/share/texmf-dist/tex/latex/hyperref/pd1enc.def
+ (/usr/share/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2026-01-29 v7.01p Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
-)
-(/usr/share/texmf-dist/tex/generic/intcalc/intcalc.sty
+) (/usr/share/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
 \Hy@SavedSpaceFactor=\count318
-
-(/usr/share/texmf-dist/tex/latex/hyperref/puenc.def
+ (/usr/share/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2026-01-29 v7.01p Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
@@ -342,20 +289,16 @@ Package hyperref Info: Backreferencing OFF on input line 4221.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4468.
 \c@Hy@tempcnt=\count319
-
-(/usr/share/texmf-dist/tex/latex/url/url.sty
+ (/usr/share/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip18
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4807.
 \XeTeXLinkMargin=\dimen192
-
-(/usr/share/texmf-dist/tex/generic/bitset/bitset.sty
+ (/usr/share/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
-
-(/usr/share/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
-Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
-)
+ (/usr/share/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
 \Fld@menulength=\count320
 \Field@Width=\dimen193
@@ -372,24 +315,19 @@ Package hyperref Info: PDF/A mode OFF on input line 6114.
 \c@Hfootnote=\count323
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
-
-(/usr/share/texmf-dist/tex/latex/hyperref/hpdftex.def
+ (/usr/share/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2026-01-29 v7.01p Hyperref driver for pdfTeX
 \Fld@listcount=\count324
 \c@bookmark@seq@number=\count325
-
-(/usr/share/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+ (/usr/share/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)
-
-(/usr/share/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+ (/usr/share/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
-Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
-84.
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 284.
 )
 \Hy@SectionHShift=\skip61
-)
-(/usr/share/texmf-dist/tex/latex/multirow/multirow.sty
+) (/usr/share/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
 \multirow@colwidth=\skip62
 \multirow@cntb=\count326
@@ -397,11 +335,9 @@ Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
 \bigstrutjot=\dimen195
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 45.
-
-(/usr/share/texmf-dist/tex/latex/setspace/setspace.sty
+ (/usr/share/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2022/12/04 v6.7b set line spacing
-)
-(/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+) (/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count327
 ) (./auxx.aux
@@ -482,238 +418,177 @@ LaTeX Info: Redefining \% on input line 59.
 \everyMPtoPDFconversion=\toks34
 ) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-85.
-
-(/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
-e
-))
-(/usr/share/texmf-dist/tex/latex/graphics/color.sty
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+)) (/usr/share/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2025/01/14 v1.3e Standard LaTeX Color (DPC)
-
-(/usr/share/texmf-dist/tex/latex/graphics-cfg/color.cfg
+ (/usr/share/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: pdftex.def on input line 149.
-
-(/usr/share/texmf-dist/tex/latex/graphics/mathcolor.ltx))
+ (/usr/share/texmf-dist/tex/latex/graphics/mathcolor.ltx))
 Package hyperref Info: Link coloring ON on input line 59.
- (./auxx.out)
-(./auxx.out)
+ (./auxx.out) (./auxx.out)
 \@outlinefile=\write3
 \openout3 = `auxx.out'.
 
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts
-/enc/dvips/cm-super/cm-super-t1.enc}] [2]
-Underfull \hbox (badness 2351) in paragraph at lines 109--110
-\T1/cmr/m/n/10.95 ni-ble en Kag-gle ba-jo el nom-bre [][]$\T1/cmtt/m/n/10.95 ht
-tps : / / www . kaggle . com / datasets / neelagiriaditya /
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}] [2] [3]
+Underfull \hbox (badness 2351) in paragraph at lines 110--111
+\T1/cmr/m/n/10.95 ni-ble en Kag-gle ba-jo el nom-bre [][]$\T1/cmtt/m/n/10.95 https : / / www . kaggle . com / datasets / neelagiriaditya /
  []
 
+[4]
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 132.
-[3]
-ignored: Infinite glue shrinkage found in box being split [4]
-ignored: Infinite glue shrinkage 
-found in box being split [5]
-ignored: Infinite glue shrinkage found in box being split [6
-]
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 134.
+ [5]
+ignored: Infinite glue shrinkage found in box being split [6]
 ignored: Infinite glue shrinkage found in box being split [7]
-ignored: Infinite glue shrinkage fo
-und in box being split [8]
+ignored: Infinite glue shrinkage found in box being split [8]
 ignored: Infinite glue shrinkage found in box being split [9]
-<../figures/DistribucionDePeleas.png, id=104, 367.8543pt x 365.6862pt>
+ignored: Infinite glue shrinkage found in box being split [10]
+ignored: Infinite glue shrinkage found in box being split [11] [12]
+<../figures/DistribucionDePeleas.png, id=152, 367.8543pt x 365.6862pt>
 File: ../figures/DistribucionDePeleas.png Graphic file (type png)
 <use ../figures/DistribucionDePeleas.png>
-Package pdftex.def Info: ../figures/DistribucionDePeleas.png  used on input lin
-e 300.
+Package pdftex.def Info: ../figures/DistribucionDePeleas.png  used on input line 304.
 (pdftex.def)             Requested size: 273.14923pt x 271.54097pt.
- [10]
-<../figures/CortePeleas.png, id=112, 698.1282pt x 552.8655pt>
+<../figures/CortePeleas.png, id=155, 698.1282pt x 552.8655pt>
 File: ../figures/CortePeleas.png Graphic file (type png)
 <use ../figures/CortePeleas.png>
-Package pdftex.def Info: ../figures/CortePeleas.png  used on input line 309.
+Package pdftex.def Info: ../figures/CortePeleas.png  used on input line 313.
 (pdftex.def)             Requested size: 386.96027pt x 306.43904pt.
- [11 <../figures/DistribucionDePeleas.png>]
-<../figures/DistribucionDeNulos.png, id=119, 987.2082pt x 842.6682pt>
+ [13 <../figures/DistribucionDePeleas.png>]
+<../figures/DistribucionDeNulos.png, id=164, 987.2082pt x 842.6682pt>
 File: ../figures/DistribucionDeNulos.png Graphic file (type png)
 <use ../figures/DistribucionDeNulos.png>
-Package pdftex.def Info: ../figures/DistribucionDeNulos.png  used on input line
- 321.
+Package pdftex.def Info: ../figures/DistribucionDeNulos.png  used on input line 325.
 (pdftex.def)             Requested size: 455.24411pt x 388.59644pt.
-
-[12 <../figures/CortePeleas.png>]
-<../figures/outliers.png, id=126, 1000.2168pt x 422.0568pt>
+ [14 <../figures/CortePeleas.png>]
+<../figures/outliers.png, id=171, 1000.2168pt x 422.0568pt>
 File: ../figures/outliers.png Graphic file (type png)
 <use ../figures/outliers.png>
-Package pdftex.def Info: ../figures/outliers.png  used on input line 331.
+Package pdftex.def Info: ../figures/outliers.png  used on input line 335.
 (pdftex.def)             Requested size: 455.24411pt x 192.10054pt.
- [13 <../figures/DistribucionDeNulos.png>]
-<../figures/heatmap.png, id=133, 672.8337pt x 566.5968pt>
+ [15 <../figures/DistribucionDeNulos.png>]
+<../figures/heatmap.png, id=178, 672.8337pt x 566.5968pt>
 File: ../figures/heatmap.png Graphic file (type png)
 <use ../figures/heatmap.png>
-Package pdftex.def Info: ../figures/heatmap.png  used on input line 341.
+Package pdftex.def Info: ../figures/heatmap.png  used on input line 345.
 (pdftex.def)             Requested size: 455.24411pt x 383.37006pt.
-
-[14 <../figures/outliers.png>]
-<../figures/DatosFaltantes.png, id=140, 917.1063pt x 478.4274pt>
+ [16 <../figures/outliers.png>]
+<../figures/DatosFaltantes.png, id=185, 917.1063pt x 478.4274pt>
 File: ../figures/DatosFaltantes.png Graphic file (type png)
 <use ../figures/DatosFaltantes.png>
-Package pdftex.def Info: ../figures/DatosFaltantes.png  used on input line 351.
-
+Package pdftex.def Info: ../figures/DatosFaltantes.png  used on input line 355.
 (pdftex.def)             Requested size: 432.48051pt x 225.61282pt.
- [15 <../figures/heatmap.png>]
-<../figures/Imagen3.png, id=148, 1276.2882pt x 842.6682pt>
+ [17 <../figures/heatmap.png>]
+<../figures/Imagen3.png, id=193, 1276.2882pt x 842.6682pt>
 File: ../figures/Imagen3.png Graphic file (type png)
 <use ../figures/Imagen3.png>
-Package pdftex.def Info: ../figures/Imagen3.png  used on input line 363.
+Package pdftex.def Info: ../figures/Imagen3.png  used on input line 367.
 (pdftex.def)             Requested size: 455.24411pt x 300.57011pt.
- [16 <../figures/DatosFaltantes.png>]
-<../figures/VentajasPerfilesVictoria.png, id=156, 919.9971pt x 992.2671pt>
+ [18 <../figures/DatosFaltantes.png>]
+<../figures/VentajasPerfilesVictoria.png, id=201, 919.9971pt x 992.2671pt>
 File: ../figures/VentajasPerfilesVictoria.png Graphic file (type png)
 <use ../figures/VentajasPerfilesVictoria.png>
-Package pdftex.def Info: ../figures/VentajasPerfilesVictoria.png  used on input
- line 370.
+Package pdftex.def Info: ../figures/VentajasPerfilesVictoria.png  used on input line 374.
 (pdftex.def)             Requested size: 432.48051pt x 466.45645pt.
- [17 <../figures/Imagen3.png>] [18 <../figures/VentajasPerfilesVictoria.png>]
-<../figures/Evolucion_Metodos_Duracion.png, id=170, 1421.0691pt x 490.2315pt>
+ [19 <../figures/Imagen3.png>] [20 <../figures/VentajasPerfilesVictoria.png>]
+<../figures/Evolucion_Metodos_Duracion.png, id=215, 1421.0691pt x 490.2315pt>
 File: ../figures/Evolucion_Metodos_Duracion.png Graphic file (type png)
 <use ../figures/Evolucion_Metodos_Duracion.png>
-Package pdftex.def Info: ../figures/Evolucion_Metodos_Duracion.png  used on inp
-ut line 392.
+Package pdftex.def Info: ../figures/Evolucion_Metodos_Duracion.png  used on input line 396.
 (pdftex.def)             Requested size: 455.24411pt x 157.04184pt.
-<../figures/Evolucion_Tecnica.png, id=172, 1699.0677pt x 490.2315pt>
+<../figures/Evolucion_Tecnica.png, id=217, 1699.0677pt x 490.2315pt>
 File: ../figures/Evolucion_Tecnica.png Graphic file (type png)
 <use ../figures/Evolucion_Tecnica.png>
-Package pdftex.def Info: ../figures/Evolucion_Tecnica.png  used on input line 4
-01.
+Package pdftex.def Info: ../figures/Evolucion_Tecnica.png  used on input line 405.
 (pdftex.def)             Requested size: 455.24411pt x 131.34694pt.
-
-Overfull \hbox (2.05675pt too wide) in paragraph at lines 406--406
-[]\T1/cmr/bx/n/14.4 Agrupamiento de es-ti-los de com-ba-te (Clus-te-ring por K-
-medias) 
+ [21 <../figures/Evolucion_Metodos_Duracion.png> <../figures/Evolucion_Tecnica.png>]
+Overfull \hbox (2.05675pt too wide) in paragraph at lines 411--411
+[]\T1/cmr/bx/n/14.4 Agrupamiento de es-ti-los de com-ba-te (Clus-te-ring por K-medias) 
  []
 
-[19 <../figures/Evolucion_Metodos_Duracion.png> <../figures/Evolucion_Tecnica.p
-ng>]
-<../figures/clustering.png, id=182, 711.1368pt x 422.0568pt>
+<../figures/clustering.png, id=226, 711.1368pt x 422.0568pt>
 File: ../figures/clustering.png Graphic file (type png)
 <use ../figures/clustering.png>
-Package pdftex.def Info: ../figures/clustering.png  used on input line 422.
+Package pdftex.def Info: ../figures/clustering.png  used on input line 427.
 (pdftex.def)             Requested size: 455.24411pt x 270.18626pt.
- [20]
-<../figures/codo_y_silouette.png, id=191, 860.21375pt x 504.88625pt>
+[22]
+<../figures/codo_y_silouette.png, id=235, 860.21375pt x 504.88625pt>
 File: ../figures/codo_y_silouette.png Graphic file (type png)
 <use ../figures/codo_y_silouette.png>
-Package pdftex.def Info: ../figures/codo_y_silouette.png  used on input line 43
-1.
+Package pdftex.def Info: ../figures/codo_y_silouette.png  used on input line 436.
 (pdftex.def)             Requested size: 455.24411pt x 267.20323pt.
- [21 <../figures/clustering.png> <../figures/codo_y_silouette.png (PNG copy)>]
+ [23 <../figures/clustering.png> <../figures/codo_y_silouette.png (PNG copy)>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 461.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\times' on input line 461.
+(hyperref)                removing `math shift' on input line 466.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 461.
+(hyperref)                removing `\times' on input line 466.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 461.
+(hyperref)                removing `math shift' on input line 466.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\times' on input line 461.
+(hyperref)                removing `math shift' on input line 466.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 461.
+(hyperref)                removing `\times' on input line 466.
 
-<../figures/codo_silhouette_4vars.png, id=202, 553.1064pt x 335.8146pt>
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 466.
+
+<../figures/codo_silhouette_4vars.png, id=246, 553.1064pt x 335.8146pt>
 File: ../figures/codo_silhouette_4vars.png Graphic file (type png)
 <use ../figures/codo_silhouette_4vars.png>
-Package pdftex.def Info: ../figures/codo_silhouette_4vars.png  used on input li
-ne 487.
+Package pdftex.def Info: ../figures/codo_silhouette_4vars.png  used on input line 492.
 (pdftex.def)             Requested size: 386.96027pt x 234.9405pt.
-[22]
-<../figures/clustering_4vars_pca.png, id=214, 625.8582pt x 408.0846pt>
+[24]
+<../figures/clustering_4vars_pca.png, id=258, 625.8582pt x 408.0846pt>
 File: ../figures/clustering_4vars_pca.png Graphic file (type png)
 <use ../figures/clustering_4vars_pca.png>
-Package pdftex.def Info: ../figures/clustering_4vars_pca.png  used on input lin
-e 519.
+Package pdftex.def Info: ../figures/clustering_4vars_pca.png  used on input line 524.
 (pdftex.def)             Requested size: 409.71692pt x 267.15726pt.
- [23 <../figures/codo_silhouette_4vars.png>]
-
-LaTeX Warning: Reference `fig:codo-silhouette-striking' on page 24 undefined on
- input line 531.
-
-<../figures/codo_silhouette_striking.png, id=221, 553.5882pt x 335.8146pt>
+ [25 <../figures/codo_silhouette_4vars.png>]
+<../figures/codo_silhouette_striking.png, id=267, 553.5882pt x 335.8146pt>
 File: ../figures/codo_silhouette_striking.png Graphic file (type png)
 <use ../figures/codo_silhouette_striking.png>
-Package pdftex.def Info: ../figures/codo_silhouette_striking.png  used on input
- line 535.
+Package pdftex.def Info: ../figures/codo_silhouette_striking.png  used on input line 540.
 (pdftex.def)             Requested size: 386.96027pt x 234.74579pt.
-[24 <../figures/clustering_4vars_pca.png>]
-
-LaTeX Warning: Reference `tab:centroides-striking' on page 25 undefined on inpu
-t line 540.
-
-
-LaTeX Warning: Reference `fig:clustering-striking-pca' on page 25 undefined on 
-input line 567.
-
-[25 <../figures/codo_silhouette_striking.png>]
-<../figures/clustering_striking_pca.png, id=235, 625.8582pt x 408.0846pt>
+ [26 <../figures/clustering_4vars_pca.png>] [27 <../figures/codo_silhouette_striking.png>]
+<../figures/clustering_striking_pca.png, id=282, 625.8582pt x 408.0846pt>
 File: ../figures/clustering_striking_pca.png Graphic file (type png)
 <use ../figures/clustering_striking_pca.png>
-Package pdftex.def Info: ../figures/clustering_striking_pca.png  used on input 
-line 571.
+Package pdftex.def Info: ../figures/clustering_striking_pca.png  used on input line 576.
 (pdftex.def)             Requested size: 409.71692pt x 267.15726pt.
-
-
-LaTeX Warning: Reference `fig:codo-silhouette-riesgo' on page 26 undefined on i
-nput line 581.
-
-<../figures/codo_silhouette_riesgo.png, id=236, 553.5882pt x 335.8146pt>
+<../figures/codo_silhouette_riesgo.png, id=284, 553.5882pt x 335.8146pt>
 File: ../figures/codo_silhouette_riesgo.png Graphic file (type png)
 <use ../figures/codo_silhouette_riesgo.png>
-Package pdftex.def Info: ../figures/codo_silhouette_riesgo.png  used on input l
-ine 585.
+Package pdftex.def Info: ../figures/codo_silhouette_riesgo.png  used on input line 590.
 (pdftex.def)             Requested size: 386.96027pt x 234.74579pt.
-[26 <../figures/clustering_striking_pca.png>]
-
-LaTeX Warning: Reference `tab:centroides-riesgo' on page 27 undefined on input 
-line 590.
-
-
-LaTeX Warning: Reference `fig:clustering-riesgo-pca' on page 27 undefined on in
-put line 613.
-
-<../figures/clustering_riesgo_pca.png, id=243, 625.8582pt x 408.0846pt>
+ [28 <../figures/clustering_striking_pca.png>]
+<../figures/clustering_riesgo_pca.png, id=294, 625.8582pt x 408.0846pt>
 File: ../figures/clustering_riesgo_pca.png Graphic file (type png)
 <use ../figures/clustering_riesgo_pca.png>
-Package pdftex.def Info: ../figures/clustering_riesgo_pca.png  used on input li
-ne 617.
+Package pdftex.def Info: ../figures/clustering_riesgo_pca.png  used on input line 622.
 (pdftex.def)             Requested size: 409.71692pt x 267.15726pt.
-[27 <../figures/codo_silhouette_riesgo.png>] [28 <../figures/clustering_riesgo_
-pca.png>] [29] [30]
-<../figures/ArboldeClasificacion-PrediccionPrePelea.png, id=273, 1148.3703pt x 
-589.7232pt>
-File: ../figures/ArboldeClasificacion-PrediccionPrePelea.png Graphic file (type
- png)
+ [29 <../figures/codo_silhouette_riesgo.png>] [30 <../figures/clustering_riesgo_pca.png>] [31] [32]
+<../figures/ArboldeClasificacion-PrediccionPrePelea.png, id=321, 1148.3703pt x 589.7232pt>
+File: ../figures/ArboldeClasificacion-PrediccionPrePelea.png Graphic file (type png)
 <use ../figures/ArboldeClasificacion-PrediccionPrePelea.png>
-Package pdftex.def Info: ../figures/ArboldeClasificacion-PrediccionPrePelea.png
-  used on input line 725.
+Package pdftex.def Info: ../figures/ArboldeClasificacion-PrediccionPrePelea.png  used on input line 736.
 (pdftex.def)             Requested size: 409.71692pt x 210.40152pt.
- [31 <../figures/ArboldeClasificacion-PrediccionPrePelea.png>] [32] [33] (./aux
-x.aux
+ [33] [34 <../figures/ArboldeClasificacion-PrediccionPrePelea.png>] [35] (./auxx.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
 )
@@ -721,56 +596,29 @@ LaTeX Info: Redefining \% on input line 11.
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `auxx.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `auxx.out':
-(rerunfilecheck)             Before: C193CB4FB3C089D2B0A1125C01C1760A;2816
-(rerunfilecheck)             After:  6E22937376BA0FA2A2F1E133212974FE;4426.
+Package rerunfilecheck Info: File `auxx.out' has not changed.
+(rerunfilecheck)             Checksum: 368B1CFBE7C8C9D2C283FD9AAD63DA7E;4929.
  )
 (\end occurred inside a group at level 1)
 
-### semi simple group (level 1) entered at line 142 (\begingroup)
+### semi simple group (level 1) entered at line 145 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 12500 strings out of 469453
- 195350 string characters out of 5469037
- 719660 words of memory out of 5000000
- 40914 multiletter control sequences out of 15000+600000
+ 12514 strings out of 469453
+ 195656 string characters out of 5469037
+ 720378 words of memory out of 5000000
+ 40923 multiletter control sequences out of 15000+600000
  647355 words of font info for 81 fonts, out of 8000000 for 9000
  40 hyphenation exceptions out of 8191
- 75i,10n,79p,1026b,650s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pf
-b></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/font
-s/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cms
-y8.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbi1095.pfb></usr/sh
-are/texmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb></usr/share/texmf-dist/
-fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf-dist/fonts/type1/pub
-lic/cm-super/sfbx1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sf
-bx1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></us
-r/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf-d
-ist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf-dist/fonts/type1
-/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-supe
-r/sfrm1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-</usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/tex
-mf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/share/texmf-dist/fonts/t
-ype1/public/cm-super/sftt1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-
-super/sftt1095.pfb>
-Output written on auxx.pdf (33 pages, 3288428 bytes).
+ 75i,16n,79p,1071b,706s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
+
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbi1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
+Output written on auxx.pdf (35 pages, 3293175 bytes).
 PDF statistics:
- 403 PDF objects out of 1000 (max. 8388607)
- 286 compressed objects within 3 object streams
- 82 named destinations out of 1000 (max. 500000)
- 176 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 454 PDF objects out of 1000 (max. 8388607)
+ 332 compressed objects within 4 object streams
+ 86 named destinations out of 1000 (max. 500000)
+ 248 words of extra memory for PDF output out of 10000 (max. 10000000)
 
